@@ -1,4 +1,4 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,12 +15,14 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Loader />
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/subject/:id" component={Subject} />
-          <Route path="/chapter/:id" component={ChapterPage} />
-          <Route component={NotFound} />
-        </Switch>
+        <WouterRouter base="/ncert-class9-solutions">
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/subject/:id" component={Subject} />
+            <Route path="/chapter/:id" component={ChapterPage} />
+            <Route component={NotFound} />
+          </Switch>
+        </WouterRouter>
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

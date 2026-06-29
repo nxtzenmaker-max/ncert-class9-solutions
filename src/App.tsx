@@ -26,7 +26,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Loader />
-        <WouterRouter base={
+        <WouterRouter>
           <Router />
         </WouterRouter>
         <Toaster />

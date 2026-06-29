@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { GraduationCap, Menu, X, Download } from "lucide-react";
 
 function scrollTo(id: string) {
   const el = document.getElementById(id);
@@ -63,7 +62,6 @@ export default function Navbar() {
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm"
               data-testid="button-download"
             >
-              <Download className="w-4 h-4" /> Download
             </motion.a>
           </div>
 
@@ -106,7 +104,6 @@ export default function Navbar() {
             className="w-full mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors"
             data-testid="button-download-mobile"
           >
-            <Download className="w-4 h-4" /> Download Source Code
           </motion.a>
         </motion.div>
       )}

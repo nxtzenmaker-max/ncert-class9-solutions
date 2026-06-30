@@ -173,8 +173,18 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center flex flex-col items-center gap-2">
-            <p className="text-gray-400 text-sm">© 2024 NCERT Class 9 Solutions. All rights reserved.</p>
-            <p className="text-gray-500 text-sm">Created with ❤️ by a Student of Goethals Public School</p>
+            <p className="text-gray-400 text-sm">© 2026 NCERT Class 9 Solutions. All rights reserved.</p>
+            <p className="text-gray-500 text-sm">
+              Created with ❤️ by a{" "}
+              <a
+                href="http://www.goethalspublicschool.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-gray-300"
+              >
+                Student of Goethals Public School
+              </a>
+            </p>
           </div>
         </div>
       </footer>

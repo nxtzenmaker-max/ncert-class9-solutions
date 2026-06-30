@@ -1,127 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>NCERT Class 9 Solutions</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#fff;color:#111827}
-#loader{position:fixed;inset:0;background:#fff;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity 0.6s}
-#loader.hide{opacity:0;pointer-events:none}
-#loader h1{font-size:3rem;font-weight:800;color:#1d4ed8}
-#loader p{font-size:1.2rem;color:#f97316;margin-top:8px}
-nav{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;z-index:100}
-.logo span{font-size:1.4rem;font-weight:800;color:#1d4ed8}
-.logo small{display:block;color:#f97316;font-size:0.75rem;font-weight:600}
-.nav-links{display:flex;gap:2rem}
-.nav-links a{text-decoration:none;color:#374151;font-weight:500}
-.nav-links a:hover{color:#1d4ed8}
-.hero{text-align:center;padding:5rem 2rem;background:linear-gradient(to bottom,#fff,#eff6ff)}
-.hero h1{font-size:3rem;font-weight:800;color:#111827}
-.hero h1 span{color:#1d4ed8}
-.hero p{margin-top:1rem;font-size:1.1rem;color:#6b7280;max-width:600px;margin-inline:auto}
-.btn-primary{display:inline-block;margin-top:2rem;padding:0.8rem 2rem;background:#1d4ed8;color:#fff;border-radius:8px;font-weight:600;text-decoration:none;border:none;cursor:pointer;font-size:1rem}
-.subjects{padding:4rem 2rem;text-align:center}
-.subjects h2{font-size:2rem;font-weight:700}
-.subjects .underline{width:80px;height:4px;background:#f97316;margin:0.5rem auto 2rem;border-radius:2px}
-.card{max-width:400px;margin:0 auto;border:1px solid #e5e7eb;border-radius:16px;padding:2rem;text-align:left;box-shadow:0 2px 8px rgba(0,0,0,0.06);transition:box-shadow 0.3s}
-.card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.12)}
-.card-icon{width:56px;height:56px;background:#eff6ff;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.8rem}
-.card h3{font-size:1.2rem;font-weight:700;margin-bottom:0.5rem}
-.card p{color:#6b7280;margin-bottom:1rem}
-.card a{color:#1d4ed8;font-weight:500;text-decoration:none}
-.features{padding:4rem 2rem;background:#f9fafb;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb}
-.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;max-width:700px;margin:0 auto;text-align:center}
-.feature-icon{width:64px;height:64px;background:#dbeafe;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.8rem}
-.feature h3{font-weight:600;margin-bottom:0.5rem}
-.feature p{color:#6b7280;font-size:0.9rem}
-footer{background:#111827;color:#fff;padding:3rem 2rem;text-align:center}
-footer .logo-f span{font-size:1.4rem;font-weight:800}
-footer .logo-f small{color:#9ca3af;font-size:0.75rem}
-footer nav{background:transparent;border:none;justify-content:center;gap:2rem;padding:1rem 0}
-footer nav a{color:#d1d5db;text-decoration:none;font-size:0.9rem}
-.footer-bottom{margin-top:1rem;border-top:1px solid #374151;padding-top:1rem;color:#9ca3af;font-size:0.85rem}
-.footer-credit{color:#9ca3af;margin-top:0.5rem;font-size:0.85rem}
-</style>
-</head>
-<body>
-
-<div id="loader">
-  <div style="text-align:center;animation:zoomIn 0.7s ease-out">
-    <div style="font-size:4rem">🎓</div>
-    <h1>NCERT</h1>
-    <p>Class 9 Solutions</p>
-  </div>
-</div>
-
-<nav>
-  <div class="logo"><span>NCERT</span><small>Class 9</small></div>
-  <div class="nav-links">
-    <a href="#hero">Home</a>
-    <a href="#subjects">Subjects</a>
-    <a href="#features">About</a>
-  </div>
-</nav>
-
-<section class="hero" id="hero">
-  <h1>NCERT <span>Class 9</span> Solutions</h1>
-  <p>Complete chapter-wise Ganita Manjari solutions. Free, accurate, and easy to understand.</p>
-  <a href="#subjects" class="btn-primary">Explore Subjects</a>
-</section>
-
-<section class="subjects" id="subjects">
-  <h2>Ganita Manjari</h2>
-  <div class="underline"></div>
-  <div class="card">
-    <div class="card-icon">🧮</div>
-    <h3>Mathematics — Ganita Manjari</h3>
-    <p>Algebra, Geometry, Statistics & more</p>
-    <a href="chapters.html">View Solutions →</a>
-  </div>
-</section>
-
-<section class="features" id="features">
-  <div class="features-grid">
-    <div class="feature">
-      <div class="feature-icon">✅</div>
-      <h3>Free Access</h3>
-      <p>No hidden fees. 100% free forever.</p>
-    </div>
-    <div class="feature">
-      <div class="feature-icon">📖</div>
-      <h3>Chapter-wise</h3>
-      <p>Structured exactly like your NCERT textbook.</p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="logo-f"><span>NCERT</span><small>Class 9</small></div>
-  <nav>
-    <a href="#hero">Home</a>
-    <a href="#subjects">Subjects</a>
-    <a href="#features">About</a>
-  </nav>
-  <div class="footer-bottom">© 2025 NCERT Class 9 Solutions. All rights reserved.</div>
-  <div class="footer-credit">Created with ❤️ by a Student of Goethals Public School</div>
-</footer>
-
-<style>
-@keyframes zoomIn{from{transform:scale(0.5);opacity:0}to{transform:scale(1);opacity:1}}
-</style>
-<script>
-setTimeout(()=>{
-  const l=document.getElementById('loader');
-  l.classList.add('hide');
-  setTimeout(()=>l.remove(),600);
-},2500);
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
-  });
-});
-</script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>NCERT Class 9 Solutions</title>
+    <meta name="description" content="NCERT Class 9 Solutions — built on Replit. Update this description to reflect the app." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="NCERT Class 9 Solutions" />
+    <meta property="og:description" content="NCERT Class 9 Solutions — built on Replit. Update this description to reflect the app." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NCERT Class 9 Solutions" />
+    <meta name="twitter:description" content="NCERT Class 9 Solutions — built on Replit. Update this description to reflect the app." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

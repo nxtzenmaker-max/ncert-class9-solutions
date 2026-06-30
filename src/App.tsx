@@ -10,18 +10,24 @@ import Loader from "@/components/Loader";
 
 const queryClient = new QueryClient();
 
+function Router() {
+  return (
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/subject/:id" component={Subject} />
+      <Route path="/chapter/:id" component={ChapterPage} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Loader />
-        <WouterRouter base="/ncert-class9-solutions">
-          <Switch>
-            <Route path="/" component={Home} />
-            <Route path="/subject/:id" component={Subject} />
-            <Route path="/chapter/:id" component={ChapterPage} />
-            <Route component={NotFound} />
-          </Switch>
+        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <Router />
         </WouterRouter>
         <Toaster />
       </TooltipProvider>

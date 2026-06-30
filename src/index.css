@@ -1,13 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
   --primary: #1d4ed8;
   --accent: #f97316;
-  --foreground: #111827;
-  --background: #ffffff;
-  --border: #e5e7eb;
-  --muted: #6b7280;
-  --card: #ffffff;
-  --ring: #1d4ed8;
-  --radius: 0.5rem;
 }
-* { box-sizing: border-box; }
-body { margin: 0; background: #fff; color: #111827; }
+
+body { font-family: 'Inter', sans-serif; }

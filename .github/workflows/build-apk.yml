@@ -6,6 +6,9 @@ on:
     paths:
       - "android/app-unsigned.apk"
 
+permissions:
+  contents: write
+
 jobs:
   sign-apk:
     runs-on: ubuntu-latest

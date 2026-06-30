@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import { GraduationCap, Menu, X } from "lucide-react";
 
 function scrollTo(id: string) {
   const el = document.getElementById(id);
@@ -42,7 +43,6 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <motion.button
@@ -50,28 +50,17 @@ export default function Navbar() {
                 onClick={link.action}
                 whileTap={{ scale: 0.93 }}
                 className="text-gray-600 hover:text-primary transition-colors font-medium cursor-pointer"
-                data-testid={`nav-${link.label.toLowerCase()}`}
               >
                 {link.label}
               </motion.button>
             ))}
-            <motion.a
-              href="/ncert-solutions-source.zip"
-              download="ncert-solutions-source.zip"
-              whileTap={{ scale: 0.93 }}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors shadow-sm"
-              data-testid="button-download"
-            >
-            </motion.a>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-2">
             <motion.button
               whileTap={{ scale: 0.88 }}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-50"
-              data-testid="button-mobile-menu"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </motion.button>
@@ -79,7 +68,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
       {isMobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -8 }}
@@ -97,14 +85,6 @@ export default function Navbar() {
               {link.label}
             </motion.button>
           ))}
-          <motion.a
-            href="/ncert-solutions-source.zip"
-            download="ncert-solutions-source.zip"
-            whileTap={{ scale: 0.96 }}
-            className="w-full mt-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-white text-sm font-semibold hover:bg-primary/90 transition-colors"
-            data-testid="button-download-mobile"
-          >
-          </motion.a>
         </motion.div>
       )}
     </nav>

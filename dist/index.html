@@ -1,25 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>NCERT Class 9 Solutions</title>
-    <meta name="description" content="NCERT Class 9 Solutions — built on Replit. Update this description to reflect the app." />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="NCERT Class 9 Solutions" />
-    <meta property="og:description" content="NCERT Class 9 Solutions — built on Replit. Update this description to reflect the app." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="NCERT Class 9 Solutions" />
-    <meta name="twitter:description" content="NCERT Class 9 Solutions — built on Replit. Update this description to reflect the app." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/ncert-class9-solutions/assets/index-BPkhB1PQ.js"></script>
-    <link rel="stylesheet" crossorigin href="/ncert-class9-solutions/assets/index-DiLsD2x-.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>NCERT Class 9 Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#fff;color:#111827}
+#loader{position:fixed;inset:0;background:#fff;z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity 0.6s ease}
+#loader.hide{opacity:0;pointer-events:none}
+.logo-icon{font-size:4rem;animation:zoomIn 0.7s ease-out}
+.logo-title{font-size:2.8rem;font-weight:800;color:#1d4ed8;margin-top:8px}
+.logo-sub{font-size:1.1rem;font-weight:600;color:#f97316;margin-top:4px}
+@keyframes zoomIn{from{transform:scale(0.3);opacity:0}to{transform:scale(1);opacity:1}}
+nav{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;z-index:100;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none}
+.nav-logo-icon{font-size:1.8rem}
+.nav-logo-text .name{font-size:1.3rem;font-weight:800;color:#1d4ed8;display:block}
+.nav-logo-text .class{font-size:0.7rem;font-weight:700;color:#f97316;display:block}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{text-decoration:none;color:#374151;font-weight:500;font-size:0.95rem;transition:color 0.2s}
+.nav-links a:hover{color:#1d4ed8}
+.hero{text-align:center;padding:5rem 2rem 4rem;background:linear-gradient(180deg,#fff 0%,#eff6ff 100%);position:relative;overflow:hidden}
+.hero h1{font-size:2.8rem;font-weight:800;color:#111827;line-height:1.2;max-width:600px;margin:0 auto}
+.hero h1 span{color:#1d4ed8}
+.hero p{margin-top:1.2rem;font-size:1.05rem;color:#6b7280;max-width:500px;margin-inline:auto;line-height:1.6}
+.hero-btns{margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{padding:0.75rem 2rem;background:#1d4ed8;color:#fff;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;border:none;cursor:pointer;transition:background 0.2s}
+.btn-primary:hover{background:#1e40af}
+.btn-outline{padding:0.75rem 2rem;border:2px solid #1d4ed8;color:#1d4ed8;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;cursor:pointer;background:#fff;transition:background 0.2s}
+.btn-outline:hover{background:#eff6ff}
+.subjects{padding:4rem 2rem;background:#fff;text-align:center}
+.subjects h2{font-size:2rem;font-weight:700;color:#111827}
+.subjects .underline{width:80px;height:4px;background:#f97316;margin:0.5rem auto 2.5rem;border-radius:2px}
+.card{max-width:380px;margin:0 auto;border:1px solid #e5e7eb;border-radius:16px;padding:2rem;text-align:left;box-shadow:0 2px 8px rgba(0,0,0,0.05);transition:all 0.3s;cursor:pointer}
+.card:hover{box-shadow:0 12px 32px rgba(0,0,0,0.1);transform:translateY(-4px)}
+.card-icon{width:56px;height:56px;background:#eff6ff;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem;font-size:1.8rem}
+.card h3{font-size:1.2rem;font-weight:700;color:#111827;margin-bottom:0.5rem}
+.card p{color:#6b7280;margin-bottom:1.2rem;font-size:0.95rem;line-height:1.5}
+.card a{color:#1d4ed8;font-weight:600;text-decoration:none;font-size:0.95rem}
+.card a:hover{text-decoration:underline}
+.features{padding:4rem 2rem;background:#f9fafb;border-top:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2.5rem;max-width:700px;margin:0 auto;text-align:center}
+.feature-icon{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.8rem}
+.feature-icon.blue{background:#dbeafe}
+.feature-icon.orange{background:#ffedd5}
+.feature h3{font-weight:600;color:#111827;margin-bottom:0.5rem}
+.feature p{color:#6b7280;font-size:0.9rem;line-height:1.5}
+footer{background:#111827;color:#fff;padding:3rem 2rem;text-align:center}
+.footer-logo .name{font-size:1.3rem;font-weight:800;color:#fff}
+.footer-logo .class{font-size:0.75rem;color:#9ca3af;display:block;margin-top:2px}
+.footer-nav{display:flex;gap:2rem;justify-content:center;margin:1.5rem 0}
+.footer-nav a{color:#d1d5db;text-decoration:none;font-size:0.9rem;transition:color 0.2s}
+.footer-nav a:hover{color:#fff}
+.footer-bottom{border-top:1px solid #374151;padding-top:1.2rem;margin-top:1.2rem}
+.footer-copy{color:#9ca3af;font-size:0.85rem}
+.footer-credit{color:#f97316;font-size:0.85rem;margin-top:0.4rem}
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="logo-icon">🎓</div>
+  <div class="logo-title">NCERT</div>
+  <div class="logo-sub">Class 9 Solutions</div>
+</div>
+
+<nav>
+  <a class="nav-logo" href="#hero">
+    <span class="nav-logo-icon">🎓</span>
+    <div class="nav-logo-text">
+      <span class="name">NCERT</span>
+      <span class="class">Class 9</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#hero">Home</a>
+    <a href="#subjects">Subjects</a>
+    <a href="#features">About</a>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <h1>NCERT <span>Class 9</span> Solutions</h1>
+  <p>Complete chapter-wise Ganita Manjari solutions. Free, accurate, and easy to understand.</p>
+  <div class="hero-btns">
+    <a href="#subjects" class="btn-primary">Explore Subjects</a>
+    <a href="#features" class="btn-outline">How It Works</a>
+  </div>
+</section>
+
+<section class="subjects" id="subjects">
+  <h2>Ganita Manjari</h2>
+  <div class="underline"></div>
+  <div class="card">
+    <div class="card-icon">🧮</div>
+    <h3>Mathematics — Ganita Manjari</h3>
+    <p>Algebra, Geometry, Statistics & more — complete chapter-wise solutions.</p>
+    <a href="chapters.html">View Solutions →</a>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="features-grid">
+    <div class="feature">
+      <div class="feature-icon blue">✅</div>
+      <h3>Free Access</h3>
+      <p>No hidden fees or subscriptions. 100% free forever.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon orange">📖</div>
+      <h3>Chapter-wise</h3>
+      <p>Structured exactly like your NCERT Ganita Manjari textbook.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon blue">🎓</div>
+      <h3>Expert Reviewed</h3>
+      <p>Content verified and accurate for Class 9 students.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <span class="name">🎓 NCERT</span>
+    <span class="class">Class 9 Solutions</span>
+  </div>
+  <div class="footer-nav">
+    <a href="#hero">Home</a>
+    <a href="#subjects">Subjects</a>
+    <a href="#features">About</a>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 NCERT Class 9 Solutions. All rights reserved.</div>
+    <div class="footer-credit">Created with ❤️ by a Student of Goethals Public School</div>
+  </div>
+</footer>
+
+<script>
+// Loader
+setTimeout(function(){
+  var l=document.getElementById('loader');
+  l.classList.add('hide');
+  setTimeout(function(){l.remove()},600);
+},2500);
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var t=document.querySelector(a.getAttribute('href'));
+    if(t)t.scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
 </html>

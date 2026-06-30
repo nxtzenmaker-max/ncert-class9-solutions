@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { GraduationCap, Menu, X } from "lucide-react";
 
@@ -11,6 +11,7 @@ function scrollTo(id: string) {
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [location, navigate] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -20,10 +21,22 @@ export default function Navbar() {
 
   const closeMobile = () => setIsMobileMenuOpen(false);
 
+  const goToSection = (id: string) => {
+    if (location === "/") {
+      // already on home page, just scroll
+      scrollTo(id);
+    } else {
+      // navigate home, then scroll once it's mounted
+      navigate("/");
+      setTimeout(() => scrollTo(id), 150);
+    }
+    closeMobile();
+  };
+
   const navLinks = [
-    { label: "Home", action: () => { scrollTo("hero"); closeMobile(); } },
-    { label: "Subjects", action: () => { scrollTo("subjects"); closeMobile(); } },
-    { label: "About", action: () => { scrollTo("features"); closeMobile(); } },
+    { label: "Home", action: () => goToSection("hero") },
+    { label: "Subjects", action: () => goToSection("subjects") },
+    { label: "About", action: () => goToSection("features") },
   ];
 
   return (

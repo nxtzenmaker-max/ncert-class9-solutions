@@ -22,37 +22,88 @@ function classifyLine(line: string) {
   return "normal";
 }
 
+// Breaks a solution into clean stepwise lines.
+// If the data already has explicit "\n" line breaks (manual steps), those are respected.
+// Otherwise, a long paragraph is auto-split into sentence-level steps for clarity.
+function splitIntoSteps(raw: string): string[] {
+  const trimmed = raw.trim();
+  if (trimmed.includes("\n")) {
+    return trimmed.split("\n").map((l) => l.trim()).filter((l) => l.length > 0);
+  }
+  const sentences = trimmed.match(/[^.!?]+[.!?]+(?=\s+[A-Z∴0-9(]|\s*$)/g);
+  if (!sentences || sentences.length <= 1) return [trimmed];
+  return sentences.map((s) => s.trim());
+}
+
 function SolutionLines({ text }: { text: string }) {
-  const lines = text.split("\n");
+  const lines = splitIntoSteps(text);
+  const hasExplicitSteps = lines.some((l) => classifyLine(l) === "step");
+  const showAutoNumbers = !hasExplicitSteps && lines.length > 1;
+
   return (
-    <div className="space-y-2.5 mt-3">
+    <div className="space-y-3 mt-3">
       {lines.map((line, i) => {
         const type = classifyLine(line);
+        const isFinal = i === lines.length - 1 && lines.length > 1;
+
         if (type === "blank") return <div key={i} className="h-1" />;
-        if (type === "step") return (
-          <p key={i} className="text-base font-bold text-gray-900 leading-snug pt-1">
-            {line}
-          </p>
-        );
-        if (type === "equals") return (
-          <p key={i} className="text-base text-gray-800 leading-snug pl-5 font-medium">
-            {line}
-          </p>
-        );
-        if (type === "therefore") return (
-          <p key={i} className="text-base font-bold text-primary leading-snug pt-1">
-            {line}
-          </p>
-        );
-        if (type === "header") return (
-          <p key={i} className="text-base font-semibold text-gray-900 leading-snug pt-1 underline underline-offset-2 decoration-gray-300">
-            {line}
-          </p>
-        );
+
+        if (type === "step") {
+          return (
+            <p key={i} className="text-base font-extrabold text-gray-900 leading-snug pt-1">
+              {line}
+            </p>
+          );
+        }
+
+        if (type === "header") {
+          return (
+            <p
+              key={i}
+              className="text-base font-bold text-gray-900 leading-snug pt-1 underline underline-offset-2 decoration-gray-300"
+            >
+              {line}
+            </p>
+          );
+        }
+
+        // Final line of a multi-step solution: highlight as the answer
+        if (isFinal || type === "therefore") {
+          return (
+            <div
+              key={i}
+              className="mt-1 px-4 py-3 rounded-lg bg-primary/5 border border-primary/20"
+            >
+              <span className="text-xs font-extrabold uppercase tracking-wide text-primary">
+                Final Answer
+              </span>
+              <p className="text-base font-extrabold text-gray-900 mt-1 leading-snug">
+                {line}
+              </p>
+            </div>
+          );
+        }
+
+        if (type === "equals") {
+          return (
+            <p key={i} className="text-base text-gray-800 leading-snug pl-5 font-bold">
+              {line}
+            </p>
+          );
+        }
+
+        // Normal step line — numbered for clean line-by-line reading
         return (
-          <p key={i} className="text-base text-gray-800 leading-relaxed">
-            {line}
-          </p>
+          <div key={i} className="flex gap-3 items-start">
+            {showAutoNumbers && (
+              <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-900 text-white text-xs font-bold flex items-center justify-center mt-0.5">
+                {i + 1}
+              </span>
+            )}
+            <p className="text-base text-gray-800 leading-relaxed font-medium">
+              {line}
+            </p>
+          </div>
         );
       })}
     </div>

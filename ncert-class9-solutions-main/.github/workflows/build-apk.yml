@@ -1,0 +1,63 @@
+name: Build Signed APK
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "android/app-unsigned.apk"
+
+permissions:
+  contents: write
+
+jobs:
+  sign-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install build-tools
+        run: sdkmanager "build-tools;34.0.0"
+
+      - name: Decode keystore
+        run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > release.keystore
+
+      - name: Zipalign
+        run: |
+          BT=$ANDROID_HOME/build-tools/34.0.0
+          $BT/zipalign -v -p 4 android/app-unsigned.apk app-aligned.apk
+
+      - name: Sign APK
+        run: |
+          BT=$ANDROID_HOME/build-tools/34.0.0
+          $BT/apksigner sign \
+            --ks release.keystore \
+            --ks-pass pass:${{ secrets.KEYSTORE_PASSWORD }} \
+            --ks-key-alias ${{ secrets.KEY_ALIAS }} \
+            --key-pass pass:${{ secrets.KEYSTORE_PASSWORD }} \
+            --out NCERT-Class9-signed.apk \
+            app-aligned.apk
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NCERT-Class9-signed-apk
+          path: NCERT-Class9-signed.apk
+
+      - name: Create Release with APK
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: apk-${{ github.run_number }}
+          name: NCERT Class 9 APK build ${{ github.run_number }}
+          files: NCERT-Class9-signed.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

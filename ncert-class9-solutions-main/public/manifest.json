@@ -1,0 +1,31 @@
+{
+  "name": "NCERT Class 9 Solutions",
+  "short_name": "NCERT Class 9",
+  "description": "Complete chapter-wise NCERT Class 9 solutions for all subjects, free and easy to understand.",
+  "start_url": "/ncert-class9-solutions/",
+  "scope": "/ncert-class9-solutions/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#1d4ed8",
+  "icons": [
+    {
+      "src": "/ncert-class9-solutions/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/ncert-class9-solutions/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/ncert-class9-solutions/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

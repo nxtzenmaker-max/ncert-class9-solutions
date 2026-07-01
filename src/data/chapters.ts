@@ -164,6 +164,7 @@ export const chapters: Chapter[] = [
                 label: "4(i)",
                 question:
                   "Reiaan's room door leads from the dining room which has length 18 ft and width 15 ft. The length of the dining room extends from point P to point A. Sketch the dining room and mark the coordinates of its corners.",
+                diagram: "ch1-dining-room",
                 solution:
                   "Given: the dining room's length (18 ft) runs from P to A, where A is already fixed at A(12, 0) (the bedroom's bottom-right corner, which is shared with the dining room).\nSince the length extends from P to A along the x-axis (horizontal direction), P must lie 18 units to the left of A.\nP = (12 − 18, 0) = (−6, 0).\n(Interestingly, this P coincides with the bathroom's corner P(−6,0) found earlier — showing the dining room runs along the entire bottom edge of the house, beneath both the bedroom and bathroom.)\nThe width of the dining room is 15 ft, extending downward (negative y-direction) from the P–A line.\nSo the other two corners are: (−6, −15) and (12, −15).\n∴ Dining room corners: P(−6, 0), A(12, 0), (12, −15), (−6, −15).",
               },
@@ -251,7 +252,7 @@ export const chapters: Chapter[] = [
             q: "4. Plot point Z(5, −6) on the Cartesian plane. Construct a right-angled triangle IZN and find the lengths of the three sides. (Comment: Answers may differ from person to person.)",
             diagram: "ch1-z-triangle",
             solution:
-              "Step 1: Plot Z(5, −6) — move 5 units right along the x-axis, then 6 units down.\nStep 2: To construct a right-angled triangle easily, choose I = (5, 0), directly above Z on the x-axis, and N = (0, 0), the origin.\nStep 3: Side IZ is vertical (both points have x = 5): IZ = |0 − (−6)| = 6 units.\nStep 4: Side IN is horizontal (both points have y = 0): IN = |5 − 0| = 5 units.\nStep 5: The right angle is at I, since IZ (vertical) ⊥ IN (horizontal).\nStep 6: By the Baudhāyana–Pythagoras Theorem, hypotenuse ZN = √(IZ² + IN²) = √(6² + 5²) = √(36 + 25) = √61 ≈ 7.81 units.\n∴ IZ = 6 units, IN = 5 units, ZN = √61 ≈ 7.81 units. (Choosing a different right-angle vertex I would give a different — but equally valid — triangle.)",
+              "Step 1: Plot Z(5, −6) — move 5 units right along the x-axis, then 6 units down (into Quadrant IV).\nStep 2: Choose I = (5, 0) on the x-axis, directly above Z (same x-coordinate), and N = (0, −6) on the y-axis, directly to the left of Z (same y-coordinate).\nStep 3: Side IZ is vertical (both have x = 5): IZ = |0 − (−6)| = 6 units.\nStep 4: Side ZN is horizontal (both have y = −6): ZN = |5 − 0| = 5 units.\nStep 5: The right angle is at Z, since IZ (vertical) ⊥ ZN (horizontal).\nStep 6: By the Baudhāyana–Pythagoras Theorem, hypotenuse IN = √(IZ² + ZN²) = √(6² + 5²) = √(36 + 25) = √61 ≈ 7.81 units.\n∴ IZ = 6 units, ZN = 5 units, IN = √61 ≈ 7.81 units.",
           },
           {
             q: "5. What would a system of coordinates be like if we did not have negative numbers? Would this system allow us to locate all the points on a 2-D plane?",
@@ -287,6 +288,7 @@ export const chapters: Chapter[] = [
           },
           {
             q: "*9. The following table shows the coordinates of points S, M and T. In each case, state whether M is the midpoint of segment ST. Justify your answer. When M is the mid-point of ST, can you find any connection between the coordinates of M, S and T?",
+            diagram: "ch1-midpoint-table",
             parts: [
               {
                 label: "Row 1",

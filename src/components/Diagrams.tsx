@@ -190,131 +190,19 @@ export function ReiaaanRoomFig15() {
   return <NCERTFig src={fig15Img} alt="Fig 1.5 room coordinate grid" caption="Fig. 1.5" />;
 }
 export function RAMPDiagram() {
-  // scale=24: all points fit comfortably within viewBox 0 0 340 260
-  // Origin at cx=160, cy=120
-  const sc = 24, cx = 160, cy = 120;
-  const R = { x: cx + 3*sc, y: cy };           // R(3,0)
-  const A = { x: cx,        y: cy + 2*sc };    // A(0,-2)
-  const M = { x: cx - 5*sc, y: cy + 2*sc };   // M(-5,-2)
-  const P = { x: cx - 5*sc, y: cy - 2*sc };   // P(-5,2)
-  const poly = [R,A,M,P].map(p=>`${p.x},${p.y}`).join(" ");
-  const ticks = [-5,-4,-3,-2,-1,1,2,3,4];
-  return (
-    <svg viewBox="0 0 340 260" className="w-full max-w-lg mx-auto block" aria-label="RAMP quadrilateral">
-      <defs>
-        <marker id="axR" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-          <path d="M0,0 L7,3.5 L0,7 Z" fill="#374151" />
-        </marker>
-        <marker id="ayR" markerWidth="7" markerHeight="7" refX="3.5" refY="0" orient="auto">
-          <path d="M0,7 L3.5,0 L7,7 Z" fill="#374151" />
-        </marker>
-      </defs>
+  return <NCERTFig src="/diagrams/ch1-ramp.webp" alt="RAMP quadrilateral with P(−5,2), M(−5,−2), A(0,−2), R(3,0)" caption="RAMP: R(3,0), A(0,−2), M(−5,−2), P(−5,2) — AM ∥ x-axis, MP ∥ y-axis, ∠M = 90°" />;
+}
 
-      {/* Grid */}
-      {ticks.map(t => (
-        <g key={t}>
-          <line x1={cx+t*sc} y1={16} x2={cx+t*sc} y2={244} stroke="#f3f4f6" strokeWidth="0.9" />
-          <line x1={16} y1={cy+t*sc} x2={324} y2={cy+t*sc} stroke="#f3f4f6" strokeWidth="0.9" />
-          <text x={cx+t*sc} y={cy+14} fontSize="9" fill="#9ca3af" textAnchor="middle">{t}</text>
-          <text x={cx-6} y={cy-t*sc+4} fontSize="9" fill="#9ca3af" textAnchor="end">{t}</text>
-        </g>
-      ))}
-      <text x={cx} y={cy+14} fontSize="9" fill="#9ca3af" textAnchor="middle">0</text>
+export function DiningRoomDiagram() {
+  return <NCERTFig src="/diagrams/ch1-dining-room.webp" alt="Dining room 18ft×15ft with dining table placed at centre" caption="Dining Room (18 ft × 15 ft) with dining table (5 ft × 3 ft) centred at (3, −7.5)" />;
+}
 
-      {/* Axes */}
-      <line x1={16} y1={cy} x2={324} y2={cy} stroke="#374151" strokeWidth="1.5" markerEnd="url(#axR)" />
-      <line x1={cx} y1={244} x2={cx} y2={16} stroke="#374151" strokeWidth="1.5" markerEnd="url(#ayR)" />
-      <text x={326} y={cy+4} fontSize="12" fill="#374151" fontWeight="bold">x</text>
-      <text x={cx+4} y={14} fontSize="12" fill="#374151" fontWeight="bold">y</text>
-
-      {/* Quadrilateral */}
-      <polygon points={poly} fill="#dbeafe" stroke="#1a56db" strokeWidth="2.5" fillOpacity="0.7" />
-
-      {/* Right angle mark at M */}
-      <rect x={M.x} y={M.y-10} width="10" height="10" fill="none" stroke="#1a56db" strokeWidth="1.5" />
-
-      {/* Points with labels */}
-      {[
-        {p:R, label:"R(3, 0)",   ax: 8,  ay:-10},
-        {p:A, label:"A(0, −2)",  ax: 6,  ay: 16},
-        {p:M, label:"M(−5, −2)", ax:-84, ay: 16},
-        {p:P, label:"P(−5, 2)",  ax:-78, ay:-8},
-      ].map(({p, label, ax, ay}) => (
-        <g key={label}>
-          <circle cx={p.x} cy={p.y} r="5" fill="#f97316" />
-          <text x={p.x+ax} y={p.y+ay} fontSize="11" fill="#1a56db" fontWeight="bold">{label}</text>
-        </g>
-      ))}
-
-      <text x={16} y={256} fontSize="10" fill="#6b7280">RAMP — AM ∥ x-axis, MP ∥ y-axis, ∠M = 90°</text>
-    </svg>
-  );
+export function MidpointTableDiagram() {
+  return <NCERTFig src="/diagrams/ch1-midpoint-table-answers.webp" alt="Midpoint table: S, M, T with Yes/No answers" caption="Table: Is M the midpoint of ST?" />;
 }
 
 export function ZTriangleDiagram() {
-  // scale=22, origin at cx=62 cy=72 — Z goes down 6 units = y+132=204, label at 216 fits in 280
-  const sc = 22, cx = 62, cy = 72;
-  const N = { x: cx,       y: cy };          // N(0,0)
-  const I = { x: cx+5*sc,  y: cy };          // I(5,0)
-  const Z = { x: cx+5*sc,  y: cy+6*sc };     // Z(5,-6)
-  const xTicks = [1,2,3,4,5,6];
-  const yTicks = [-1,-2,-3,-4,-5,-6];
-  return (
-    <svg viewBox="0 0 280 280" className="w-full max-w-md mx-auto block" aria-label="Right triangle IZN">
-      <defs>
-        <marker id="axZ" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-          <path d="M0,0 L7,3.5 L0,7 Z" fill="#374151" />
-        </marker>
-        <marker id="ayZ" markerWidth="7" markerHeight="7" refX="3.5" refY="0" orient="auto">
-          <path d="M0,7 L3.5,0 L7,7 Z" fill="#374151" />
-        </marker>
-      </defs>
-
-      {/* Grid */}
-      {xTicks.map(t => (
-        <line key={`vg${t}`} x1={cx+t*sc} y1={14} x2={cx+t*sc} y2={260} stroke="#f3f4f6" strokeWidth="0.9" />
-      ))}
-      {yTicks.map(t => (
-        <line key={`hg${t}`} x1={14} y1={cy-t*sc} x2={264} y2={cy-t*sc} stroke="#f3f4f6" strokeWidth="0.9" />
-      ))}
-
-      {/* Axes */}
-      <line x1={14} y1={cy} x2={264} y2={cy} stroke="#374151" strokeWidth="1.5" markerEnd="url(#axZ)" />
-      <line x1={cx} y1={260} x2={cx} y2={14} stroke="#374151" strokeWidth="1.5" markerEnd="url(#ayZ)" />
-      <text x={266} y={cy+4} fontSize="12" fill="#374151" fontWeight="bold">x</text>
-      <text x={cx+4} y={12} fontSize="12" fill="#374151" fontWeight="bold">y</text>
-      <text x={cx-4} y={cy+14} fontSize="9" fill="#374151" textAnchor="end">0</text>
-
-      {/* Tick labels */}
-      {xTicks.map(t => (
-        <text key={t} x={cx+t*sc} y={cy+14} fontSize="9" fill="#9ca3af" textAnchor="middle">{t}</text>
-      ))}
-      {yTicks.map(t => (
-        <text key={t} x={cx-4} y={cy-t*sc+4} fontSize="9" fill="#9ca3af" textAnchor="end">{t}</text>
-      ))}
-
-      {/* Triangle fill */}
-      <polygon points={`${N.x},${N.y} ${I.x},${I.y} ${Z.x},${Z.y}`} fill="#dbeafe" stroke="#1a56db" strokeWidth="2" fillOpacity="0.7" />
-
-      {/* Right angle box at I */}
-      <rect x={I.x-11} y={I.y} width="11" height="11" fill="none" stroke="#1a56db" strokeWidth="1.5" />
-
-      {/* Side length labels */}
-      <text x={(N.x+I.x)/2} y={N.y-8} fontSize="11" fill="#16a34a" fontWeight="bold" textAnchor="middle">IN = 5</text>
-      <text x={I.x+6} y={(I.y+Z.y)/2+4} fontSize="11" fill="#f97316" fontWeight="bold">IZ = 6</text>
-      <text x={(N.x+Z.x)/2-46} y={(N.y+Z.y)/2+4} fontSize="11" fill="#1a56db" fontWeight="bold">ZN = √61</text>
-
-      {/* Point dots + labels */}
-      <circle cx={N.x} cy={N.y} r="5" fill="#1a56db" />
-      <text x={N.x-6} y={N.y-10} fontSize="11" fill="#1a56db" fontWeight="bold" textAnchor="end">N(0, 0)</text>
-
-      <circle cx={I.x} cy={I.y} r="5" fill="#16a34a" />
-      <text x={I.x+8} y={I.y-8} fontSize="11" fill="#16a34a" fontWeight="bold">I(5, 0)</text>
-
-      <circle cx={Z.x} cy={Z.y} r="5" fill="#f97316" />
-      <text x={Z.x+8} y={Z.y+4} fontSize="11" fill="#f97316" fontWeight="bold">Z(5, −6)</text>
-    </svg>
-  );
+  return <NCERTFig src="/diagrams/ch1-z-triangle.webp" alt="Right triangle IZN with Z(5,−6), I(5,0), N(0,−6)" caption="Z(5,−6): right-angled triangle IZN — IZ = 6, ZN = 5, IN = √61" />;
 }
 
 export function CoordinatePlaneDiagram() {
@@ -387,6 +275,8 @@ const diagramMap: Record<string, React.FC> = {
   "ch1-fig19-reflection": () => <Fig19ReflectionDiagram />,
   "ch1-ramp": () => <RAMPDiagram />,
   "ch1-z-triangle": () => <ZTriangleDiagram />,
+  "ch1-dining-room": () => <DiningRoomDiagram />,
+  "ch1-midpoint-table": () => <MidpointTableDiagram />,
 };
 
 export default function DiagramRenderer({ id }: { id: string }) {

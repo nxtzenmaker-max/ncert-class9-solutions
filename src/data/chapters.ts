@@ -24,45 +24,87 @@ export const chapters: Chapter[] = [
     subtitle: "Orienting Yourself: The Use of Coordinates",
     exerciseSets: [
       {
+        title: "In-Text Questions (Before Exercise 1.1)",
+        questions: [
+          {
+            q: "Fig. 1.2 shows the structure of the coordinate plane. Point B is on the x-axis, 4.5 units to the right of O. Point G is on the y-axis, 4.5 units below O. Point H is on the y-axis, 4 units above O. Write the coordinates of B, G and H.",
+            diagram: "ch1-fig12-axes",
+            solution:
+              "Given: B is on the x-axis, 4.5 units to the right of O (right of O = positive x-direction).\nSince B lies ON the x-axis, its y-coordinate = 0.\nB = (4.5, 0).\nGiven: G is on the y-axis, 4.5 units below O (below O = negative y-direction).\nSince G lies ON the y-axis, its x-coordinate = 0.\nG = (0, −4.5).\nGiven: H is on the y-axis, 4 units above O (above O = positive y-direction).\nH = (0, 4).\n∴ B = (4.5, 0), G = (0, −4.5), H = (0, 4).",
+          },
+          {
+            q: "A point P = (x, 0) lies on the x-axis. What can you say about the position of P if x is positive? If x is negative? Similarly, what about a point P = (0, y) on the y-axis?",
+            solution:
+              "Case 1: P = (x, 0) lies on the x-axis.\nIf x > 0 (positive), P lies to the right of the origin O.\nIf x < 0 (negative), P lies to the left of the origin O.\nCase 2: P = (0, y) lies on the y-axis.\nIf y > 0 (positive), P lies above the origin O.\nIf y < 0 (negative), P lies below the origin O.\n∴ The sign of the non-zero coordinate tells us the direction of the point from the origin along that axis.",
+          },
+        ],
+      },
+      {
         title: "Exercise Set 1.1",
         questions: [
           {
-            q: "Fig. 1.3 shows Reiaan's room with points OABC marking its corners. Point O is the origin. Referring to Fig. 1.3, answer the following questions:",
+            q: "Fig. 1.3 shows Reiaan's room with points OABC marking its corners. The x- and y-axes are marked in the figure. Point O is the origin. Referring to Fig. 1.3, answer the following questions:",
             diagram: "ch1-fig13-room",
             parts: [
               {
                 label: "(i)",
-                question: "If D1R1 represents the door to Reiaan's room, how far is the door from the left wall (the y-axis) of the room? How far is the door from the x-axis?",
-                solution: "The door D1R1 lies along the x-axis (y = 0). Its x-coordinates give its distance from the y-axis. From the figure, D1 is at approximately (7, 0), so the door is 7 units from the y-axis and 0 units from the x-axis (it lies on the x-axis).",
+                question:
+                  "If D₁R₁ represents the door to Reiaan's room, how far is the door from the left wall (the y-axis) of the room? How far is the door from the x-axis?",
+                solution:
+                  "Given: The door D₁R₁ lies along the bottom wall of the room, on the x-axis.\nFrom Fig. 1.3, D₁ = (8, 0) and R₁ = (11.5, 0).\nDistance of the door from the y-axis (left wall) = x-coordinate of D₁ = 8 units.\nSince the entire door D₁R₁ lies on the x-axis itself (y = 0 for both points), its distance from the x-axis = 0 units.\n∴ The door is 8 units from the left wall (y-axis), and 0 units from the x-axis (it lies on the x-axis).",
               },
               {
                 label: "(ii)",
-                question: "What are the coordinates of D1?",
-                solution: "From the figure, D1 is at the point (7, 0).",
+                question: "What are the coordinates of D₁?",
+                solution:
+                  "From Fig. 1.3, point D₁ lies on the x-axis, 8 units to the right of the origin O.\n∴ D₁ = (8, 0).",
               },
               {
                 label: "(iii)",
-                question: "If R1 is the point (11.5, 0), how wide is the door? Do you think this is a comfortable width for the room door?",
-                solution: "Width of door = x-coordinate of R1 − x-coordinate of D1 = 11.5 − 7 = 4.5 units (ft). A standard door is about 3 ft wide, so 4.5 ft is comfortable and also suitable for wheelchair access.",
+                question:
+                  "If R₁ is the point (11.5, 0), how wide is the door? Do you think this is a comfortable width for the room door? If a person in a wheelchair wants to enter the room, will he/she be able to do so easily?",
+                solution:
+                  "Given: D₁ = (8, 0) and R₁ = (11.5, 0).\nBoth points lie on the x-axis, so the width of the door = difference of their x-coordinates.\nWidth = x-coordinate of R₁ − x-coordinate of D₁ = 11.5 − 8 = 3.5 units.\nSince the scale used is 1 cm : 1 foot, the door is 3.5 feet (42 inches) wide.\nA standard interior door is about 3 feet (36 inches) wide, and wheelchair-accessible doors generally need a minimum clear width of about 2.7 feet (32 inches).\n∴ The door is 3.5 ft wide, which is comfortable and wide enough for a wheelchair user to enter easily.",
               },
               {
                 label: "(iv)",
-                question: "If B1 (0, 1.5) and B2 (0, 4) represent the ends of the bathroom door, is the bathroom door narrower or wider than the room door?",
-                solution: "Width of bathroom door = 4 − 1.5 = 2.5 units (ft). Width of room door = 4.5 ft. Since 2.5 < 4.5, the bathroom door is narrower than the room door.",
+                question:
+                  "If B₁ (0, 1.5) and B₂ (0, 4) represent the ends of the bathroom door, is the bathroom door narrower or wider than the room door?",
+                solution:
+                  "Given: B₁ = (0, 1.5) and B₂ = (0, 4). Both lie on the y-axis, so the door's width = difference of their y-coordinates.\nWidth of bathroom door = y-coordinate of B₂ − y-coordinate of B₁ = 4 − 1.5 = 2.5 units.\nFrom part (iii), width of room door = 3.5 units.\nCompare: 2.5 < 3.5.\n∴ The bathroom door (2.5 ft) is narrower than the room door (3.5 ft).",
               },
             ],
           },
           {
-            q: "Think and Reflect: What is the x-coordinate of a point on the y-axis?",
-            solution: "A point on the y-axis has x-coordinate equal to 0. For example, (0, 3), (0, −5) are all on the y-axis.",
+            q: "Think and Reflect: What are the standard widths for a room door? Look around your home and in school.",
+            solution:
+              "Standard interior room doors in Indian homes are typically about 3 ft (90 cm) wide, while bathroom doors are often narrower, around 2 to 2.5 ft (60–75 cm), since bathrooms are smaller spaces. Main entrance doors are usually wider, about 3.5 to 4 ft, to allow comfortable movement and furniture to pass through. (This is an observation-based activity — measure the doors around you and compare with these standard values.)",
           },
           {
-            q: "Think and Reflect: Is there a similar generalisation for a point on the x-axis?",
-            solution: "Yes. A point on the x-axis has y-coordinate equal to 0. For example, (4, 0), (−7, 0) lie on the x-axis.",
+            q: "Think and Reflect: Are the doors in your school suitable for people in wheelchairs?",
+            solution:
+              "For comfortable wheelchair access, a doorway should have a minimum clear width of about 32 inches (2.7 ft), and ideally 36 inches (3 ft) for easy manoeuvring. Check the doors in your school against this standard — if any doors are narrower than 2.7 ft, or have raised thresholds/steps, they would not be easily accessible to a wheelchair user. (This is an observation-based activity to be done in your own school.)",
           },
           {
-            q: "Think and Reflect: Does point Q(y, x) ever coincide with point P(x, y)? Justify your answer.",
-            solution: "Q(y, x) coincides with P(x, y) when y = x, i.e., when both coordinates are equal. For example, if x = y = 3, then P(3, 3) = Q(3, 3). If x ≠ y, they do not coincide.",
+            q: "Think and Reflect: What is the x-coordinate of a point on the y-axis? Is there a similar generalisation for a point on the x-axis?",
+            solution:
+              "Every point on the y-axis is of the form (0, y) — its x-coordinate is always 0, no matter how far up or down it is. For example, (0, 3), (0, −5), (0, 7.5) all lie on the y-axis.\nSimilarly, every point on the x-axis is of the form (x, 0) — its y-coordinate is always 0. For example, (4, 0), (−7, 0), (2.5, 0) all lie on the x-axis.\n∴ Points on the y-axis: x-coordinate = 0. Points on the x-axis: y-coordinate = 0.",
+          },
+          {
+            q: "Think and Reflect: Does point Q(y, x) ever coincide with point P(x, y)? Justify your answer. If x ≠ y, then (x, y) ≠ (y, x); and (x, y) = (y, x) if and only if x = y. Is this claim true?",
+            solution:
+              "P(x, y) and Q(y, x) represent the same point only when their corresponding coordinates are equal, i.e., x = y and y = x — both conditions reduce to the single condition x = y.\nExample 1: If x = y = 3, then P = (3, 3) and Q = (3, 3). Here P and Q coincide.\nExample 2: If x = 2 and y = 5, then P = (2, 5) and Q = (5, 2). These are different points (P is in a different position from Q), so they do not coincide.\n∴ Yes, the claim is true: (x, y) = (y, x) if and only if x = y. Whenever x ≠ y, P and Q are always different points.",
+          },
+        ],
+      },
+      {
+        title: "Quadrants (Fig. 1.4)",
+        questions: [
+          {
+            q: "The axes divide the Cartesian plane into four parts called quadrants. In Fig. 1.4, point S(3, −5) is in Quadrant IV, and point Q(−5, 3) is in Quadrant II. Copy Fig. 1.4 and mark S and Q. Mark any point P in Quadrant I and any point R in Quadrant III, and write down their coordinates.",
+            diagram: "ch1-fig14-quadrants",
+            solution:
+              "Sign convention for each quadrant:\nQuadrant I: x > 0, y > 0 — both coordinates positive.\nQuadrant II: x < 0, y > 0 — x negative, y positive.\nQuadrant III: x < 0, y < 0 — both coordinates negative.\nQuadrant IV: x > 0, y < 0 — x positive, y negative.\nChecking S(3, −5): x = 3 (positive), y = −5 (negative) → matches Quadrant IV. ✓\nChecking Q(−5, 3): x = −5 (negative), y = 3 (positive) → matches Quadrant II. ✓\nExample point P in Quadrant I: P(4, 2) — both coordinates positive.\nExample point R in Quadrant III: R(−4, −2) — both coordinates negative.\n∴ P(4, 2) lies in Quadrant I and R(−4, −2) lies in Quadrant III (any point following the correct sign pattern is a valid answer).",
           },
         ],
       },
@@ -70,35 +112,101 @@ export const chapters: Chapter[] = [
         title: "Exercise Set 1.2",
         questions: [
           {
-            q: "On a graph sheet, mark the x-axis and y-axis and the origin O. Using Fig. 1.5, answer the given questions.",
-            diagram: "ch1-fig15-grid",
+            q: "On a graph sheet, mark the x-axis and y-axis and the origin O. Mark points from (−7, 0) to (13, 0) on the x-axis and from (0, −15) to (0, 12) on the y-axis. (Use the scale 1 cm = 1 unit.) Using Fig. 1.5, answer the given questions.",
+            diagram: "ch1-fig15-fullplan",
             parts: [
               {
-                label: "Q1(i)",
-                question: "Place Reiaan's rectangular study table with three of its feet at the points (8, 9), (11, 9) and (11, 7). Where will the fourth foot of the table be?",
-                solution: "The three given feet form two sides of the rectangle: one side from (8, 9) to (11, 9) (horizontal, length = 3), and another from (11, 9) to (11, 7) (vertical, length = 2). The fourth foot completes the rectangle at (8, 7).",
+                label: "1(i)",
+                question:
+                  "Place Reiaan's rectangular study table with three of its feet at the points (8, 9), (11, 9) and (11, 7). Where will the fourth foot of the table be?",
+                solution:
+                  "Given three corners: (8, 9), (11, 9), (11, 7).\nFrom (8, 9) to (11, 9): same y-coordinate (9), so this is a horizontal side of length 11 − 8 = 3 units.\nFrom (11, 9) to (11, 7): same x-coordinate (11), so this is a vertical side of length 9 − 7 = 2 units.\nFor a rectangle, the fourth corner must share its x-coordinate with the first point (8) and its y-coordinate with the third point (7).\n∴ The fourth foot of the table will be at the point (8, 7).",
               },
               {
-                label: "Q1(ii)",
+                label: "1(ii)",
                 question: "Is this a good spot for the table?",
-                solution: "Yes, the table at coordinates (8, 7) to (11, 9) is in the interior of the room, away from walls and doors, so it is a good spot.",
+                solution:
+                  "The table occupies the rectangle from (8, 7) to (11, 9) — well inside the bedroom, which spans from O(0,0) to B(12,10).\nIt is away from the bed (which extends from x = 0 to x = 6), away from the wardrobe (x = 3 to 7, y = 0 to 2), and away from the door D₁R₁ (x = 8 to 11.5, y = 0) and the right wall (x = 12).\n∴ Yes, this is a good spot — the table sits in open floor space, near the right wall, without blocking the bed, wardrobe, or doorway.",
               },
               {
-                label: "Q1(iii)",
-                question: "What is the width of the table? The length?",
-                solution: "Width = 11 − 8 = 3 units (ft). Length = 9 − 7 = 2 units (ft). The height of the table cannot be determined from the 2D coordinate plan.",
+                label: "1(iii)",
+                question: "What is the width of the table? The length? Can you make out the height of the table?",
+                solution:
+                  "Width = difference of x-coordinates = 11 − 8 = 3 units (3 feet, using the scale 1 cm = 1 foot).\nLength = difference of y-coordinates = 9 − 7 = 2 units (2 feet).\nThe coordinate plan only shows the floor layout (a top, bird's-eye view) — it gives no information about how tall objects are.\n∴ Width = 3 ft, Length = 2 ft. The height of the table CANNOT be determined from this 2-D coordinate diagram.",
               },
               {
-                label: "Q3(i)",
-                question: "What are the coordinates of the four corners O, F, R, and P of the bathroom?",
-                solution: "From Fig. 1.5: O = (0, 0), and typical bathroom corners are at F = (0, 6), R = (4, 6), P = (4, 0) (exact values depend on the figure scale).",
+                label: "2",
+                question:
+                  "If the bathroom door has a hinge at B₁ and opens into the bedroom, will it hit the wardrobe? Are there any changes you would suggest if the door is made wider?",
+                solution:
+                  "Given: hinge at B₁(0, 1.5), door width = 2.5 units (from Exercise 1.1, part iv).\nWhen the door swings open into the bedroom, it sweeps a quarter-circle of radius 2.5 units centred at B₁(0, 1.5).\nThe wardrobe occupies the region x = 3 to 7, y = 0 to 2 — its nearest point to B₁ is at (3, 1.5), which is 3 units away along the x-axis.\nSince the door's swing radius (2.5 units) is less than the distance to the wardrobe (3 units), the open door will NOT reach the wardrobe.\nIf the door were made wider (radius ≥ 3 units), its swept arc could reach the wardrobe; in that case, the wardrobe would need to be shifted further right, or the door could be made to swing outward instead of into the bedroom.\n∴ With the current width, the door does not hit the wardrobe. A wider door (3 ft or more) would risk hitting it, so the wardrobe's position or the door's swing direction would need to change.",
               },
               {
-                label: "Q4(i)",
-                question: "Reiaan's room door leads from the dining room which has length 18 ft and width 15 ft. The length extends from point P to point A. Sketch the dining room and mark the coordinates of its corners.",
-                solution: "Point A is at approximately (18, 0) (along the x-axis from P). The dining room corners are: P(0, 0), A(18, 0), (18, 15), (0, 15). The four corners have coordinates (0,0), (18,0), (18,15), (0,15).",
+                label: "3(i)",
+                question: "Look at Reiaan's bathroom. What are the coordinates of the four corners O, F, R, and P of the bathroom?",
+                solution:
+                  "Reading directly off the grid in Fig. 1.5:\nO is the shared corner with the bedroom — O = (0, 0).\nF is directly above O, where the bathroom meets the bedroom's top-left corner — F = (0, 9).\nR is the top-left corner of the bathroom, 6 units to the left of F — R = (−6, 9).\nP is the bottom-left corner, directly below R — P = (−6, 0).\n∴ O = (0, 0), F = (0, 9), R = (−6, 9), P = (−6, 0). The bathroom is a rectangle 6 units wide and 9 units tall (6 ft × 9 ft).",
+              },
+              {
+                label: "3(ii)",
+                question: "What is the shape of the showering area SHWR in Reiaan's bathroom? Write the coordinates of the four corners.",
+                solution:
+                  "From Fig. 1.5, the four corners of the showering area are: S(−6, 6), H(−3, 6), W(−3, 9), R(−6, 9).\nSide SH: from (−6,6) to (−3,6) — horizontal, length 3.\nSide HW: from (−3,6) to (−3,9) — vertical, length 3.\nSide WR: from (−3,9) to (−6,9) — horizontal, length 3.\nSide RS: from (−6,9) to (−6,6) — vertical, length 3.\nAll four sides are equal in length (3 units) and adjacent sides are perpendicular (alternating horizontal/vertical).\n∴ SHWR is a square of side 3 units, with corners S(−6, 6), H(−3, 6), W(−3, 9), R(−6, 9).",
+              },
+              {
+                label: "3(iii)",
+                question:
+                  "Mark off a 3 ft × 2 ft space for the washbasin and a 2 ft × 3 ft space for the toilet. Write the coordinates of the corners of these spaces.",
+                solution:
+                  "The remaining free floor of the bathroom (below the showering area) spans roughly from y = 0 to y = 6, x = −6 to 0.\nWashbasin (3 ft × 2 ft) — place it along the bottom-left wall: corners at (−6, 0), (−3, 0), (−3, 2), (−6, 2). Width along x = 3, height along y = 2. ✓ matches 3 ft × 2 ft.\nToilet (2 ft × 3 ft) — place it beside the washbasin: corners at (−3, 0), (−1, 0), (−1, 3), (−3, 3). Width along x = 2, height along y = 3. ✓ matches 2 ft × 3 ft.\n∴ Washbasin: (−6,0), (−3,0), (−3,2), (−6,2). Toilet: (−3,0), (−1,0), (−1,3), (−3,3). (Any non-overlapping placement of the correct dimensions within the bathroom is an acceptable answer.)",
+              },
+              {
+                label: "4(i)",
+                question:
+                  "Reiaan's room door leads from the dining room which has length 18 ft and width 15 ft. The length of the dining room extends from point P to point A. Sketch the dining room and mark the coordinates of its corners.",
+                solution:
+                  "Given: the dining room's length (18 ft) runs from P to A, where A is already fixed at A(12, 0) (the bedroom's bottom-right corner, which is shared with the dining room).\nSince the length extends from P to A along the x-axis (horizontal direction), P must lie 18 units to the left of A.\nP = (12 − 18, 0) = (−6, 0).\n(Interestingly, this P coincides with the bathroom's corner P(−6,0) found earlier — showing the dining room runs along the entire bottom edge of the house, beneath both the bedroom and bathroom.)\nThe width of the dining room is 15 ft, extending downward (negative y-direction) from the P–A line.\nSo the other two corners are: (−6, −15) and (12, −15).\n∴ Dining room corners: P(−6, 0), A(12, 0), (12, −15), (−6, −15).",
+              },
+              {
+                label: "4(ii)",
+                question:
+                  "Place a rectangular 5 ft × 3 ft dining table precisely in the centre of the dining room. Write down the coordinates of the feet of the table.",
+                solution:
+                  "Centre of the dining room = midpoint of its diagonal = midpoint of (−6, 0) and (12, −15) = ((−6+12)/2, (0+(−15))/2) = (3, −7.5).\nThe table is 5 ft (along x) × 3 ft (along y), centred at (3, −7.5).\nHalf-width = 5/2 = 2.5, Half-height = 3/2 = 1.5.\nFour corners = centre ± (half-width, half-height):\n(3 − 2.5, −7.5 − 1.5) = (0.5, −9)\n(3 + 2.5, −7.5 − 1.5) = (5.5, −9)\n(3 + 2.5, −7.5 + 1.5) = (5.5, −6)\n(3 − 2.5, −7.5 + 1.5) = (0.5, −6)\n∴ The four feet of the dining table are at (0.5, −9), (5.5, −9), (5.5, −6), (0.5, −6).",
               },
             ],
+          },
+        ],
+      },
+      {
+        title: "Distance Between Two Points (Fig. 1.6 – 1.9)",
+        questions: [
+          {
+            q: "Look at triangle ADM in Fig. 1.6, where A(3, 4), D(7, 1) and M(9, 6). Using Fig. 1.7, find the length of side AD using the Baudhāyana–Pythagoras Theorem.",
+            diagram: "ch1-fig67-triangle",
+            solution:
+              "Step 1: Identify the horizontal and vertical shifts between A(3, 4) and D(7, 1).\nStep 2: Distance moved along the x-axis, CD = x-coordinate of D − x-coordinate of A = 7 − 3 = 4 units.\nStep 3: Distance moved along the y-axis, AC = y-coordinate of A − y-coordinate of D = 4 − 1 = 3 units.\nStep 4: Triangle ACD is right-angled at C (one side horizontal, one vertical), with AD as the hypotenuse.\nStep 5: By the Baudhāyana–Pythagoras Theorem: AD² = CD² + AC² = 4² + 3² = 16 + 9 = 25.\nStep 6: AD = √25 = 5 units.\n∴ AD = 5 units.",
+          },
+          {
+            q: "Now find the lengths of the remaining two sides, DM and MA, of triangle ADM where A(3, 4), D(7, 1) and M(9, 6).",
+            solution:
+              "Step 1: For DM, between D(7, 1) and M(9, 6): horizontal shift = 9 − 7 = 2, vertical shift = 6 − 1 = 5.\nStep 2: DM = √(2² + 5²) = √(4 + 25) = √29 units.\nStep 3: For MA, between M(9, 6) and A(3, 4): horizontal shift = 9 − 3 = 6, vertical shift = 6 − 4 = 2.\nStep 4: MA = √(6² + 2²) = √(36 + 4) = √40 = 2√10 units.\n∴ DM = √29 units ≈ 5.39 units, and MA = √40 = 2√10 units ≈ 6.32 units.",
+          },
+          {
+            q: "In general, the distance between two points (x₁, y₁) and (x₂, y₂) is given by the distance formula. State this formula and explain how Fig. 1.8 illustrates it.",
+            solution:
+              "For any two points A(x₁, y₁) and D(x₂, y₂), construct a right triangle by drawing a horizontal line from A and a vertical line from D, meeting at point F(x₁, y₂) (as in Fig. 1.8).\nHorizontal leg: FD = |x₂ − x₁|.\nVertical leg: AF = |y₂ − y₁|.\nBy the Baudhāyana–Pythagoras Theorem applied to right triangle AFD:\nAD² = (x₂ − x₁)² + (y₂ − y₁)².\n∴ Distance formula: AD = √[(x₂ − x₁)² + (y₂ − y₁)²]. This works for ANY two points in the plane, regardless of which quadrant they lie in.",
+          },
+          {
+            q: "In Fig. 1.9, triangle ADM (A(3,4), D(7,1), M(9,6)) is reflected in the y-axis to form triangle A'D'M'. What are the coordinates of the images of points A, M, and D? Verify that reflection preserves the side lengths.",
+            diagram: "ch1-fig19-reflection",
+            solution:
+              "Reflecting a point (x, y) in the y-axis gives the image (−x, y) — the y-coordinate stays the same, the x-coordinate changes sign.\nA(3, 4) → A'(−3, 4).\nD(7, 1) → D'(−7, 1).\nM(9, 6) → M'(−9, 6).\nVerifying side A'D': horizontal shift = |−3 − (−7)| = 4, vertical shift = |4 − 1| = 3. A'D' = √(4² + 3²) = √25 = 5 units — same as AD = 5 units. ✓\nVerifying side D'M': horizontal shift = |−7 − (−9)| = 2, vertical shift = |1 − 6| = 5. D'M' = √(2² + 5²) = √29 units — same as DM = √29 units. ✓\nVerifying side M'A': horizontal shift = |−9 − (−3)| = 6, vertical shift = |6 − 4| = 2. M'A' = √(6² + 2²) = √40 units — same as MA = √40 units. ✓\n∴ A' = (−3, 4), D' = (−7, 1), M' = (−9, 6). All three side lengths are unchanged after reflection — reflection preserves distances (it is a rigid transformation).",
+          },
+          {
+            q: "Think and Reflect: What has remained the same and what has changed with this reflection? Would these observations be the same if ΔADM is reflected in the x-axis (instead of the y-axis)?",
+            solution:
+              "What remained the same: the side lengths (AD = 5, DM = √29, MA = √40) and the overall shape/size of the triangle (it is congruent to the original).\nWhat changed: the position of the triangle (it moved from Quadrant I to Quadrant II) and its orientation (the triangle is now a mirror image — its 'handedness' is flipped).\nIf ΔADM were reflected in the x-axis instead: each point (x, y) would map to (x, −y) instead of (−x, y). A(3,4)→(3,−4), D(7,1)→(7,−1), M(9,6)→(9,−6). The triangle would move into Quadrant IV instead of Quadrant II, but by the same reasoning as above, all side lengths would again be preserved (only the sign pattern of the shift changes, and squaring removes the sign).\n∴ Reflection (in either axis) always preserves side lengths — only the position and orientation of the figure change.",
           },
         ],
       },
@@ -107,58 +215,191 @@ export const chapters: Chapter[] = [
         questions: [
           {
             q: "1. What are the x-coordinate and y-coordinate of the point of intersection of the two axes?",
-            solution: "The two axes intersect at the origin O. The x-coordinate = 0 and y-coordinate = 0. So the point is (0, 0).",
+            solution:
+              "The x-axis and y-axis intersect at exactly one point, called the origin, denoted O.\nBy definition, the origin is the point from which all distances are measured, so both its coordinates are zero.\n∴ x-coordinate = 0, y-coordinate = 0. The point of intersection is O(0, 0).",
           },
           {
             q: "2. Point W has x-coordinate equal to −5. Can you predict the coordinates of point H which is on the line through W parallel to the y-axis? Which quadrants can H lie in?",
-            solution: "Any point on a line parallel to the y-axis passing through x = −5 has coordinates (−5, k) for any value k. Since x = −5 < 0, point H lies in Quadrant II (if k > 0) or Quadrant III (if k < 0).",
+            solution:
+              "A line through W parallel to the y-axis is a vertical line — every point on it has the same x-coordinate as W, namely −5.\nSo H must be of the form H = (−5, k), where k can be any real number (the y-coordinate is free to vary).\nIf k > 0: H = (−5, k) has x < 0 and y > 0 → H lies in Quadrant II.\nIf k < 0: H = (−5, k) has x < 0 and y < 0 → H lies in Quadrant III.\nIf k = 0: H = (−5, 0) lies ON the x-axis, not in any quadrant.\n∴ H = (−5, k) for any real k. H can lie in Quadrant II (if k > 0) or Quadrant III (if k < 0).",
           },
           {
-            q: "3. Consider the points R(3, 0), A(0, −2), M(−5, −2) and P(−5, 2). If joined in the same order, predict: (i) Two sides of RAMP perpendicular to each other. (ii) One side parallel to one of the axes. (iii) Two points that are mirror images in one axis.",
+            q: "3. Consider the points R(3, 0), A(0, −2), M(−5, −2) and P(−5, 2). If they are joined in the same order, predict the following, then plot the points to verify:",
             diagram: "ch1-ramp",
-            solution: "(i) RA and AP are perpendicular since RA goes from (3,0) to (0,−2) and AP goes from (0,−2) to (−5,−2) — actually AM is horizontal and MP is vertical, so AM ⊥ MP. (ii) Side AM (from A(0,−2) to M(−5,−2)) is parallel to the x-axis. (iii) M(−5,−2) and P(−5,2) are mirror images in the x-axis.",
-          },
-          {
-            q: "4. Plot point Z(5, −6) on the Cartesian plane. Construct a right-angled triangle IZN and find the lengths of the three sides.",
-            diagram: "ch1-z-triangle",
-            solution: "Step 1: Plot Z(5, −6) — move 5 units right on x-axis, then 6 units down.\nStep 2: Choose I = (5, 0) directly above Z on the x-axis, and N = (0, 0) at the origin.\nStep 3: The right angle is at I (one vertical leg, one horizontal leg).\nStep 4: Side IZ (vertical) = distance from (5,0) to (5,−6) = 6 units.\nStep 5: Side IN (horizontal) = distance from (0,0) to (5,0) = 5 units.\nStep 6: Hypotenuse ZN = √(IZ² + IN²) = √(6² + 5²) = √(36 + 25) = √61 ≈ 7.81 units.\n∴ The three sides are IZ = 6 units, IN = 5 units, ZN = √61 ≈ 7.81 units.",
-          },
-          {
-            q: "5. What would a system of coordinates be like if we did not have negative numbers? Would this system allow us to locate all points on a 2-D plane?",
-            solution: "Without negative numbers, we could only describe points in Quadrant I (both x ≥ 0 and y ≥ 0). We would not be able to locate points in Quadrants II, III, or IV, so this system would NOT allow us to locate all points on a 2-D plane.",
-          },
-          {
-            q: "*6. Are the points M(−3, −4), A(0, 0) and G(6, 8) on the same straight line? Suggest a method to check without plotting.",
-            solution: "Check if the slope between any two pairs of points is equal. Slope MA = (0−(−4))/(0−(−3)) = 4/3. Slope AG = (8−0)/(6−0) = 8/6 = 4/3. Since both slopes are equal (= 4/3), the three points are collinear (on the same straight line).",
-          },
-          {
-            q: "*9. The table shows coordinates of S, M and T. State whether M is the midpoint of ST.",
             parts: [
               {
-                label: "Row 1",
-                question: "S(−3, 0), M(0, 0), T(3, 0)",
-                solution: "Midpoint of ST = ((−3+3)/2, (0+0)/2) = (0, 0) = M. Yes, M is the midpoint.",
+                label: "(i)",
+                question: "Two sides of RAMP that are perpendicular to each other.",
+                solution:
+                  "Side AM: from A(0,−2) to M(−5,−2) — both points have the same y-coordinate (−2), so AM is a HORIZONTAL segment.\nSide MP: from M(−5,−2) to P(−5,2) — both points have the same x-coordinate (−5), so MP is a VERTICAL segment.\nA horizontal segment and a vertical segment are always perpendicular to each other.\n∴ Sides AM and MP are perpendicular to each other (AM ⊥ MP).",
               },
               {
-                label: "Row 2",
-                question: "S(2, 3), M(3, 4), T(4, 5)",
-                solution: "Midpoint of ST = ((2+4)/2, (3+5)/2) = (3, 4) = M. Yes, M is the midpoint.",
+                label: "(ii)",
+                question: "One side of RAMP that is parallel to one of the axes.",
+                solution:
+                  "From part (i): AM is horizontal (constant y = −2) → AM is parallel to the x-axis.\nAlso, MP is vertical (constant x = −5) → MP is parallel to the y-axis.\n∴ Side AM is parallel to the x-axis, and side MP is parallel to the y-axis (both qualify as an answer).",
               },
               {
-                label: "Row 3",
-                question: "S(0, 0), M(0, 5), T(0, −10)",
-                solution: "Midpoint of ST = ((0+0)/2, (0+(−10))/2) = (0, −5) ≠ (0, 5). No, M is not the midpoint.",
-              },
-              {
-                label: "Row 4",
-                question: "S(−8, 7), M(0, −2), T(6, −3)",
-                solution: "Midpoint of ST = ((−8+6)/2, (7+(−3))/2) = (−1, 2) ≠ (0, −2). No, M is not the midpoint.",
+                label: "(iii)",
+                question: "Two points that are mirror images of each other in one axis. Which axis will this be?",
+                solution:
+                  "Compare M(−5, −2) and P(−5, 2): they have the same x-coordinate (−5), and their y-coordinates are negatives of each other (−2 and 2).\nA reflection in the x-axis maps (x, y) → (x, −y) — exactly the relationship between M and P.\n∴ M(−5,−2) and P(−5,2) are mirror images of each other in the x-axis.",
               },
             ],
           },
           {
-            q: "*10. Use the midpoint formula to find coordinates of B given that M(−7, 1) is the midpoint of A(3, −4) and B(x, y).",
-            solution: "Using midpoint formula: (3+x)/2 = −7 → x = −17. (−4+y)/2 = 1 → y = 6. Therefore B = (−17, 6).",
+            q: "4. Plot point Z(5, −6) on the Cartesian plane. Construct a right-angled triangle IZN and find the lengths of the three sides. (Comment: Answers may differ from person to person.)",
+            diagram: "ch1-z-triangle",
+            solution:
+              "Step 1: Plot Z(5, −6) — move 5 units right along the x-axis, then 6 units down.\nStep 2: To construct a right-angled triangle easily, choose I = (5, 0), directly above Z on the x-axis, and N = (0, 0), the origin.\nStep 3: Side IZ is vertical (both points have x = 5): IZ = |0 − (−6)| = 6 units.\nStep 4: Side IN is horizontal (both points have y = 0): IN = |5 − 0| = 5 units.\nStep 5: The right angle is at I, since IZ (vertical) ⊥ IN (horizontal).\nStep 6: By the Baudhāyana–Pythagoras Theorem, hypotenuse ZN = √(IZ² + IN²) = √(6² + 5²) = √(36 + 25) = √61 ≈ 7.81 units.\n∴ IZ = 6 units, IN = 5 units, ZN = √61 ≈ 7.81 units. (Choosing a different right-angle vertex I would give a different — but equally valid — triangle.)",
+          },
+          {
+            q: "5. What would a system of coordinates be like if we did not have negative numbers? Would this system allow us to locate all the points on a 2-D plane?",
+            solution:
+              "Without negative numbers, both coordinates x and y could only take values ≥ 0.\nThis restricts every point to satisfy x ≥ 0 AND y ≥ 0 — which is exactly the condition for Quadrant I (including the boundary axes).\nPoints in Quadrant II (x < 0, y > 0), Quadrant III (x < 0, y < 0), and Quadrant IV (x > 0, y < 0) would all become impossible to represent.\n∴ No — such a system would only allow us to locate points in Quadrant I. It would NOT allow us to locate all the points on a 2-D plane; three out of the four quadrants would be inaccessible.",
+          },
+          {
+            q: "*6. Are the points M(−3, −4), A(0, 0) and G(6, 8) on the same straight line? Suggest a method to check this without plotting and joining the points.",
+            solution:
+              "Method: Three points are collinear (lie on the same straight line) if and only if the slope between any two pairs of them is equal.\nStep 1: Slope of MA = (y-coordinate of A − y-coordinate of M) / (x-coordinate of A − x-coordinate of M) = (0 − (−4)) / (0 − (−3)) = 4/3.\nStep 2: Slope of AG = (8 − 0) / (6 − 0) = 8/6 = 4/3.\nStep 3: Since slope of MA = slope of AG = 4/3, and both segments share the common point A, the three points lie on the same line.\n∴ Yes, M, A and G are collinear. Method: compute the slope between two pairs of the points using slope = (y₂−y₁)/(x₂−x₁); if the slopes are equal (and a point is shared), the points are collinear.",
+          },
+          {
+            q: "*7. Use your method (from Problem 6) to check if the points R(−5, −1), B(−2, −5) and C(4, −12) are on the same straight line. Now plot both sets of points and check your answers.",
+            solution:
+              "Step 1: Slope of RB = (−5 − (−1)) / (−2 − (−5)) = (−4) / (3) = −4/3.\nStep 2: Slope of BC = (−12 − (−5)) / (4 − (−2)) = (−7) / (6) = −7/6.\nStep 3: Compare: −4/3 = −8/6, but slope of BC = −7/6. Since −8/6 ≠ −7/6, the slopes are NOT equal.\n∴ R, B and C are NOT collinear (they do not lie on the same straight line) — unlike the points in Question 6, which were collinear.",
+          },
+          {
+            q: "*8. Using the origin as one vertex, plot the vertices of:",
+            parts: [
+              {
+                label: "(i)",
+                question: "A right-angled isosceles triangle.",
+                solution:
+                  "Choose O(0, 0) as the right-angle vertex, and two other vertices equidistant from O along the axes, e.g., A(4, 0) and B(0, 4).\nOA = 4 units, OB = 4 units — these two legs are equal (isosceles condition), and they are perpendicular since one is along the x-axis and the other along the y-axis (right-angle condition).\n∴ O(0,0), A(4,0), B(0,4) form a right-angled isosceles triangle, right-angled at O, with equal legs OA = OB = 4 units. (Any equal, perpendicular pair of legs from O gives a valid answer.)",
+              },
+              {
+                label: "(ii)",
+                question: "An isosceles triangle with one vertex in Quadrant III and the other in Quadrant IV.",
+                solution:
+                  "Choose O(0, 0) as the apex, P(−3, −4) in Quadrant III (x < 0, y < 0), and Q(3, −4) in Quadrant IV (x > 0, y < 0) — chosen symmetrically about the y-axis so that OP = OQ.\nOP = √((−3)² + (−4)²) = √(9+16) = √25 = 5 units.\nOQ = √(3² + (−4)²) = √(9+16) = √25 = 5 units.\nSince OP = OQ = 5 units, triangle OPQ is isosceles.\n∴ O(0,0), P(−3,−4) [Quadrant III], Q(3,−4) [Quadrant IV] form a valid isosceles triangle with OP = OQ = 5 units.",
+              },
+            ],
+          },
+          {
+            q: "*9. The following table shows the coordinates of points S, M and T. In each case, state whether M is the midpoint of segment ST. Justify your answer. When M is the mid-point of ST, can you find any connection between the coordinates of M, S and T?",
+            parts: [
+              {
+                label: "Row 1",
+                question: "S(−3, 0), M(0, 0), T(3, 0)",
+                solution:
+                  "Using the midpoint formula, the midpoint of ST = ((x₁+x₂)/2, (y₁+y₂)/2) = ((−3+3)/2, (0+0)/2) = (0, 0).\nThis matches the given M(0, 0).\n∴ Yes, M is the midpoint of ST.",
+              },
+              {
+                label: "Row 2",
+                question: "S(2, 3), M(3, 4), T(4, 5)",
+                solution:
+                  "Midpoint of ST = ((2+4)/2, (3+5)/2) = (6/2, 8/2) = (3, 4).\nThis matches the given M(3, 4).\n∴ Yes, M is the midpoint of ST.",
+              },
+              {
+                label: "Row 3",
+                question: "S(0, 0), M(0, 5), T(0, −10)",
+                solution:
+                  "Midpoint of ST = ((0+0)/2, (0+(−10))/2) = (0, −5).\nThe given M is (0, 5), but the calculated midpoint is (0, −5). These do not match.\n∴ No, M is NOT the midpoint of ST.",
+              },
+              {
+                label: "Row 4",
+                question: "S(−8, 7), M(0, −2), T(6, −3)",
+                solution:
+                  "Midpoint of ST = ((−8+6)/2, (7+(−3))/2) = (−2/2, 4/2) = (−1, 2).\nThe given M is (0, −2), but the calculated midpoint is (−1, 2). These do not match.\n∴ No, M is NOT the midpoint of ST.\nConnection: when M IS the midpoint of ST, the coordinates of M are exactly the average of the corresponding coordinates of S and T — that is, M = ((x_S + x_T)/2, (y_S + y_T)/2). This is the midpoint formula.",
+              },
+            ],
+          },
+          {
+            q: "*10. Use the connection you found to find the coordinates of B given that M(−7, 1) is the midpoint of A(3, −4) and B(x, y).",
+            solution:
+              "Using the midpoint formula: M = ((x_A + x_B)/2, (y_A + y_B)/2).\nFor the x-coordinate: (3 + x)/2 = −7 → 3 + x = −14 → x = −17.\nFor the y-coordinate: (−4 + y)/2 = 1 → −4 + y = 2 → y = 6.\n∴ B = (−17, 6).",
+          },
+          {
+            q: "*11. Let P, Q be points of trisection of AB, with P closer to A, and Q closer to B. Using your knowledge of how to find the coordinates of the midpoint of a segment, how would you find the coordinates of P and Q? Do this for the case when the points are A(4, 7) and B(16, −2).",
+            solution:
+              "Points of trisection divide AB into three equal parts. So P divides AB in the ratio AP : PB = 1 : 2, and Q divides AB in the ratio AQ : QB = 2 : 1.\nThis means P is located one-third of the way from A to B: P = A + (1/3)(B − A).\nAnd Q is located two-thirds of the way from A to B: Q = A + (2/3)(B − A).\nGiven A(4, 7), B(16, −2): B − A = (16−4, −2−7) = (12, −9).\nFor P: P = (4 + 12/3, 7 + (−9)/3) = (4 + 4, 7 − 3) = (8, 4).\nFor Q: Q = (4 + 2×12/3, 7 + 2×(−9)/3) = (4 + 8, 7 − 6) = (12, 1).\n∴ P = (8, 4) and Q = (12, 1).",
+          },
+          {
+            q: "*12. (i) Given the points A(1, −8), B(−4, 7) and C(−7, −4), show that they lie on a circle K whose centre is the origin O(0, 0). What is the radius of circle K? (ii) Given the points D(−5, 6) and E(0, 9), check whether D and E lie within the circle, on the circle, or outside the circle K.",
+            parts: [
+              {
+                label: "(i)",
+                question: "Show A, B, C lie on circle K centred at O, and find its radius.",
+                solution:
+                  "Points lie on a circle centred at O if and only if they are all equidistant from O (that distance is the radius).\nOA = √(1² + (−8)²) = √(1 + 64) = √65.\nOB = √((−4)² + 7²) = √(16 + 49) = √65.\nOC = √((−7)² + (−4)²) = √(49 + 16) = √65.\nSince OA = OB = OC = √65, all three points are equidistant from O.\n∴ A, B and C all lie on a circle K centred at O(0,0), with radius √65 units (≈ 8.06 units).",
+              },
+              {
+                label: "(ii)",
+                question: "Check whether D(−5, 6) and E(0, 9) lie inside, on, or outside circle K.",
+                solution:
+                  "Compare each point's distance from O with the radius √65.\nOD = √((−5)² + 6²) = √(25 + 36) = √61.\nSince √61 < √65 (as 61 < 65), point D lies INSIDE circle K.\nOE = √(0² + 9²) = √81 = 9.\nSince 9 = √81 and 81 > 65, so √81 > √65, point E lies OUTSIDE circle K.\n∴ D(−5, 6) lies inside circle K; E(0, 9) lies outside circle K.",
+              },
+            ],
+          },
+          {
+            q: "*13. The midpoints of the sides of triangle ABC are the points D, E, and F (D = midpoint of BC, E = midpoint of CA, F = midpoint of AB). Given that the coordinates of D, E, and F are (5, 1), (6, 5), and (0, 3), respectively, find the coordinates of A, B and C.",
+            solution:
+              "Key fact: when D, E, F are midpoints of BC, CA, AB respectively, the original vertices can be recovered using A = E + F − D, B = D + F − E, C = D + E − F.\n(This comes from the midpoint relations: D=(B+C)/2, E=(C+A)/2, F=(A+B)/2, solved simultaneously for A, B, C.)\nStep 1: A = E + F − D = (6+0−5, 5+3−1) = (1, 7).\nStep 2: B = D + F − E = (5+0−6, 1+3−5) = (−1, −1).\nStep 3: C = D + E − F = (5+6−0, 1+5−3) = (11, 3).\nVerification: midpoint of BC = midpoint of (−1,−1) and (11,3) = (5, 1) = D ✓. Midpoint of CA = midpoint of (11,3) and (1,7) = (6, 5) = E ✓. Midpoint of AB = midpoint of (1,7) and (−1,−1) = (0, 3) = F ✓.\n∴ A = (1, 7), B = (−1, −1), C = (11, 3).",
+          },
+          {
+            q: "14. A city has two main roads which cross each other at the centre of the city, along the North–South and East–West directions. All other streets run parallel to these roads, 200 m apart, with 10 streets in each direction. A street intersection is named (a, b) if it is formed by the a-th N–S street and the b-th E–W street.",
+            parts: [
+              {
+                label: "(i)",
+                question: "Using 1 cm = 200 m, draw a model of the city in your notebook, representing roads/streets by single lines.",
+                solution:
+                  "Draw 10 vertical lines (representing the N–S streets) spaced 1 cm apart, and 10 horizontal lines (representing the E–W streets) spaced 1 cm apart, forming a 10×10 grid. Each grid line represents one street, and each 1 cm gap represents the real-world 200 m spacing between streets. (This is a notebook drawing activity.)",
+              },
+              {
+                label: "(ii)(a)",
+                question: "How many street intersections can be referred to as (4, 3)?",
+                solution:
+                  "An intersection labelled (a, b) is uniquely formed by ONE specific N–S street (the a-th one) crossing ONE specific E–W street (the b-th one).\nSince the 4th N–S street and the 3rd E–W street can only cross each other at exactly one point in the entire grid.\n∴ Only 1 street intersection can be referred to as (4, 3).",
+              },
+              {
+                label: "(ii)(b)",
+                question: "How many street intersections can be referred to as (3, 4)?",
+                solution:
+                  "By the same reasoning as part (a): the 3rd N–S street and the 4th E–W street cross at exactly one unique point.\nNote that (3, 4) refers to a DIFFERENT intersection from (4, 3), since the order (N–S street, E–W street) matters.\n∴ Only 1 street intersection can be referred to as (3, 4) — and it is a different point from intersection (4, 3).",
+              },
+            ],
+          },
+          {
+            q: "15. A computer graphics program displays images on a rectangular screen whose coordinate system has the origin at the bottom-left corner. The screen is 800 pixels wide and 600 pixels high. A circular icon of radius 80 pixels is drawn with its centre at A(100, 150). Another circular icon of radius 100 pixels is drawn with its centre at B(250, 230). Determine:",
+            parts: [
+              {
+                label: "(i)",
+                question: "Whether any part of either circle lies outside the screen.",
+                solution:
+                  "Screen boundaries: 0 ≤ x ≤ 800, 0 ≤ y ≤ 600.\nCircle A (centre (100,150), radius 80): leftmost point x = 100−80 = 20 (≥0 ✓), rightmost x = 100+80 = 180 (≤800 ✓), bottom y = 150−80 = 70 (≥0 ✓), top y = 150+80 = 230 (≤600 ✓). Circle A is entirely within the screen.\nCircle B (centre (250,230), radius 100): leftmost x = 250−100 = 150 (≥0 ✓), rightmost x = 250+100 = 350 (≤800 ✓), bottom y = 230−100 = 130 (≥0 ✓), top y = 230+100 = 330 (≤600 ✓). Circle B is entirely within the screen.\n∴ Neither circle extends outside the screen — both fit completely within the 800×600 boundary.",
+              },
+              {
+                label: "(ii)",
+                question: "Whether the two circles intersect each other.",
+                solution:
+                  "Step 1: Distance between centres A(100,150) and B(250,230): d = √((250−100)² + (230−150)²) = √(150² + 80²) = √(22500 + 6400) = √28900 = 170.\nStep 2: Sum of radii = 80 + 100 = 180. Difference of radii = 100 − 80 = 20.\nStep 3: Two circles intersect (at two points) if the distance between centres is strictly between the difference and the sum of the radii: |r₁−r₂| < d < r₁+r₂.\nCheck: 20 < 170 < 180 ✓ — this condition is satisfied.\n∴ Yes, the two circles intersect each other (at two points), since the distance between their centres, 170, lies between the difference of radii (20) and sum of radii (180).",
+              },
+            ],
+          },
+          {
+            q: "16. Plot the points A(2, 1), B(−1, 2), C(−2, −1), and D(1, −2) in the coordinate plane. Is ABCD a square? Can you explain why? What is the area of this square?",
+            solution:
+              "Step 1: Find all four side lengths using the distance formula.\nAB = √((2−(−1))² + (1−2)²) = √(3² + (−1)²) = √(9+1) = √10.\nBC = √((−1−(−2))² + (2−(−1))²) = √(1² + 3²) = √(1+9) = √10.\nCD = √((−2−1)² + (−1−(−2))²) = √((−3)² + 1²) = √(9+1) = √10.\nDA = √((1−2)² + (−2−1)²) = √((−1)² + (−3)²) = √(1+9) = √10.\nStep 2: All four sides are equal (AB = BC = CD = DA = √10), so ABCD is at least a rhombus.\nStep 3: Check the diagonals.\nAC = √((2−(−2))² + (1−(−1))²) = √(4² + 2²) = √(16+4) = √20.\nBD = √((−1−1)² + (2−(−2))²) = √((−2)² + 4²) = √(4+16) = √20.\nStep 4: Both diagonals are equal (AC = BD = √20). A rhombus with equal diagonals must have all angles equal to 90°, which makes it a square.\nStep 5: Area of a square using diagonals: Area = (1/2) × d₁ × d₂ = (1/2) × √20 × √20 = (1/2) × 20 = 10 square units. (This also matches side² = (√10)² = 10.)\n∴ Yes, ABCD is a square — all sides are equal (√10 units) and both diagonals are equal (√20 units), confirming all angles are right angles. Area = 10 square units.",
+          },
+        ],
+      },
+      {
+        title: "Chapter Summary",
+        questions: [
+          {
+            q: "Quick Revision: Key facts about the Cartesian coordinate system.",
+            solution:
+              "Two perpendicular lines are needed to locate any point in a plane: the horizontal x-axis and the vertical y-axis.\nThis plane is called the Cartesian plane, coordinate plane, or xy-plane; the two lines are the coordinate axes.\nThe axes divide the plane into four quadrants. The point where they meet is the origin O(0, 0).\nFor a point (x, y): x is its distance from the y-axis (measured along the x-axis), and y is its distance from the x-axis (measured along the y-axis).\nPoints on the x-axis have the form (x, 0); points on the y-axis have the form (0, y).\nSign pattern by quadrant: Quadrant I (+, +), Quadrant II (−, +), Quadrant III (−, −), Quadrant IV (+, −).\n(x, y) = (y, x) only when x = y; otherwise they are different points.\nDistance between (x₁, y) and (x₂, y) [same y] = |x₂ − x₁|. Distance between (x, y₁) and (x, y₂) [same x] = |y₂ − y₁|.\n∴ Distance formula (Baudhāyana–Pythagoras Theorem): distance between (x₁,y₁) and (x₂,y₂) = √[(x₂−x₁)² + (y₂−y₁)²].",
           },
         ],
       },

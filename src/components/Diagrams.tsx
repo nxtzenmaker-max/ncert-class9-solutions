@@ -135,7 +135,7 @@ export function ReiaaanRoomFig13() {
   const sc = 14;
   const ox = 100, oy = 36;
   const W = 18 * sc, H = 12 * sc; // 252 × 168
-  const d1x = ox + 7 * sc;        // room door start
+  const d1x = ox + 8 * sc;        // room door start
   const r1x = ox + 11.5 * sc;     // room door end
   const b2y = oy + H - 4 * sc;    // bathroom door top (B2 y=4)
   const b1y = oy + H - 1.5 * sc;  // bathroom door bottom (B1 y=1.5)
@@ -187,7 +187,7 @@ export function ReiaaanRoomFig13() {
       <text x={ox + 3} y={oy + 12} fontSize="11" fill="#1a56db" fontWeight="bold">C(0,12)</text>
 
       {/* Room door labels — below the wall */}
-      <text x={d1x} y={oy + H + 32} fontSize="10" fill="#f97316" fontWeight="bold" textAnchor="middle">D₁(7,0)</text>
+      <text x={d1x} y={oy + H + 32} fontSize="10" fill="#f97316" fontWeight="bold" textAnchor="middle">D₁(8,0)</text>
       <text x={r1x} y={oy + H + 32} fontSize="10" fill="#f97316" fontWeight="bold" textAnchor="middle">R₁(11.5,0)</text>
 
       {/* Bathroom door labels — left of the wall, properly inside viewBox */}
@@ -199,67 +199,6 @@ export function ReiaaanRoomFig13() {
     </svg>
   );
 }
-
-export function ReiaaanRoomFig15() {
-  // Room on coordinate grid, 15×12 units, scale=17
-  // ox=40 (left for y-labels), oy=24 (top pad)
-  const sc = 17;
-  const ox = 40, oy = 24;
-  const W = 15 * sc, H = 12 * sc; // 255 × 204
-  // Study table corners (8,7)→(11,9)
-  const tx1 = ox + 8 * sc, ty1 = oy + H - 9 * sc;
-  const tx2 = ox + 11 * sc, ty2 = oy + H - 7 * sc;
-  return (
-    <svg viewBox="0 0 360 280" className="w-full max-w-lg mx-auto block" aria-label="Fig 1.5 Room coordinate grid">
-      <defs>
-        <marker id="ax15" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
-          <path d="M0,0 L7,3.5 L0,7 Z" fill="#374151" />
-        </marker>
-        <marker id="ay15" markerWidth="7" markerHeight="7" refX="3.5" refY="0" orient="auto">
-          <path d="M0,7 L3.5,0 L7,7 Z" fill="#374151" />
-        </marker>
-      </defs>
-
-      {/* Grid lines */}
-      {Array.from({length: 16}, (_, i) => (
-        <line key={`v${i}`} x1={ox + i*sc} y1={oy} x2={ox + i*sc} y2={oy+H} stroke="#e5e7eb" strokeWidth="0.8" />
-      ))}
-      {Array.from({length: 13}, (_, i) => (
-        <line key={`h${i}`} x1={ox} y1={oy + i*sc} x2={ox+W} y2={oy + i*sc} stroke="#e5e7eb" strokeWidth="0.8" />
-      ))}
-
-      {/* Room walls */}
-      <rect x={ox} y={oy} width={W} height={H} fill="#f0f9ff" stroke="#1a56db" strokeWidth="2.5" />
-
-      {/* Study table */}
-      <rect x={tx1} y={ty1} width={tx2-tx1} height={ty2-ty1} fill="#fef08a" stroke="#d97706" strokeWidth="2" rx="3" />
-      <text x={(tx1+tx2)/2} y={(ty1+ty2)/2+4} fontSize="10" fill="#92400e" fontWeight="bold" textAnchor="middle">Table</text>
-
-      {/* Axes */}
-      <line x1={ox-10} y1={oy+H} x2={ox+W+18} y2={oy+H} stroke="#374151" strokeWidth="1.5" markerEnd="url(#ax15)" />
-      <line x1={ox} y1={oy+H+10} x2={ox} y2={oy-16} stroke="#374151" strokeWidth="1.5" markerEnd="url(#ay15)" />
-      <text x={ox+W+20} y={oy+H+4} fontSize="12" fill="#374151" fontWeight="bold">x</text>
-      <text x={ox+4} y={oy-18} fontSize="12" fill="#374151" fontWeight="bold">y</text>
-      <text x={ox-12} y={oy+H+16} fontSize="10" fill="#374151" fontWeight="bold">O</text>
-
-      {/* X-axis tick numbers */}
-      {[0,2,4,6,8,10,12,14].map(i => (
-        <text key={`xn${i}`} x={ox + i*sc} y={oy+H+16} fontSize="9" fill="#6b7280" textAnchor="middle">{i}</text>
-      ))}
-      {/* Y-axis tick numbers */}
-      {[2,4,6,8,10,12].map(i => (
-        <text key={`yn${i}`} x={ox-6} y={oy+H - i*sc+4} fontSize="9" fill="#6b7280" textAnchor="end">{i}</text>
-      ))}
-
-      {/* Table coordinate labels */}
-      <text x={tx1} y={ty2+14} fontSize="10" fill="#d97706" fontWeight="bold" textAnchor="middle">(8,7)</text>
-      <text x={tx2} y={ty1-6} fontSize="10" fill="#d97706" fontWeight="bold" textAnchor="middle">(11,9)</text>
-
-      <text x={ox} y={268} fontSize="10" fill="#6b7280">Fig 1.5 — Room plan on coordinate grid (study table in yellow)</text>
-    </svg>
-  );
-}
-
 export function RAMPDiagram() {
   // scale=24: all points fit comfortably within viewBox 0 0 340 260
   // Origin at cx=160, cy=120
@@ -435,7 +374,226 @@ export function MidpointDiagram() {
     </svg>
   );
 }
+export function Fig12AxesDiagram() {
+  const sc = 18, cx = 150, cy = 130;
+  const pts = [
+    { x: 0, y: 0, label: "O(0, 0)", ax: 6, ay: 16, color: "#374151" },
+    { x: 4.5, y: 0, label: "B(4.5, 0)", ax: -8, ay: 16, color: "#1a56db" },
+    { x: -2.9, y: 0, label: "E(−2.9, 0)", ax: -10, ay: -8, color: "#1a56db" },
+    { x: 0, y: 4, label: "H(0, 4)", ax: 6, ay: -2, color: "#16a34a" },
+    { x: 0, y: -4.5, label: "G(0, −4.5)", ax: 6, ay: 4, color: "#f97316" },
+  ];
+  const xticks = [-7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7];
+  const yticks = [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5];
+  return (
+    <svg viewBox="0 0 300 260" className="w-full max-w-sm mx-auto block" aria-label="Fig 1.2 coordinate plane structure">
+      <defs>
+        <marker id="ax12" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#374151" /></marker>
+        <marker id="ay12" markerWidth="7" markerHeight="7" refX="3.5" refY="0" orient="auto"><path d="M0,7 L3.5,0 L7,7 Z" fill="#374151" /></marker>
+      </defs>
+      {xticks.map(t => <line key={`xg${t}`} x1={cx + t * sc} y1={14} x2={cx + t * sc} y2={246} stroke="#f3f4f6" strokeWidth="0.8" />)}
+      {yticks.map(t => <line key={`yg${t}`} x1={14} y1={cy - t * sc} x2={286} y2={cy - t * sc} stroke="#f3f4f6" strokeWidth="0.8" />)}
+      <line x1={14} y1={cy} x2={286} y2={cy} stroke="#374151" strokeWidth="1.5" markerEnd="url(#ax12)" />
+      <line x1={cx} y1={246} x2={cx} y2={14} stroke="#374151" strokeWidth="1.5" markerEnd="url(#ay12)" />
+      <text x={288} y={cy + 4} fontSize="11" fill="#374151" fontWeight="bold">x</text>
+      <text x={cx + 4} y={12} fontSize="11" fill="#374151" fontWeight="bold">y</text>
+      {pts.map((p, i) => (
+        <g key={i}>
+          <circle cx={cx + p.x * sc} cy={cy - p.y * sc} r="4.5" fill={p.color} />
+          <text x={cx + p.x * sc + p.ax} y={cy - p.y * sc + p.ay} fontSize="10.5" fill={p.color} fontWeight="bold">{p.label}</text>
+        </g>
+      ))}
+    </svg>
+  );
+}
 
+export function Fig14QuadrantsDiagram() {
+  const sc = 20, cx = 140, cy = 140;
+  const pts = [
+    { x: 3, y: -5, label: "S(3, −5)", ax: 6, ay: 14, color: "#f97316" },
+    { x: -5, y: 3, label: "Q(−5, 3)", ax: -10, ay: -8, color: "#1a56db" },
+    { x: 4, y: 2, label: "P(4, 2)", ax: 6, ay: -6, color: "#16a34a" },
+    { x: -4, y: -2, label: "R(−4, −2)", ax: -16, ay: 16, color: "#16a34a" },
+  ];
+  const ticks = [-6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6];
+  return (
+    <svg viewBox="0 0 280 280" className="w-full max-w-sm mx-auto block" aria-label="Fig 1.4 four quadrants">
+      <defs>
+        <marker id="ax14" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#374151" /></marker>
+        <marker id="ay14" markerWidth="7" markerHeight="7" refX="3.5" refY="0" orient="auto"><path d="M0,7 L3.5,0 L7,7 Z" fill="#374151" /></marker>
+      </defs>
+      <rect x={cx} y={14} width={126} height={cy - 14} fill="#eff6ff" />
+      <rect x={14} y={14} width={cx - 14} height={cy - 14} fill="#fef3e7" />
+      <rect x={14} y={cy} width={cx - 14} height={252 - cy} fill="#eff6ff" />
+      <rect x={cx} y={cy} width={126} height={252 - cy} fill="#fef3e7" />
+      <text x={cx + 50} y={34} fontSize="11" fill="#9ca3af" fontWeight="bold">Quadrant I</text>
+      <text x={30} y={34} fontSize="10" fill="#9ca3af" fontWeight="bold">Quadrant II</text>
+      <text x={26} y={244} fontSize="10" fill="#9ca3af" fontWeight="bold">Quadrant III</text>
+      <text x={cx + 38} y={244} fontSize="10" fill="#9ca3af" fontWeight="bold">Quadrant IV</text>
+      {ticks.map(t => (
+        <g key={t}>
+          <line x1={cx + t * sc} y1={14} x2={cx + t * sc} y2={252} stroke="#e5e7eb" strokeWidth="0.7" />
+          <line x1={14} y1={cy - t * sc} x2={266} y2={cy - t * sc} stroke="#e5e7eb" strokeWidth="0.7" />
+        </g>
+      ))}
+      <line x1={14} y1={cy} x2={266} y2={cy} stroke="#374151" strokeWidth="1.5" markerEnd="url(#ax14)" />
+      <line x1={cx} y1={252} x2={cx} y2={14} stroke="#374151" strokeWidth="1.5" markerEnd="url(#ay14)" />
+      <text x={268} y={cy + 4} fontSize="11" fill="#374151" fontWeight="bold">x</text>
+      <text x={cx + 4} y={12} fontSize="11" fill="#374151" fontWeight="bold">y</text>
+      {pts.map((p, i) => (
+        <g key={i}>
+          <circle cx={cx + p.x * sc} cy={cy - p.y * sc} r="4.5" fill={p.color} />
+          <text x={cx + p.x * sc + p.ax} y={cy - p.y * sc + p.ay} fontSize="10.5" fill={p.color} fontWeight="bold">{p.label}</text>
+        </g>
+      ))}
+    </svg>
+  );
+}
+
+export function Fig67TriangleDiagram() {
+  const sc = 24, ox = 20, baseline = 190;
+  const px = (x: number) => ox + x * sc;
+  const py = (y: number) => baseline - y * sc;
+  const A = { x: 3, y: 4 }, D = { x: 7, y: 1 }, M = { x: 9, y: 6 }, C = { x: 7, y: 4 };
+  return (
+    <svg viewBox="0 0 280 220" className="w-full max-w-md mx-auto block" aria-label="Fig 1.6-1.7 triangle ADM with helper point C">
+      <defs>
+        <marker id="ax67" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#374151" /></marker>
+        <marker id="ay67" markerWidth="7" markerHeight="7" refX="3.5" refY="0" orient="auto"><path d="M0,7 L3.5,0 L7,7 Z" fill="#374151" /></marker>
+      </defs>
+      {[1,2,3,4,5,6,7,8,9].map(t => <line key={`vg${t}`} x1={px(t)} y1={14} x2={px(t)} y2={baseline} stroke="#f3f4f6" strokeWidth="0.8" />)}
+      {[1,2,3,4,5,6].map(t => <line key={`hg${t}`} x1={px(0)} y1={py(t)} x2={260} y2={py(t)} stroke="#f3f4f6" strokeWidth="0.8" />)}
+      <line x1={px(0)} y1={baseline} x2={260} y2={baseline} stroke="#374151" strokeWidth="1.5" markerEnd="url(#ax67)" />
+      <line x1={px(0)} y1={baseline} x2={px(0)} y2={14} stroke="#374151" strokeWidth="1.5" markerEnd="url(#ay67)" />
+      <text x={262} y={baseline + 4} fontSize="11" fill="#374151" fontWeight="bold">x</text>
+      <text x={px(0) + 4} y={12} fontSize="11" fill="#374151" fontWeight="bold">y</text>
+      <polygon points={`${px(A.x)},${py(A.y)} ${px(D.x)},${py(D.y)} ${px(M.x)},${py(M.y)}`} fill="#dbeafe" stroke="#1a56db" strokeWidth="2.5" fillOpacity="0.6" />
+      <line x1={px(A.x)} y1={py(A.y)} x2={px(C.x)} y2={py(C.y)} stroke="#16a34a" strokeWidth="1.5" strokeDasharray="4 3" />
+      <line x1={px(C.x)} y1={py(C.y)} x2={px(D.x)} y2={py(D.y)} stroke="#f97316" strokeWidth="1.5" strokeDasharray="4 3" />
+      <rect x={px(C.x) - 10} y={py(C.y)} width="10" height="10" fill="none" stroke="#374151" strokeWidth="1.2" />
+      <text x={(px(A.x) + px(C.x)) / 2 - 4} y={py(A.y) - 6} fontSize="10.5" fill="#16a34a" fontWeight="bold">AC = 3</text>
+      <text x={px(C.x) + 4} y={(py(C.y) + py(D.y)) / 2} fontSize="10.5" fill="#f97316" fontWeight="bold">CD = 4</text>
+      <text x={(px(A.x) + px(D.x)) / 2 - 22} y={(py(A.y) + py(D.y)) / 2 - 6} fontSize="10.5" fill="#1a56db" fontWeight="bold">AD = 5</text>
+      <text x={(px(D.x) + px(M.x)) / 2 + 4} y={(py(D.y) + py(M.y)) / 2} fontSize="10.5" fill="#9333ea" fontWeight="bold">DM = √29</text>
+      <text x={(px(M.x) + px(A.x)) / 2 - 50} y={(py(M.y) + py(A.y)) / 2 - 4} fontSize="10.5" fill="#be185d" fontWeight="bold">MA = √40</text>
+      <circle cx={px(A.x)} cy={py(A.y)} r="4.5" fill="#1a56db" /><text x={px(A.x) - 26} y={py(A.y) + 4} fontSize="11" fill="#1a56db" fontWeight="bold">A(3,4)</text>
+      <circle cx={px(D.x)} cy={py(D.y)} r="4.5" fill="#1a56db" /><text x={px(D.x) - 8} y={py(D.y) + 18} fontSize="11" fill="#1a56db" fontWeight="bold">D(7,1)</text>
+      <circle cx={px(M.x)} cy={py(M.y)} r="4.5" fill="#1a56db" /><text x={px(M.x) + 6} y={py(M.y) - 6} fontSize="11" fill="#1a56db" fontWeight="bold">M(9,6)</text>
+      <circle cx={px(C.x)} cy={py(C.y)} r="3.5" fill="#374151" /><text x={px(C.x) + 6} y={py(C.y) + 4} fontSize="10" fill="#374151">C(7,4)</text>
+    </svg>
+  );
+}
+
+export function Fig19ReflectionDiagram() {
+  const sc = 14, cx = 150, baseline = 180;
+  const pxR = (x: number) => cx + x * sc;
+  const py = (y: number) => baseline - y * sc;
+  const A = { x: 3, y: 4 }, D = { x: 7, y: 1 }, M = { x: 9, y: 6 };
+  const Ap = { x: -3, y: 4 }, Dp = { x: -7, y: 1 }, Mp = { x: -9, y: 6 };
+  return (
+    <svg viewBox="0 0 300 210" className="w-full max-w-md mx-auto block" aria-label="Fig 1.9 reflection in y-axis">
+      <defs>
+        <marker id="ax19" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#374151" /></marker>
+        <marker id="ay19" markerWidth="7" markerHeight="7" refX="3.5" refY="0" orient="auto"><path d="M0,7 L3.5,0 L7,7 Z" fill="#374151" /></marker>
+      </defs>
+      <line x1={10} y1={baseline} x2={290} y2={baseline} stroke="#374151" strokeWidth="1.5" markerEnd="url(#ax19)" />
+      <line x1={cx} y1={195} x2={cx} y2={10} stroke="#374151" strokeWidth="1.5" markerEnd="url(#ay19)" />
+      <text x={292} y={baseline + 4} fontSize="11" fill="#374151" fontWeight="bold">x</text>
+      <text x={cx + 4} y={10} fontSize="11" fill="#374151" fontWeight="bold">y</text>
+      <polygon points={`${pxR(A.x)},${py(A.y)} ${pxR(D.x)},${py(D.y)} ${pxR(M.x)},${py(M.y)}`} fill="#dbeafe" stroke="#1a56db" strokeWidth="2.2" fillOpacity="0.65" />
+      <polygon points={`${pxR(Ap.x)},${py(Ap.y)} ${pxR(Dp.x)},${py(Dp.y)} ${pxR(Mp.x)},${py(Mp.y)}`} fill="#fef3e7" stroke="#f97316" strokeWidth="2.2" fillOpacity="0.65" />
+      {[[A, Ap], [D, Dp], [M, Mp]].map(([p1, p2], i) => (
+        <line key={i} x1={pxR(p1.x)} y1={py(p1.y)} x2={pxR(p2.x)} y2={py(p2.y)} stroke="#9ca3af" strokeWidth="1" strokeDasharray="3 3" />
+      ))}
+      <circle cx={pxR(A.x)} cy={py(A.y)} r="4" fill="#1a56db" /><text x={pxR(A.x) + 6} y={py(A.y) - 4} fontSize="10" fill="#1a56db" fontWeight="bold">A(3,4)</text>
+      <circle cx={pxR(D.x)} cy={py(D.y)} r="4" fill="#1a56db" /><text x={pxR(D.x) + 6} y={py(D.y) + 14} fontSize="10" fill="#1a56db" fontWeight="bold">D(7,1)</text>
+      <circle cx={pxR(M.x)} cy={py(M.y)} r="4" fill="#1a56db" /><text x={pxR(M.x) + 6} y={py(M.y) - 4} fontSize="10" fill="#1a56db" fontWeight="bold">M(9,6)</text>
+      <circle cx={pxR(Ap.x)} cy={py(Ap.y)} r="4" fill="#f97316" /><text x={pxR(Ap.x) - 50} y={py(Ap.y) - 4} fontSize="10" fill="#f97316" fontWeight="bold">A'(−3,4)</text>
+      <circle cx={pxR(Dp.x)} cy={py(Dp.y)} r="4" fill="#f97316" /><text x={pxR(Dp.x) - 54} y={py(Dp.y) + 14} fontSize="10" fill="#f97316" fontWeight="bold">D'(−7,1)</text>
+      <circle cx={pxR(Mp.x)} cy={py(Mp.y)} r="4" fill="#f97316" /><text x={pxR(Mp.x) - 54} y={py(Mp.y) - 4} fontSize="10" fill="#f97316" fontWeight="bold">M'(−9,6)</text>
+      <text x={16} y={204} fontSize="9.5" fill="#6b7280">Blue = original ΔADM   Orange = reflection ΔA'D'M' in y-axis</text>
+    </svg>
+  );
+}
+
+export function Fig15FullPlanDiagram() {
+  const sc = 16, ox = 30, oyTop = 20, baseline = 180;
+  const px = (x: number) => ox + (x + 6) * sc;
+  const py = (y: number) => oyTop + (10 - y) * sc;
+  return (
+    <svg viewBox="0 0 340 210" className="w-full max-w-xl mx-auto block" aria-label="Fig 1.5 full room and bathroom plan">
+      <defs>
+        <marker id="ax15f" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#374151" /></marker>
+        <marker id="ay15f" markerWidth="7" markerHeight="7" refX="3.5" refY="0" orient="auto"><path d="M0,7 L3.5,0 L7,7 Z" fill="#374151" /></marker>
+      </defs>
+
+      {/* Bedroom fill */}
+      <rect x={px(0)} y={py(10)} width={px(12) - px(0)} height={py(0) - py(10)} fill="#fdf2e0" stroke="#d97706" strokeWidth="2.5" />
+      {/* Bathroom fill */}
+      <rect x={px(-6)} y={py(9)} width={px(0) - px(-6)} height={py(0) - py(9)} fill="#dbeafe" stroke="#1a56db" strokeWidth="2.5" />
+
+      {/* Showering area SHWR */}
+      <rect x={px(-6)} y={py(9)} width={px(-3) - px(-6)} height={py(6) - py(9)} fill="#bfdbfe" stroke="#1a56db" strokeWidth="1.5" />
+      {/* Washbasin */}
+      <rect x={px(-6)} y={py(2)} width={px(-3) - px(-6)} height={py(0) - py(2)} fill="#a7f3d0" stroke="#047857" strokeWidth="1.2" />
+      {/* Toilet */}
+      <rect x={px(-3)} y={py(3)} width={px(-1) - px(-3)} height={py(0) - py(3)} fill="#fde68a" stroke="#b45309" strokeWidth="1.2" />
+
+      {/* Bed */}
+      <rect x={px(0)} y={py(8)} width={px(6) - px(0)} height={py(5) - py(8)} fill="#e0e7ff" stroke="#4338ca" strokeWidth="1.5" />
+      {/* Wardrobe */}
+      <rect x={px(3)} y={py(2)} width={px(7) - px(3)} height={py(0) - py(2)} fill="#fed7aa" stroke="#c2410c" strokeWidth="1.5" />
+      {/* Study table (8,7)-(11,9) */}
+      <rect x={px(8)} y={py(9)} width={px(11) - px(8)} height={py(7) - py(9)} fill="#fef08a" stroke="#a16207" strokeWidth="1.5" />
+
+      {/* Axes */}
+      <line x1={10} y1={baseline} x2={328} y2={baseline} stroke="#374151" strokeWidth="1.4" markerEnd="url(#ax15f)" />
+      <line x1={px(0)} y1={195} x2={px(0)} y2={10} stroke="#374151" strokeWidth="1.4" markerEnd="url(#ay15f)" />
+      <text x={330} y={baseline + 4} fontSize="10" fill="#374151" fontWeight="bold">x</text>
+      <text x={px(0) + 4} y={10} fontSize="10" fill="#374151" fontWeight="bold">y</text>
+
+      {/* tick labels */}
+      {[-6,-4,-2,2,4,6,8,10,12].map(t => <text key={`xt${t}`} x={px(t)} y={baseline + 12} fontSize="7.5" fill="#9ca3af" textAnchor="middle">{t}</text>)}
+      {[2,4,6,8,10].map(t => <text key={`yt${t}`} x={px(0) - 8} y={py(t) + 3} fontSize="7.5" fill="#9ca3af" textAnchor="end">{t}</text>)}
+
+      {/* Labels for key points */}
+      {[
+        { x: 0, y: 0, l: "O(0,0)", c: "#374151", ax: 4, ay: 14 },
+        { x: 12, y: 0, l: "A(12,0)", c: "#d97706", ax: -6, ay: 14 },
+        { x: 12, y: 10, l: "B(12,10)", c: "#d97706", ax: -10, ay: -4 },
+        { x: 0, y: 10, l: "C(0,10)", c: "#d97706", ax: 2, ay: -4 },
+        { x: -6, y: 0, l: "P", c: "#1a56db", ax: -8, ay: 12 },
+        { x: -6, y: 9, l: "R", c: "#1a56db", ax: -8, ay: -3 },
+        { x: 0, y: 9, l: "F", c: "#1a56db", ax: 3, ay: -3 },
+        { x: -6, y: 6, l: "S", c: "#1a56db", ax: -8, ay: 3 },
+        { x: -3, y: 6, l: "H", c: "#1a56db", ax: 2, ay: 10 },
+        { x: -3, y: 9, l: "W", c: "#1a56db", ax: -4, ay: -4 },
+        { x: 0, y: 5, l: "S₁", c: "#4338ca", ax: 2, ay: 3 },
+        { x: 6, y: 5, l: "S₂", c: "#4338ca", ax: 2, ay: 3 },
+        { x: 6, y: 8, l: "S₃", c: "#4338ca", ax: 2, ay: -3 },
+        { x: 0, y: 8, l: "S₄", c: "#4338ca", ax: -10, ay: -3 },
+        { x: 0, y: 4, l: "B₂", c: "#16a34a", ax: 3, ay: 2 },
+        { x: 0, y: 1.5, l: "B₁", c: "#16a34a", ax: 3, ay: 2 },
+        { x: 3, y: 0, l: "W₁", c: "#c2410c", ax: -2, ay: 12 },
+        { x: 7, y: 0, l: "W₂", c: "#c2410c", ax: -2, ay: 12 },
+        { x: 7, y: 2, l: "W₃", c: "#c2410c", ax: 2, ay: -3 },
+        { x: 3, y: 2, l: "W₄", c: "#c2410c", ax: -2, ay: -3 },
+        { x: 8, y: 0, l: "D₁", c: "#f97316", ax: -2, ay: 12 },
+        { x: 11.5, y: 0, l: "R₁(11.5,0)", c: "#f97316", ax: -10, ay: 12 },
+      ].map((p, i) => (
+        <g key={i}>
+          <circle cx={px(p.x)} cy={py(p.y)} r="3" fill={p.c} />
+          <text x={px(p.x) + p.ax} y={py(p.y) + p.ay} fontSize="8.5" fill={p.c} fontWeight="bold">{p.l}</text>
+        </g>
+      ))}
+      <text x={px(1.5)} y={py(6.5)} fontSize="9" fill="#4338ca" fontWeight="bold">Bed</text>
+      <text x={px(4)} y={py(1)} fontSize="8" fill="#c2410c" fontWeight="bold">Wardrobe</text>
+      <text x={px(-5.7)} y={py(7.5)} fontSize="7" fill="#1a56db" fontWeight="bold">Shower</text>
+      <text x={px(-5.7)} y={py(1)} fontSize="7" fill="#047857" fontWeight="bold">Basin</text>
+      <text x={px(-2.9)} y={py(1.5)} fontSize="7" fill="#b45309" fontWeight="bold">Toilet</text>
+    </svg>
+  );
+}
 const diagramMap: Record<string, React.FC> = {
   "chord-distance": () => <ChordDistanceDiagram r={90} d={50} />,
   "chord-distance-2": () => <ChordDistanceDiagram r={90} d={30} />,
@@ -449,8 +607,12 @@ const diagramMap: Record<string, React.FC> = {
   "right-triangle-12-9-15": () => <RightTriangleDiagram a={12} b={9} c={15} />,
   "coordinate-z": () => <CoordinatePlaneDiagram />,
   "midpoint": () => <MidpointDiagram />,
+  "ch1-fig12-axes": () => <Fig12AxesDiagram />,
   "ch1-fig13-room": () => <ReiaaanRoomFig13 />,
-  "ch1-fig15-grid": () => <ReiaaanRoomFig15 />,
+  "ch1-fig14-quadrants": () => <Fig14QuadrantsDiagram />,
+  "ch1-fig15-fullplan": () => <Fig15FullPlanDiagram />,
+  "ch1-fig67-triangle": () => <Fig67TriangleDiagram />,
+  "ch1-fig19-reflection": () => <Fig19ReflectionDiagram />,
   "ch1-ramp": () => <RAMPDiagram />,
   "ch1-z-triangle": () => <ZTriangleDiagram />,
 };

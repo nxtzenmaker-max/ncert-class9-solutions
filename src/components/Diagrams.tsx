@@ -443,7 +443,7 @@ export default function DiagramRenderer({ id, tight }: { id: string; tight?: boo
     );
   }
   return (
-    <div className="my-3 p-3 bg-blue-50 rounded-xl border border-blue-100 flex flex-col items-center">
+    <div className="my-3 p-3 bg-white flex flex-col items-center">
       <Component />
     </div>
   );

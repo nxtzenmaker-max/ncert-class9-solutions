@@ -4,3 +4,4 @@ android/release.keystore
 android/*.keystore
 node_modules/
 dist/
+setup-rox.sh

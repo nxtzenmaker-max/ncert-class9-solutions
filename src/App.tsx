@@ -7,6 +7,7 @@ import Home from "@/pages/Home";
 import Subject from "@/pages/Subject";
 import ChapterPage from "@/pages/ChapterPage";
 import Loader from "@/components/Loader";
+import RoxWidget from "@/components/RoxWidget";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ function App() {
           <Router />
         </WouterRouter>
         <Toaster />
+        <RoxWidget />
       </TooltipProvider>
     </QueryClientProvider>
   );

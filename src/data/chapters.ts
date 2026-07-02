@@ -613,19 +613,19 @@ export const chapters: Chapter[] = [
         questions: [
           {
             q: "1. A merchant receives 15 copper ingots for every 2 bags of spices. If he brings 12 bags, how many ingots will he get?",
-            solution: "Rate: 15 ingots per 2 bags = 7.5 ingots per bag. For 12 bags: 12 × (15/2) = 12 × 7.5 = 90 ingots.",
+            solution: "Given: 15 copper ingots are received for every 2 bags of spices.\nStep 1: Find the rate of ingots per bag.\nRate = 15 ÷ 2\n= 7.5 ingots per bag.\nStep 2: Find the ingots for 12 bags.\nTotal ingots = 12 × 7.5\n= 90.\n∴ The merchant will get 90 copper ingots.",
           },
           {
             q: "2. Look at the sequence 11, 13, 17, 19. What do these numbers have in common? List the next three numbers that fit the pattern.",
-            solution: "These are consecutive prime numbers. All are prime (divisible only by 1 and themselves). Next three primes: 23, 29, 31.",
+            solution: "Given sequence: 11, 13, 17, 19.\nStep 1: Check each number for factors.\n11 → divisible only by 1 and 11 → prime.\n13 → divisible only by 1 and 13 → prime.\n17 → divisible only by 1 and 17 → prime.\n19 → divisible only by 1 and 19 → prime.\n∴ All four numbers are prime numbers; they are consecutive primes.\nStep 2: Find the next three primes after 19.\n20 = 2 × 10 → not prime.\n21 = 3 × 7 → not prime.\n22 = 2 × 11 → not prime.\n23 → divisible only by 1 and 23 → prime.\n24 to 28 → all composite (divisible by 2, 3, or other factors).\n29 → divisible only by 1 and 29 → prime.\n30 = 2 × 15 → not prime.\n31 → divisible only by 1 and 31 → prime.\n∴ The next three numbers fitting the pattern are 23, 29, 31.",
           },
           {
             q: "3. Natural Numbers are closed under addition. Are they closed under subtraction? Provide examples.",
-            solution: "No. Natural numbers are NOT closed under subtraction. Example: 3 − 5 = −2, which is not a natural number. Another: 1 − 4 = −3, not a natural number. Subtraction can give negative results, which are outside the set of natural numbers.",
+            solution: "Natural numbers = {1, 2, 3, 4, ...}.\nClosure property: a set is closed under an operation if the result of that operation on any two members always stays inside the set.\nStep 1: Check addition.\n3 + 5 = 8 → a natural number.\n1 + 4 = 5 → a natural number.\n∴ Addition of any two natural numbers always gives a natural number, so natural numbers ARE closed under addition.\nStep 2: Check subtraction.\nExample 1: 3 − 5 = −2.\n−2 is not a natural number.\nExample 2: 1 − 4 = −3.\n−3 is not a natural number.\n∴ Natural numbers are NOT closed under subtraction, because subtracting a larger number from a smaller one gives a negative result, which lies outside the set of natural numbers.",
           },
           {
             q: "*4. Each finger has 3 joints and the thumb is used to count them. How many can you count on one hand? How does this relate to ancient base-12 counting?",
-            solution: "Four fingers × 3 joints each = 12 counts per hand. The thumb points to each joint. This gives a base-12 (duodecimal) system. Ancient Indians and other cultures used this to count up to 12 on one hand, which is why we have 12 inches in a foot, 12 months in a year, and 60 (= 12 × 5) minutes in an hour.",
+            solution: "Given: Each finger has 3 joints, and there are 4 countable fingers (index, middle, ring, little) on one hand.\nStep 1: Find the total joints on one hand.\nTotal joints = 4 fingers × 3 joints\n= 12 joints.\nStep 2: Understand the counting method.\nThe thumb is used to touch each of these 12 joints one by one, so a person can count from 1 to 12 using just one hand.\n∴ This method naturally produces a base-12 (duodecimal) counting system.\nStep 3: Real-world traces of base-12 counting.\n12 inches = 1 foot.\n12 months = 1 year.\n60 minutes = 12 × 5 minutes = 1 hour (60 is a multiple of 12).\n∴ Ancient civilizations used the 12 finger-joints to count, which is why base-12 patterns still appear in units we use today.",
           },
         ],
       },
@@ -634,24 +634,40 @@ export const chapters: Chapter[] = [
         questions: [
           {
             q: "1. The temperature in Ladakh is 4°C at noon. By midnight it drops by 15°C. What is the midnight temperature?",
-            solution: "Midnight temperature = 4 − 15 = −11°C.",
+            solution: "Given: Noon temperature = 4°C.\nDrop in temperature by midnight = 15°C.\nStep 1: Since the temperature falls, subtract the drop from the noon temperature.\nMidnight temperature = 4 − 15\n= −11°C.\n∴ The temperature at midnight is −11°C, i.e., 11°C below zero.",
           },
           {
             q: "2. A spice trader takes a loan of ₹850. Next day he makes a profit of ₹1,200. The following week he incurs a loss of ₹450. Write as an equation and calculate his final financial standing.",
-            solution: "Final = −850 + 1200 − 450 = −100. His final financial standing is a debt of ₹100 (−₹100).",
+            solution: "Given:\nLoan taken = ₹850 → this is money owed, so represent it as −850.\nProfit next day = ₹1,200 → a gain, so represent it as +1200.\nLoss following week = ₹450 → a loss, so represent it as −450.\nStep 1: Write the equation.\nFinal standing = (−850) + 1200 + (−450).\nStep 2: Simplify.\n= (−850) + 1200 − 450\n= 350 − 450\n= −100.\n∴ His final financial standing is −₹100, i.e., he ends up in a debt of ₹100.",
           },
           {
             q: "3. Calculate the following using Brahmagupta's laws:",
             parts: [
-              { label: "(i)", question: "(−12) × 5", solution: "(−12) × 5 = −60 (negative × positive = negative)" },
-              { label: "(ii)", question: "(−8) × (−7)", solution: "(−8) × (−7) = 56 (negative × negative = positive)" },
-              { label: "(iii)", question: "0 − (−14)", solution: "0 − (−14) = 0 + 14 = 14" },
-              { label: "(iv)", question: "(−20) ÷ 4", solution: "(−20) ÷ 4 = −5 (negative ÷ positive = negative)" },
+              {
+                label: "(i)",
+                question: "(−12) × 5",
+                solution: "Rule: (negative) × (positive) = negative.\n(−12) × 5 = −(12 × 5)\n= −60.",
+              },
+              {
+                label: "(ii)",
+                question: "(−8) × (−7)",
+                solution: "Rule: (negative) × (negative) = positive.\n(−8) × (−7) = +(8 × 7)\n= 56.",
+              },
+              {
+                label: "(iii)",
+                question: "0 − (−14)",
+                solution: "Rule: subtracting a negative number is the same as adding its positive value.\n0 − (−14) = 0 + 14\n= 14.",
+              },
+              {
+                label: "(iv)",
+                question: "(−20) ÷ 4",
+                solution: "Rule: (negative) ÷ (positive) = negative.\n(−20) ÷ 4 = −(20 ÷ 4)\n= −5.",
+              },
             ],
           },
           {
             q: "4. Explain, using a real-world example of debt, why subtracting a negative number is the same as adding a positive number (e.g., 10 − (−5) = 15).",
-            solution: "Imagine you have ₹10. Someone removes a debt of ₹5 (i.e., subtracts −₹5). Removing a debt means you now owe ₹5 less, so you effectively gain ₹5. Result: 10 + 5 = ₹15. Subtracting a negative (removing a debt) is the same as adding a positive (gaining money). Hence 10 − (−5) = 10 + 5 = 15.",
+            solution: "Let the person's money = ₹10.\nSuppose the person also has a debt of ₹5 recorded against their account, written as −5.\nStep 1: 'Removing' or forgiving this debt of ₹5 means we subtract the −5 from the account: 10 − (−5).\nStep 2: Removing a debt of ₹5 increases the person's net worth by ₹5, because they no longer owe that amount, which is the same as gaining ₹5.\nSo, removing the debt = adding ₹5 to what they already have.\n10 − (−5) = 10 + 5\n= 15.\n∴ Subtracting a negative number gives the same result as adding the corresponding positive number, because 'taking away a debt' has the same effect as 'gaining money'.",
           },
         ],
       },
@@ -661,38 +677,62 @@ export const chapters: Chapter[] = [
           {
             q: "1. Convert the following to terminating or non-terminating repeating decimal:",
             parts: [
-              { label: "(i)", question: "3/50", solution: "3/50 = 0.06 (terminating, since denominator = 2 × 5²)" },
-              { label: "(ii)", question: "2/9", solution: "2/9 = 0.222… = 0.2̄ (non-terminating repeating)" },
+              {
+                label: "(i)",
+                question: "3/50",
+                solution: "Step 1: Factorize the denominator.\n50 = 2 × 5².\nSince the denominator has only 2's and 5's as prime factors, the decimal terminates.\nStep 2: Convert to decimal.\n3/50 = (3 × 2)/(50 × 2)\n= 6/100\n= 0.06.\n∴ 3/50 is a terminating decimal = 0.06.",
+              },
+              {
+                label: "(ii)",
+                question: "2/9",
+                solution: "Step 1: Factorize the denominator.\n9 = 3².\nSince the denominator has a prime factor other than 2 or 5 (namely 3), the decimal is non-terminating repeating.\nStep 2: Divide to find the decimal.\n2 ÷ 9 = 0.2222...\n= 0.2̄ (2 repeats forever).\n∴ 2/9 is a non-terminating repeating decimal = 0.2̄.",
+              },
             ],
           },
           {
             q: "2. Prove that √5 is an irrational number.",
-            solution: "Assume √5 = p/q in lowest form (p, q integers, q ≠ 0, gcd(p,q) = 1). Then p² = 5q², so 5 | p² → 5 | p. Let p = 5m. Then 25m² = 5q² → q² = 5m² → 5 | q. But this contradicts gcd(p, q) = 1. Hence √5 is irrational.",
+            solution: "To prove: √5 is irrational.\nProof by contradiction:\nStep 1: Assume √5 is rational.\nThen √5 = p/q, where p and q are integers, q ≠ 0, and gcd(p, q) = 1 (lowest terms).\nStep 2: Square both sides.\n5 = p²/q²\n⟹ p² = 5q² ... (1)\nStep 3: Analyze equation (1).\nFrom (1), 5 divides p².\nSince 5 is prime, 5 must divide p.\nSo let p = 5m, for some integer m.\nStep 4: Substitute back into (1).\n(5m)² = 5q²\n25m² = 5q²\nq² = 5m².\nSo 5 divides q² ⇒ 5 divides q.\nStep 5: Reach the contradiction.\nBoth p and q are divisible by 5, but this contradicts our assumption that gcd(p, q) = 1.\n∴ Our assumption is false, and √5 is irrational.",
           },
           {
             q: "3. Convert the following decimals to p/q form:",
             parts: [
-              { label: "(i)", question: "12.6", solution: "12.6 = 126/10 = 63/5" },
-              { label: "(ii)", question: "0.0120", solution: "0.0120 = 120/10000 = 3/250" },
-              { label: "(iii)", question: "3.052", solution: "3.052 = 3052/1000 = 763/250" },
-              { label: "(v)", question: "0.23̄ (0.2333...)", solution: "Let x = 0.2333... → 10x = 2.333... → 100x = 23.333... → 100x − 10x = 21 → x = 21/90 = 7/30" },
+              {
+                label: "(i)",
+                question: "12.6",
+                solution: "12.6 = 126/10\nDivide numerator and denominator by their HCF, 2:\n= 63/5.\n∴ 12.6 = 63/5.",
+              },
+              {
+                label: "(ii)",
+                question: "0.0120",
+                solution: "0.0120 = 120/10000\nDivide numerator and denominator by their HCF, 40:\n= 3/250.\n∴ 0.0120 = 3/250.",
+              },
+              {
+                label: "(iii)",
+                question: "3.052",
+                solution: "3.052 = 3052/1000\nDivide numerator and denominator by their HCF, 4:\n= 763/250.\n∴ 3.052 = 763/250.",
+              },
+              {
+                label: "(v)",
+                question: "0.23̄ (0.2333...)",
+                solution: "Let x = 0.2333... ... (1)\nStep 1: Multiply by 10 (shifts the one non-repeating digit).\n10x = 2.333... ... (2)\nStep 2: Multiply the original by 100 (shifts the repeating digit along too).\n100x = 23.333... ... (3)\nStep 3: Subtract (2) from (3), since the repeating parts cancel.\n100x − 10x = 23.333... − 2.333...\n90x = 21\nx = 21/90\nDivide numerator and denominator by their HCF, 3:\nx = 7/30.\n∴ 0.2333... = 7/30.",
+              },
             ],
           },
           {
             q: "5. Find 6 rational numbers between 3 and 4.",
-            solution: "Multiply both by 7: 21/7 and 28/7. Six rational numbers: 22/7, 23/7, 24/7, 25/7, 26/7, 27/7.",
+            solution: "Given numbers: 3 and 4.\nStep 1: Since we need 6 rational numbers, multiply numerator and denominator of both by (6 + 1) = 7.\n3 = 21/7, 4 = 28/7.\nStep 2: List the rational numbers with numerators strictly between 21 and 28.\n22/7, 23/7, 24/7, 25/7, 26/7, 27/7.\n∴ Six rational numbers between 3 and 4 are 22/7, 23/7, 24/7, 25/7, 26/7, 27/7.",
           },
           {
             q: "6. Find 5 rational numbers between 2/5 and 3/5.",
-            solution: "Multiply both by 6: 12/30 and 18/30. Five rational numbers: 13/30, 14/30, 15/30, 16/30, 17/30 → i.e., 13/30, 7/15, 1/2, 8/15, 17/30.",
+            solution: "Given numbers: 2/5 and 3/5.\nStep 1: Since we need 5 rational numbers, multiply numerator and denominator of both by (5 + 1) = 6.\n2/5 = 12/30, 3/5 = 18/30.\nStep 2: List the rational numbers with numerators strictly between 12 and 18.\n13/30, 14/30, 15/30, 16/30, 17/30.\n∴ Five rational numbers between 2/5 and 3/5 are 13/30, 14/30, 15/30, 16/30, 17/30.",
           },
           {
             q: "8. If x/3 + x/5 = 16/15, find the rational number x.",
-            solution: "x/3 + x/5 = 16/15. LCM of 3 and 5 is 15. (5x + 3x)/15 = 16/15 → 8x = 16 → x = 2.",
+            solution: "Given: x/3 + x/5 = 16/15.\nStep 1: Find the LCM of the denominators 3 and 5.\nLCM(3, 5) = 15.\nStep 2: Rewrite each fraction with denominator 15.\nx/3 = 5x/15, x/5 = 3x/15.\nStep 3: Add the fractions.\n5x/15 + 3x/15 = 16/15\n(5x + 3x)/15 = 16/15\n8x/15 = 16/15.\nStep 4: Since denominators are equal, equate numerators.\n8x = 16\nx = 16/8\n= 2.\n∴ x = 2.",
           },
           {
             q: "11. Without performing division, determine whether 18/125 is terminating or non-terminating. If it terminates, state the number of decimal places.",
-            solution: "125 = 5³. Since the denominator has only factors of 5 (and 2⁰), it is a terminating decimal. 18/125 = 18 × 2³ / (5³ × 2³) = 144/1000 = 0.144. It terminates in 3 decimal places.",
+            solution: "Step 1: Factorize the denominator.\n125 = 5³.\nSince the only prime factor of the denominator is 5 (no other prime like 3 or 7), the decimal terminates.\nStep 2: Convert the denominator to a power of 10 by multiplying by 2³ (because 5³ × 2³ = 10³).\n18/125 = (18 × 8)/(125 × 8)\n= 144/1000\n= 0.144.\n∴ 18/125 is a terminating decimal that ends after 3 decimal places, and equals 0.144.",
           },
         ],
       },

@@ -1070,43 +1070,99 @@ export const chapters: Chapter[] = [
           {
             q: "1. Fill in the blanks:",
             parts: [
-              { label: "(i)", question: "The probability of an impossible event is _______.", solution: "0" },
-              { label: "(ii)", question: "The set of all possible outcomes of a random experiment is called the __________.", solution: "Sample Space" },
-              { label: "(iii)", question: "The probability of an event that is certain to happen is _______.", solution: "1" },
-              { label: "(iv)", question: "Tossing a fair coin has a probability of ______ for getting heads.", solution: "1/2 (or 0.5)" },
+              {
+                label: "(i)",
+                question: "The probability of an impossible event is _______.",
+                solution: "An impossible event is one that can never occur.\nBy definition, probability measures the chance of an event happening, on a scale from 0 (never happens) to 1 (always happens).\n∴ The probability of an impossible event is 0.",
+              },
+              {
+                label: "(ii)",
+                question: "The set of all possible outcomes of a random experiment is called the __________.",
+                solution: "In probability, every possible result that a random experiment can produce is collected into one set.\nThis complete set of outcomes is given a special name.\n∴ The set of all possible outcomes of a random experiment is called the Sample Space.",
+              },
+              {
+                label: "(iii)",
+                question: "The probability of an event that is certain to happen is _______.",
+                solution: "A certain event is one that will definitely occur every single time.\nOn the probability scale of 0 to 1, an event that always happens sits at the highest end.\n∴ The probability of a certain event is 1.",
+              },
+              {
+                label: "(iv)",
+                question: "Tossing a fair coin has a probability of ______ for getting heads.",
+                solution: "A fair coin has exactly 2 equally likely outcomes: Heads (H) and Tails (T).\nP(Heads) = (favourable outcomes) ÷ (total outcomes) = 1 ÷ 2\n= 1/2.\n∴ The probability of getting heads is 1/2 (or 0.5).",
+              },
             ],
           },
           {
             q: "2. In a survey of 50 students, 15 liked football. The frequency is 15. What is the relative frequency?",
-            solution: "Relative frequency = 15/50 = 3/10 = 0.3",
+            solution: "Given: Total students surveyed = 50.\nStudents who liked football (frequency) = 15.\nRelative frequency = frequency ÷ total number of observations.\nRelative frequency = 15/50\nSimplify by dividing numerator and denominator by their HCF, 5:\n= 3/10\n= 0.3.\n∴ The relative frequency of students who liked football is 3/10 (or 0.3).",
           },
           {
             q: "3. Which of the following experiments have equally likely outcomes? Explain.",
             parts: [
-              { label: "(i)", question: "A driver attempts to start a car. The car starts or does not start.", solution: "Not equally likely — the car starting depends on its condition. The two outcomes are not equally probable in general." },
-              { label: "(ii)", question: "Tossing a fair coin once.", solution: "Equally likely — both heads and tails have probability 1/2." },
-              { label: "(iii)", question: "Rolling a fair 6-sided die.", solution: "Equally likely — each of the 6 faces has probability 1/6." },
-              { label: "(iv)", question: "Choosing a marble from a bag with 3 red and 7 blue marbles.", solution: "Not equally likely — P(red) = 3/10, P(blue) = 7/10. The outcomes are not equally likely." },
-              { label: "(v)", question: "A baby is born. It is a boy or a girl.", solution: "Approximately equally likely — each has approximately probability 1/2, though in practice not exactly 50/50." },
+              {
+                label: "(i)",
+                question: "A driver attempts to start a car. The car starts or does not start.",
+                solution: "There are 2 possible outcomes: the car starts, or it does not start.\nBut whether the car starts depends on real factors like battery charge, fuel, engine condition, and maintenance — these are not symmetric or random by nature.\n∴ This is NOT an equally likely experiment, because the two outcomes do not have an equal chance of occurring in general.",
+              },
+              {
+                label: "(ii)",
+                question: "Tossing a fair coin once.",
+                solution: "There are 2 possible outcomes: Heads (H) or Tails (T).\nSince the coin is fair, neither side is favoured — the physical symmetry of the coin gives both outcomes the same chance.\nP(H) = P(T) = 1/2.\n∴ This IS an equally likely experiment.",
+              },
+              {
+                label: "(iii)",
+                question: "Rolling a fair 6-sided die.",
+                solution: "There are 6 possible outcomes: 1, 2, 3, 4, 5, 6.\nSince the die is fair, every face has an equal chance of landing up.\nP(any one face) = 1/6 for each.\n∴ This IS an equally likely experiment.",
+              },
+              {
+                label: "(iv)",
+                question: "Choosing a marble from a bag with 3 red and 7 blue marbles.",
+                solution: "Total marbles = 3 red + 7 blue = 10.\nP(red) = 3/10.\nP(blue) = 7/10.\nSince 3/10 ≠ 7/10, the two colour outcomes do not have equal chances (though each individual marble is equally likely to be picked).\n∴ This is NOT an equally likely experiment in terms of colour outcomes.",
+              },
+              {
+                label: "(v)",
+                question: "A baby is born. It is a boy or a girl.",
+                solution: "There are 2 possible outcomes: boy or girl.\nIn theory, each outcome is treated as having a chance close to 1/2.\nIn practice, real birth statistics show a very slight imbalance (not exactly 50/50), so it is only an approximation.\n∴ This is approximately (but not perfectly) an equally likely experiment.",
+              },
             ],
           },
           {
             q: "4. Write the sample space and calculate the probability:",
             parts: [
-              { label: "(i)", question: "Two coins tossed. P(at least one head)?", solution: "Sample space: {HH, HT, TH, TT}. Favourable: {HH, HT, TH} = 3. P(at least one head) = 3/4." },
-              { label: "(ii)", question: "Cards numbered 1−10. P(even number)?", solution: "Even numbers: {2, 4, 6, 8, 10} = 5 outcomes. P(even) = 5/10 = 1/2." },
-              { label: "(iii)", question: "Die rolled. P(number greater than 4)?", solution: "Favourable: {5, 6}. P(>4) = 2/6 = 1/3." },
-              { label: "(iv)", question: "Bag: 3 red, 2 blue, 1 green. P(not red)?", solution: "Not red: {2 blue + 1 green} = 3. Total = 6. P(not red) = 3/6 = 1/2." },
-              { label: "(v)", question: "Three coins tossed. P(exactly two heads)?", solution: "Sample space: {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}. Exactly two heads: {HHT, HTH, THH} = 3. P = 3/8." },
+              {
+                label: "(i)",
+                question: "Two coins tossed. P(at least one head)?",
+                solution: "Step 1: List the sample space (all possible outcomes of tossing 2 coins).\nSample space = {HH, HT, TH, TT}.\nTotal outcomes = 4.\nStep 2: Identify favourable outcomes (at least one head means 1 or 2 heads).\nFavourable outcomes = {HH, HT, TH} = 3.\nStep 3: Compute the probability.\nP(at least one head) = favourable ÷ total = 3/4.\n∴ P(at least one head) = 3/4.",
+              },
+              {
+                label: "(ii)",
+                question: "Cards numbered 1−10. P(even number)?",
+                solution: "Step 1: List the sample space.\nSample space = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}.\nTotal outcomes = 10.\nStep 2: Identify favourable outcomes (even numbers).\nFavourable outcomes = {2, 4, 6, 8, 10} = 5.\nStep 3: Compute the probability.\nP(even) = 5/10\n= 1/2.\n∴ P(even number) = 1/2.",
+              },
+              {
+                label: "(iii)",
+                question: "Die rolled. P(number greater than 4)?",
+                solution: "Step 1: List the sample space.\nSample space = {1, 2, 3, 4, 5, 6}.\nTotal outcomes = 6.\nStep 2: Identify favourable outcomes (numbers greater than 4).\nFavourable outcomes = {5, 6} = 2.\nStep 3: Compute the probability.\nP(>4) = 2/6\n= 1/3.\n∴ P(number greater than 4) = 1/3.",
+              },
+              {
+                label: "(iv)",
+                question: "Bag: 3 red, 2 blue, 1 green. P(not red)?",
+                solution: "Step 1: Find the total number of marbles.\nTotal = 3 red + 2 blue + 1 green = 6.\nStep 2: Identify favourable outcomes (not red = blue or green).\nFavourable outcomes = 2 blue + 1 green = 3.\nStep 3: Compute the probability.\nP(not red) = 3/6\n= 1/2.\n∴ P(not red) = 1/2.",
+              },
+              {
+                label: "(v)",
+                question: "Three coins tossed. P(exactly two heads)?",
+                solution: "Step 1: List the sample space (all possible outcomes of tossing 3 coins).\nSample space = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}.\nTotal outcomes = 8.\nStep 2: Identify favourable outcomes (exactly 2 heads).\nFavourable outcomes = {HHT, HTH, THH} = 3.\nStep 3: Compute the probability.\nP(exactly two heads) = 3/8.\n∴ P(exactly two heads) = 3/8.",
+              },
             ],
           },
           {
             q: "5. A bag has 3 candies: strawberry, lemon, and mint. One is picked at random. What is the probability of picking a strawberry candy?",
-            solution: "P(strawberry) = 1/3.",
+            solution: "Step 1: Find the total number of candies.\nTotal candies = strawberry + lemon + mint = 3.\nStep 2: Since one candy is picked at random, each candy is equally likely to be picked.\nFavourable outcomes (strawberry) = 1.\nStep 3: Compute the probability.\nP(strawberry) = favourable ÷ total = 1/3.\n∴ P(picking a strawberry candy) = 1/3.",
           },
           {
             q: "6. A child has 2 shirts (red, blue) and 3 pants (jeans, khakis, shorts). List all combinations.",
-            solution: "Total combinations = 2 × 3 = 6. | Red + Jeans | Red + Khakis | Red + Shorts | Blue + Jeans | Blue + Khakis | Blue + Shorts |",
+            solution: "Step 1: Count the total combinations using the counting principle.\nTotal combinations = (number of shirts) × (number of pants) = 2 × 3\n= 6.\nStep 2: List every combination by pairing each shirt with each pant.\nWith Red shirt: Red + Jeans, Red + Khakis, Red + Shorts.\nWith Blue shirt: Blue + Jeans, Blue + Khakis, Blue + Shorts.\n∴ The 6 possible combinations are:\n1. Red + Jeans\n2. Red + Khakis\n3. Red + Shorts\n4. Blue + Jeans\n5. Blue + Khakis\n6. Blue + Shorts.",
           },
         ],
       },

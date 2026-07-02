@@ -11,7 +11,8 @@ import { chapters } from "@/data/chapters";
 // typeset radical — a √ glyph beside an overlined expression — instead of a
 // flat unicode √ followed by brackets.
 function formatMath(text: string): ReactNode {
-  const regex = /√\[([^\]]+)\]|√\(([^)]+)\)/g;
+  // Combined pass: √[...] / √(...) radicals, and simple numeric fractions like 5/9 or -160/9.
+  const regex = /√\[([^\]]+)\]|√\(([^)]+)\)|(-?\d+)\/(\d+)/g;
   const parts: ReactNode[] = [];
   let lastIndex = 0;
   let match: RegExpExecArray | null;
@@ -21,13 +22,26 @@ function formatMath(text: string): ReactNode {
     if (match.index > lastIndex) {
       parts.push(text.slice(lastIndex, match.index));
     }
-    const expr = match[1] ?? match[2] ?? "";
-    parts.push(
-      <span key={`sqrt-${key++}`} className="inline-flex items-start whitespace-nowrap mx-[1px]">
-        <span className="text-[1.05em] leading-none mr-[1px] translate-y-[1px]">√</span>
-        <span className="border-t-[1.5px] border-gray-800 pt-[1px] px-[2px]">{expr}</span>
-      </span>
-    );
+
+    if (match[1] !== undefined || match[2] !== undefined) {
+      const expr = match[1] ?? match[2] ?? "";
+      parts.push(
+        <span key={`sqrt-${key++}`} className="inline-flex items-start whitespace-nowrap mx-[1px]">
+          <span className="text-[1.05em] leading-none mr-[1px] translate-y-[1px]">√</span>
+          <span className="border-t-[1.5px] border-gray-800 pt-[1px] px-[2px]">{expr}</span>
+        </span>
+      );
+    } else {
+      const num = match[3];
+      const den = match[4];
+      parts.push(
+        <span key={`frac-${key++}`} className="inline-flex flex-col items-center align-middle mx-[2px] text-[0.82em] leading-none translate-y-[2px]">
+          <span className="border-b border-gray-800 px-[3px] pb-[1px]">{num}</span>
+          <span className="px-[3px] pt-[1px]">{den}</span>
+        </span>
+      );
+    }
+
     lastIndex = regex.lastIndex;
   }
 

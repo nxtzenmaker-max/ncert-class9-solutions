@@ -150,7 +150,8 @@ export default function RoxWidget() {
 
   const btnStyle = dragStyle ?? {
     ...cornerToStyle(corner),
-    transition: "top .3s ease, bottom .3s ease, left .3s ease, right .3s ease",
+    transition:
+      "top .35s cubic-bezier(0.22,1,0.36,1), bottom .35s cubic-bezier(0.22,1,0.36,1), left .35s cubic-bezier(0.22,1,0.36,1), right .35s cubic-bezier(0.22,1,0.36,1), transform .35s cubic-bezier(0.22,1,0.36,1), opacity .35s cubic-bezier(0.22,1,0.36,1)",
   };
 
   return (
@@ -163,7 +164,7 @@ export default function RoxWidget() {
         onPointerUp={handlePointerUp}
         style={{ ...btnStyle, touchAction: "none" }}
         aria-label="Rox AI"
-        className={`z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-500/30 active:scale-95 transition-all duration-300 ease-out ${
+        className={`z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-500/30 active:scale-95 ${
           isOpenish
             ? `opacity-0 scale-50 pointer-events-none ${slideOutClass(corner)}`
             : "opacity-100 scale-100 translate-x-0 translate-y-0"

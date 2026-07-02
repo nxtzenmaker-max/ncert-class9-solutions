@@ -1,10 +1,40 @@
 import { useState } from "react";
+import type { ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation, useParams } from "wouter";
 import { ArrowLeft, ArrowRight, BookOpen, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import DiagramRenderer from "@/components/Diagrams";
 import { chapters } from "@/data/chapters";
+
+// Converts inline math markup (currently: √[...] or √(...)) into a properly
+// typeset radical — a √ glyph beside an overlined expression — instead of a
+// flat unicode √ followed by brackets.
+function formatMath(text: string): ReactNode {
+  const regex = /√\[([^\]]+)\]|√\(([^)]+)\)/g;
+  const parts: ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  let key = 0;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    const expr = match[1] ?? match[2] ?? "";
+    parts.push(
+      <span key={`sqrt-${key++}`} className="inline-flex items-start whitespace-nowrap mx-[1px]">
+        <span className="text-[1.05em] leading-none mr-[1px] translate-y-[1px]">√</span>
+        <span className="border-t-[1.5px] border-gray-800 pt-[1px] px-[2px]">{expr}</span>
+      </span>
+    );
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex === 0) return text;
+  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
+  return parts;
+}
 
 function classifyLine(line: string) {
   if (line.startsWith("Step "))    return "step";
@@ -51,7 +81,7 @@ function SolutionLines({ text }: { text: string }) {
         if (type === "step") {
           return (
             <p key={i} className="text-base font-extrabold text-gray-900 leading-snug pt-1">
-              {line}
+              {formatMath(line)}
             </p>
           );
         }
@@ -62,7 +92,7 @@ function SolutionLines({ text }: { text: string }) {
               key={i}
               className="text-base font-bold text-gray-900 leading-snug pt-1 underline underline-offset-2 decoration-gray-300"
             >
-              {line}
+              {formatMath(line)}
             </p>
           );
         }
@@ -78,7 +108,7 @@ function SolutionLines({ text }: { text: string }) {
                 Final Answer
               </span>
               <p className="text-base font-extrabold text-gray-900 mt-1 leading-snug">
-                {line}
+                {formatMath(line)}
               </p>
             </div>
           );
@@ -87,7 +117,7 @@ function SolutionLines({ text }: { text: string }) {
         if (type === "equals") {
           return (
             <p key={i} className="text-base text-gray-800 leading-snug pl-5 font-bold">
-              {line}
+              {formatMath(line)}
             </p>
           );
         }
@@ -101,7 +131,7 @@ function SolutionLines({ text }: { text: string }) {
               </span>
             )}
             <p className="text-base text-gray-800 leading-relaxed font-medium">
-              {line}
+              {formatMath(line)}
             </p>
           </div>
         );
@@ -209,7 +239,7 @@ export default function ChapterPage() {
                   <span className="flex-shrink-0 w-9 h-9 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center mt-0.5 shadow-sm">
                     {qIdx + 1}
                   </span>
-                  <p className="text-gray-900 font-semibold leading-relaxed text-base">{question.q}</p>
+                  <p className="text-gray-900 font-semibold leading-relaxed text-base">{formatMath(question.q)}</p>
                 </div>
 
                 {/* Solution body */}
@@ -226,7 +256,7 @@ export default function ChapterPage() {
                             {part.label}
                           </span>
                           <div className="flex-1 min-w-0">
-                            <p className="text-base text-gray-800 font-semibold leading-snug">{part.question}</p>
+                            <p className="text-base text-gray-800 font-semibold leading-snug">{formatMath(part.question)}</p>
                             {part.diagram && <DiagramRenderer id={part.diagram} />}
                             <div className="mt-3 border-l-2 border-gray-200 pl-4">
                               <span className="text-base font-bold text-gray-900">Solution:</span>

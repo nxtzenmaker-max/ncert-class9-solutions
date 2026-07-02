@@ -16,7 +16,7 @@ function scrollTo(id: string) {
 }
 
 const subjects = [
-  { id: 1, name: "Ganita Manjari", icon: Calculator, color: "text-primary", desc: "Algebra, Geometry, Statistics & more" },
+  { id: 1, name: "Ganita Manjari Part 1", icon: Calculator, color: "text-primary", desc: "Algebra, Geometry, Statistics & more" },
 ];
 
 export default function Home() {
@@ -99,7 +99,7 @@ export default function Home() {
                       src={ganitaManjariCover}
                       alt=""
                       aria-hidden="true"
-                      className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-all duration-500"
+                      className="absolute inset-0 w-full h-full object-cover opacity-[0.49] group-hover:opacity-[0.55] transition-all duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-white/40" />
                     <div className="relative z-10">

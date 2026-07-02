@@ -21,7 +21,7 @@ const subjects = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white font-sans text-foreground selection:bg-primary selection:text-white">
+    <div className="min-h-screen bg-white font-sans text-foreground">
       <Navbar />
 
       <main>

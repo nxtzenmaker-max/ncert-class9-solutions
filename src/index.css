@@ -43,4 +43,13 @@ body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: transparent;
 }

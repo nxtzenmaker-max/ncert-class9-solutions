@@ -319,7 +319,7 @@ export default function ChapterPage() {
       </div>
 
       <footer className="border-t border-gray-100 py-8 text-center text-sm text-gray-400">
-        <p>© 2024 NCERT Class 9 Solutions</p>
+        <p>© 2026 NCERT Class 9 Solutions. All rights reserved.</p>
         <p className="mt-1">Created with ❤️ by a Student of Goethals Public School</p>
       </footer>
     </div>

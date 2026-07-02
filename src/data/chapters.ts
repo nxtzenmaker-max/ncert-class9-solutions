@@ -749,20 +749,56 @@ export const chapters: Chapter[] = [
           {
             q: "1. Using the identity (a + b)² = a² + 2ab + b², expand the following:",
             parts: [
-              { label: "(i)", question: "(7x + 4y)²", solution: "(7x)² + 2(7x)(4y) + (4y)² = 49x² + 56xy + 16y²" },
-              { label: "(ii)", question: "(3x/2 + 7y/5)²", solution: "9x²/4 + 2(3x/2)(7y/5) + 49y²/25 = 9x²/4 + 21xy/5 + 49y²/25" },
-              { label: "(iii)", question: "(2.5p + 1.5q)²", solution: "(2.5p)² + 2(2.5p)(1.5q) + (1.5q)² = 6.25p² + 7.5pq + 2.25q²" },
-              { label: "(iv)", question: "(3s/4 + 8t)²", solution: "9s²/16 + 2(3s/4)(8t) + 64t² = 9s²/16 + 12st + 64t²" },
-              { label: "(v)", question: "(x + 1/(2y))²", solution: "x² + 2(x)(1/2y) + 1/(4y²) = x² + x/y + 1/(4y²)" },
-              { label: "(vi)", question: "(1/x + 1/y)²", solution: "1/x² + 2/(xy) + 1/y²" },
+              {
+                label: "(i)",
+                question: "(7x + 4y)²",
+                solution: "Identity: (a + b)² = a² + 2ab + b², here a = 7x, b = 4y.\na² = (7x)² = 49x².\n2ab = 2(7x)(4y) = 56xy.\nb² = (4y)² = 16y².\n∴ (7x + 4y)² = 49x² + 56xy + 16y².",
+              },
+              {
+                label: "(ii)",
+                question: "(3x/2 + 7y/5)²",
+                solution: "Identity: (a + b)² = a² + 2ab + b², here a = 3x/2, b = 7y/5.\na² = (3x/2)² = 9x²/4.\n2ab = 2(3x/2)(7y/5) = 21xy/5.\nb² = (7y/5)² = 49y²/25.\n∴ (3x/2 + 7y/5)² = 9x²/4 + 21xy/5 + 49y²/25.",
+              },
+              {
+                label: "(iii)",
+                question: "(2.5p + 1.5q)²",
+                solution: "Identity: (a + b)² = a² + 2ab + b², here a = 2.5p, b = 1.5q.\na² = (2.5p)² = 6.25p².\n2ab = 2(2.5p)(1.5q) = 7.5pq.\nb² = (1.5q)² = 2.25q².\n∴ (2.5p + 1.5q)² = 6.25p² + 7.5pq + 2.25q².",
+              },
+              {
+                label: "(iv)",
+                question: "(3s/4 + 8t)²",
+                solution: "Identity: (a + b)² = a² + 2ab + b², here a = 3s/4, b = 8t.\na² = (3s/4)² = 9s²/16.\n2ab = 2(3s/4)(8t) = 12st.\nb² = (8t)² = 64t².\n∴ (3s/4 + 8t)² = 9s²/16 + 12st + 64t².",
+              },
+              {
+                label: "(v)",
+                question: "(x + 1/(2y))²",
+                solution: "Identity: (a + b)² = a² + 2ab + b², here a = x, b = 1/(2y).\na² = x².\n2ab = 2(x)(1/2y) = x/y.\nb² = 1/(4y²).\n∴ (x + 1/(2y))² = x² + x/y + 1/(4y²).",
+              },
+              {
+                label: "(vi)",
+                question: "(1/x + 1/y)²",
+                solution: "Identity: (a + b)² = a² + 2ab + b², here a = 1/x, b = 1/y.\na² = 1/x².\n2ab = 2(1/x)(1/y) = 2/(xy).\nb² = 1/y².\n∴ (1/x + 1/y)² = 1/x² + 2/(xy) + 1/y².",
+              },
             ],
           },
           {
             q: "2. Using the same identity, find the values:",
             parts: [
-              { label: "(i)", question: "(64)²", solution: "(60 + 4)² = 3600 + 480 + 16 = 4096" },
-              { label: "(ii)", question: "(105)²", solution: "(100 + 5)² = 10000 + 1000 + 25 = 11025" },
-              { label: "(iii)", question: "(205)²", solution: "(200 + 5)² = 40000 + 2000 + 25 = 42025" },
+              {
+                label: "(i)",
+                question: "(64)²",
+                solution: "Write 64 = 60 + 4, so a = 60, b = 4.\na² = 60² = 3600.\n2ab = 2(60)(4) = 480.\nb² = 4² = 16.\n64² = 3600 + 480 + 16\n= 4096.\n∴ 64² = 4096.",
+              },
+              {
+                label: "(ii)",
+                question: "(105)²",
+                solution: "Write 105 = 100 + 5, so a = 100, b = 5.\na² = 100² = 10000.\n2ab = 2(100)(5) = 1000.\nb² = 5² = 25.\n105² = 10000 + 1000 + 25\n= 11025.\n∴ 105² = 11025.",
+              },
+              {
+                label: "(iii)",
+                question: "(205)²",
+                solution: "Write 205 = 200 + 5, so a = 200, b = 5.\na² = 200² = 40000.\n2ab = 2(200)(5) = 2000.\nb² = 5² = 25.\n205² = 40000 + 2000 + 25\n= 42025.\n∴ 205² = 42025.",
+              },
             ],
           },
         ],
@@ -773,25 +809,61 @@ export const chapters: Chapter[] = [
           {
             q: "1. Find the following squares using suitable identities:",
             parts: [
-              { label: "(i)", question: "117²", solution: "(120 − 3)² = 14400 − 720 + 9 = 13689" },
-              { label: "(ii)", question: "78²", solution: "(80 − 2)² = 6400 − 320 + 4 = 6084" },
-              { label: "(iii)", question: "198²", solution: "(200 − 2)² = 40000 − 800 + 4 = 39204" },
-              { label: "(iv)", question: "214²", solution: "(200 + 14)² = 40000 + 5600 + 196 = 45796" },
-              { label: "(v)", question: "1104²", solution: "(1100 + 4)² = 1210000 + 8800 + 16 = 1218816" },
-              { label: "(vi)", question: "1120²", solution: "(1100 + 20)² = 1210000 + 44000 + 400 = 1254400" },
+              {
+                label: "(i)",
+                question: "117²",
+                solution: "Write 117 = 120 − 3, so use (a − b)² = a² − 2ab + b² with a = 120, b = 3.\na² = 120² = 14400.\n2ab = 2(120)(3) = 720.\nb² = 3² = 9.\n117² = 14400 − 720 + 9\n= 13689.\n∴ 117² = 13689.",
+              },
+              {
+                label: "(ii)",
+                question: "78²",
+                solution: "Write 78 = 80 − 2, so use (a − b)² = a² − 2ab + b² with a = 80, b = 2.\na² = 80² = 6400.\n2ab = 2(80)(2) = 320.\nb² = 2² = 4.\n78² = 6400 − 320 + 4\n= 6084.\n∴ 78² = 6084.",
+              },
+              {
+                label: "(iii)",
+                question: "198²",
+                solution: "Write 198 = 200 − 2, so use (a − b)² = a² − 2ab + b² with a = 200, b = 2.\na² = 200² = 40000.\n2ab = 2(200)(2) = 800.\nb² = 2² = 4.\n198² = 40000 − 800 + 4\n= 39204.\n∴ 198² = 39204.",
+              },
+              {
+                label: "(iv)",
+                question: "214²",
+                solution: "Write 214 = 200 + 14, so use (a + b)² = a² + 2ab + b² with a = 200, b = 14.\na² = 200² = 40000.\n2ab = 2(200)(14) = 5600.\nb² = 14² = 196.\n214² = 40000 + 5600 + 196\n= 45796.\n∴ 214² = 45796.",
+              },
+              {
+                label: "(v)",
+                question: "1104²",
+                solution: "Write 1104 = 1100 + 4, so use (a + b)² = a² + 2ab + b² with a = 1100, b = 4.\na² = 1100² = 1210000.\n2ab = 2(1100)(4) = 8800.\nb² = 4² = 16.\n1104² = 1210000 + 8800 + 16\n= 1218816.\n∴ 1104² = 1218816.",
+              },
+              {
+                label: "(vi)",
+                question: "1120²",
+                solution: "Write 1120 = 1100 + 20, so use (a + b)² = a² + 2ab + b² with a = 1100, b = 20.\na² = 1100² = 1210000.\n2ab = 2(1100)(20) = 44000.\nb² = 20² = 400.\n1120² = 1210000 + 44000 + 400\n= 1254400.\n∴ 1120² = 1254400.",
+              },
             ],
           },
           {
             q: "2. Factor using suitable identities:",
             parts: [
-              { label: "(i)", question: "16y² − 24y + 9", solution: "(4y)² − 2(4y)(3) + 3² = (4y − 3)²" },
-              { label: "(ii)", question: "9s²/4 + st + 4t²", solution: "(3s/2)² + 2(3s/2)(t) + (2t)² − hmm. Let's check: (3s/2 + 2t)² = 9s²/4 + 6st/2 + 4t² = 9s²/4 + 3st + 4t². But coefficient of st is 1, not 3. So rewrite: 9s²/4 + st + 4t² doesn't factor as a perfect square. Check if (3s/2 − 2t)²: 9s²/4 − 6st + 4t² ≠. This doesn't factor as a simple perfect square." },
-              { label: "(v)", question: "9a² + 4b² + c² − 12ab + 6ac − 4bc", solution: "= (3a)² + (−2b)² + (c)² + 2(3a)(−2b) + 2(3a)(c) + 2(−2b)(c) = (3a − 2b + c)²" },
+              {
+                label: "(i)",
+                question: "16y² − 24y + 9",
+                solution: "Check the identity (a − b)² = a² − 2ab + b².\n16y² = (4y)², so a = 4y.\n9 = 3², so b = 3.\nCheck middle term: 2ab = 2(4y)(3) = 24y, matches the given −24y (with negative sign).\n∴ 16y² − 24y + 9 = (4y − 3)².",
+              },
+              {
+                label: "(ii)",
+                question: "9s²/4 + st + 4t²",
+                solution: "Check if this fits (a + b)² = a² + 2ab + b².\n9s²/4 = (3s/2)², so a = 3s/2.\n4t² = (2t)², so b = 2t.\nExpected middle term: 2ab = 2(3s/2)(2t) = 6st.\nBut the given middle term is st, not 6st.\n∴ Since the middle term does not match 2ab, this expression is NOT a perfect square trinomial and cannot be factorised using the (a + b)² identity as written.",
+              },
+              {
+                label: "(v)",
+                question: "9a² + 4b² + c² − 12ab + 6ac − 4bc",
+                solution: "Identity: (a + b + c)² = a² + b² + c² + 2ab + 2bc + 2ca.\nMatch terms: 9a² = (3a)², 4b² = (−2b)², c² = (c)².\nCheck cross terms with a = 3a, b = −2b, c = c:\n2(3a)(−2b) = −12ab ✓ matches.\n2(3a)(c) = 6ac ✓ matches.\n2(−2b)(c) = −4bc ✓ matches.\n∴ 9a² + 4b² + c² − 12ab + 6ac − 4bc = (3a − 2b + c)².",
+              },
             ],
           },
           {
             q: "3. Expand (p + 3q + 7r)² using (a + b + c)² = a² + b² + c² + 2ab + 2bc + 2ca.",
-            solution: "p² + 9q² + 49r² + 2(p)(3q) + 2(3q)(7r) + 2(7r)(p) = p² + 9q² + 49r² + 6pq + 42qr + 14pr",
+            solution: "Identity: (a + b + c)² = a² + b² + c² + 2ab + 2bc + 2ca, here a = p, b = 3q, c = 7r.\na² = p².\nb² = (3q)² = 9q².\nc² = (7r)² = 49r².\n2ab = 2(p)(3q) = 6pq.\n2bc = 2(3q)(7r) = 42qr.\n2ca = 2(7r)(p) = 14pr.\n∴ (p + 3q + 7r)² = p² + 9q² + 49r² + 6pq + 42qr + 14pr.",
           },
         ],
       },
@@ -801,28 +873,76 @@ export const chapters: Chapter[] = [
           {
             q: "1. Use suitable identities to find the following products:",
             parts: [
-              { label: "(i)", question: "(−3x + 4)²", solution: "(−3x)² + 2(−3x)(4) + 4² = 9x² − 24x + 16" },
-              { label: "(ii)", question: "(2s + 7)(2s − 7)", solution: "(2s)² − 7² = 4s² − 49" },
-              { label: "(iii)", question: "(p² + 1/2)(p² − 1/2)", solution: "(p²)² − (1/2)² = p⁴ − 1/4" },
-              { label: "(iv)", question: "(2n + 7)(2n − 7)", solution: "4n² − 49" },
+              {
+                label: "(i)",
+                question: "(−3x + 4)²",
+                solution: "Identity: (a + b)² = a² + 2ab + b², here a = −3x, b = 4.\na² = (−3x)² = 9x².\n2ab = 2(−3x)(4) = −24x.\nb² = 4² = 16.\n∴ (−3x + 4)² = 9x² − 24x + 16.",
+              },
+              {
+                label: "(ii)",
+                question: "(2s + 7)(2s − 7)",
+                solution: "Identity: (a + b)(a − b) = a² − b², here a = 2s, b = 7.\na² = (2s)² = 4s².\nb² = 7² = 49.\n∴ (2s + 7)(2s − 7) = 4s² − 49.",
+              },
+              {
+                label: "(iii)",
+                question: "(p² + 1/2)(p² − 1/2)",
+                solution: "Identity: (a + b)(a − b) = a² − b², here a = p², b = 1/2.\na² = (p²)² = p⁴.\nb² = (1/2)² = 1/4.\n∴ (p² + 1/2)(p² − 1/2) = p⁴ − 1/4.",
+              },
+              {
+                label: "(iv)",
+                question: "(2n + 7)(2n − 7)",
+                solution: "Identity: (a + b)(a − b) = a² − b², here a = 2n, b = 7.\na² = (2n)² = 4n².\nb² = 7² = 49.\n∴ (2n + 7)(2n − 7) = 4n² − 49.",
+              },
             ],
           },
           {
             q: "2. Find the values using suitable identities:",
             parts: [
-              { label: "(i)", question: "17 × 21", solution: "(19 − 2)(19 + 2) = 19² − 4 = 361 − 4 = 357. Or: (20−3)(20+1) = 400 + 20 − 60 − 3 = 357" },
-              { label: "(ii)", question: "104 × 96", solution: "(100 + 4)(100 − 4) = 100² − 4² = 10000 − 16 = 9984" },
-              { label: "(iii)", question: "24 × 16", solution: "(20 + 4)(20 − 4) = 400 − 16 = 384" },
-              { label: "(iv)", question: "147³", solution: "(150 − 3)³ = 150³ − 3(150²)(3) + 3(150)(9) − 27 = 3375000 − 202500 + 4050 − 27 = 3176523" },
-              { label: "(v)", question: "199³", solution: "(200 − 1)³ = 8000000 − 3(40000) + 3(200) − 1 = 8000000 − 120000 + 600 − 1 = 7880599" },
+              {
+                label: "(i)",
+                question: "17 × 21",
+                solution: "Write both numbers around the mean 19: 17 = 19 − 2, 21 = 19 + 2.\nUse (a − b)(a + b) = a² − b², here a = 19, b = 2.\na² = 19² = 361.\nb² = 2² = 4.\n17 × 21 = 361 − 4\n= 357.\n∴ 17 × 21 = 357.",
+              },
+              {
+                label: "(ii)",
+                question: "104 × 96",
+                solution: "Write both numbers around the mean 100: 104 = 100 + 4, 96 = 100 − 4.\nUse (a + b)(a − b) = a² − b², here a = 100, b = 4.\na² = 100² = 10000.\nb² = 4² = 16.\n104 × 96 = 10000 − 16\n= 9984.\n∴ 104 × 96 = 9984.",
+              },
+              {
+                label: "(iii)",
+                question: "24 × 16",
+                solution: "Write both numbers around the mean 20: 24 = 20 + 4, 16 = 20 − 4.\nUse (a + b)(a − b) = a² − b², here a = 20, b = 4.\na² = 20² = 400.\nb² = 4² = 16.\n24 × 16 = 400 − 16\n= 384.\n∴ 24 × 16 = 384.",
+              },
+              {
+                label: "(iv)",
+                question: "147³",
+                solution: "Write 147 = 150 − 3, so use (a − b)³ = a³ − 3a²b + 3ab² − b³ with a = 150, b = 3.\na³ = 150³ = 3375000.\n3a²b = 3(150²)(3) = 3(22500)(3) = 202500.\n3ab² = 3(150)(3²) = 3(150)(9) = 4050.\nb³ = 3³ = 27.\n147³ = 3375000 − 202500 + 4050 − 27\n= 3172500 + 4050 − 27\n= 3176550 − 27\n= 3176523.\n∴ 147³ = 3176523.",
+              },
+              {
+                label: "(v)",
+                question: "199³",
+                solution: "Write 199 = 200 − 1, so use (a − b)³ = a³ − 3a²b + 3ab² − b³ with a = 200, b = 1.\na³ = 200³ = 8000000.\n3a²b = 3(200²)(1) = 3(40000)(1) = 120000.\n3ab² = 3(200)(1²) = 600.\nb³ = 1³ = 1.\n199³ = 8000000 − 120000 + 600 − 1\n= 7880000 + 600 − 1\n= 7880600 − 1\n= 7880599.\n∴ 199³ = 7880599.",
+              },
             ],
           },
           {
             q: "3. Factor the following algebraic expressions:",
             parts: [
-              { label: "(i)", question: "4y² + 1 + (1/4y)", solution: "Rewrite: 4y² + 4y(1/4y) ... Actually: 4y² + 1/4 needs checking. If 4y² + 1 + 4y... = (2y+1)² check: 4y²+4y+1. So if expression is 4y² + 4y + 1 = (2y+1)²." },
-              { label: "(iii)", question: "27b³ − 1/64b³", solution: "(3b)³ − (1/4b)³ = (3b − 1/4b)[(3b)² + (3b)(1/4b) + (1/4b)²] = (3b − 1/4b)(9b² + 3/4 + 1/16b²)" },
-              { label: "(viii)", question: "9m² − 12m + 4", solution: "(3m)² − 2(3m)(2) + 2² = (3m − 2)²" },
+              {
+                label: "(i)",
+                question: "4y² + 1 + (1/4y)",
+                solution: "As written, the expression mixes a degree-2 term (4y²), a constant (1), and a term with y in the denominator (1/4y), so the terms do not have matching degrees needed for the (a + b)² identity.\nNote: if the middle term were instead 4y — i.e., the expression 4y² + 4y + 1 — it fits (a + b)² = a² + 2ab + b² with a = 2y, b = 1:\na² = (2y)² = 4y².\n2ab = 2(2y)(1) = 4y.\nb² = 1² = 1.\n∴ 4y² + 4y + 1 = (2y + 1)². (Double-check the exact expression from your textbook if the answer doesn't match.)",
+              },
+              {
+                label: "(iii)",
+                question: "27b³ − 1/64b³",
+                solution: "Identity: a³ − b³ = (a − b)(a² + ab + b²).\n27b³ = (3b)³, so a = 3b.\n1/(64b³) = (1/(4b))³, so b_term = 1/(4b).\nStep 1: Write the difference of cubes.\n27b³ − 1/64b³ = (3b)³ − (1/(4b))³.\nStep 2: Apply the identity.\n= (3b − 1/(4b))[(3b)² + (3b)(1/(4b)) + (1/(4b))²]\nSimplify inside the bracket:\n(3b)² = 9b².\n(3b)(1/(4b)) = 3/4.\n(1/(4b))² = 1/(16b²).\n∴ 27b³ − 1/64b³ = (3b − 1/(4b))(9b² + 3/4 + 1/(16b²)).",
+              },
+              {
+                label: "(viii)",
+                question: "9m² − 12m + 4",
+                solution: "Check the identity (a − b)² = a² − 2ab + b².\n9m² = (3m)², so a = 3m.\n4 = 2², so b = 2.\nCheck middle term: 2ab = 2(3m)(2) = 12m, matches the given −12m.\n∴ 9m² − 12m + 4 = (3m − 2)².",
+              },
             ],
           },
         ],

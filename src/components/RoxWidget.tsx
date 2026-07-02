@@ -8,12 +8,38 @@ import {
   type RoxMessage,
 } from "@/lib/rox";
 
+type Corner = "top-left" | "top-right" | "bottom-left" | "bottom-right";
+type PanelState = "closed" | "entering" | "open" | "exiting";
+
+const BTN_SIZE = 56; // h-14 w-14
+const MARGIN = 20; // matches previous bottom-5/right-5 (1.25rem)
+
+function cornerToStyle(corner: Corner): React.CSSProperties {
+  const style: React.CSSProperties = { position: "fixed" };
+  corner.includes("top") ? (style.top = MARGIN) : (style.bottom = MARGIN);
+  corner.includes("left") ? (style.left = MARGIN) : (style.right = MARGIN);
+  return style;
+}
+
+function nearestCorner(x: number, y: number): Corner {
+  const vertical = y < window.innerHeight / 2 ? "top" : "bottom";
+  const horizontal = x < window.innerWidth / 2 ? "left" : "right";
+  return `${vertical}-${horizontal}` as Corner;
+}
+
 export default function RoxWidget() {
-  const [open, setOpen] = useState(false);
+  const [panelState, setPanelState] = useState<PanelState>("closed");
   const [messages, setMessages] = useState<RoxMessage[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const [corner, setCorner] = useState<Corner>("bottom-right");
+  const [dragStyle, setDragStyle] = useState<React.CSSProperties | null>(null);
+  const draggingRef = useRef(false);
+  const movedRef = useRef(false);
+  const startRef = useRef({ x: 0, y: 0 });
+  const btnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     setMessages(loadRoxHistory());
@@ -21,7 +47,22 @@ export default function RoxWidget() {
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
-  }, [messages, open, loading]);
+  }, [messages, panelState, loading]);
+
+  function openPanel() {
+    setPanelState("entering");
+    requestAnimationFrame(() => requestAnimationFrame(() => setPanelState("open")));
+  }
+
+  function closePanel() {
+    setPanelState("exiting");
+    window.setTimeout(() => setPanelState("closed"), 200);
+  }
+
+  function togglePanel() {
+    if (panelState === "closed" || panelState === "exiting") openPanel();
+    else closePanel();
+  }
 
   async function handleSend() {
     const text = input.trim();
@@ -43,7 +84,7 @@ export default function RoxWidget() {
         ...next,
         {
           role: "assistant",
-          content: "Kuch gadbad ho gayi, thodi der baad try karo 🙏",
+          content: "Something went wrong, please try again in a moment 🙏",
         },
       ];
       setMessages(withErr);
@@ -58,21 +99,81 @@ export default function RoxWidget() {
     clearRoxHistory();
   }
 
+  // ---- Drag to reposition + snap to nearest corner ----
+  function handlePointerDown(e: React.PointerEvent<HTMLButtonElement>) {
+    draggingRef.current = true;
+    movedRef.current = false;
+    startRef.current = { x: e.clientX, y: e.clientY };
+    btnRef.current?.setPointerCapture(e.pointerId);
+  }
+
+  function handlePointerMove(e: React.PointerEvent<HTMLButtonElement>) {
+    if (!draggingRef.current) return;
+    const dx = e.clientX - startRef.current.x;
+    const dy = e.clientY - startRef.current.y;
+    if (Math.abs(dx) > 6 || Math.abs(dy) > 6) movedRef.current = true;
+    if (!movedRef.current) return;
+
+    const half = BTN_SIZE / 2;
+    const x = Math.min(Math.max(e.clientX, half), window.innerWidth - half);
+    const y = Math.min(Math.max(e.clientY, half), window.innerHeight - half);
+
+    setDragStyle({
+      position: "fixed",
+      left: x - half,
+      top: y - half,
+      right: "auto",
+      bottom: "auto",
+      transition: "none",
+    });
+  }
+
+  function handlePointerUp(e: React.PointerEvent<HTMLButtonElement>) {
+    draggingRef.current = false;
+    btnRef.current?.releasePointerCapture(e.pointerId);
+
+    if (movedRef.current) {
+      setCorner(nearestCorner(e.clientX, e.clientY));
+      setDragStyle(null);
+    } else {
+      togglePanel();
+    }
+  }
+
+  const isOpenish = panelState === "entering" || panelState === "open";
+  const btnStyle = dragStyle ?? {
+    ...cornerToStyle(corner),
+    transition: "top .3s ease, bottom .3s ease, left .3s ease, right .3s ease",
+  };
+
   return (
     <>
-      {/* Floating round toggle button */}
+      {/* Floating round toggle button — draggable, snaps to nearest corner */}
       <button
-        onClick={() => setOpen((v) => !v)}
+        ref={btnRef}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        style={{ ...btnStyle, touchAction: "none" }}
         aria-label="Rox AI"
-        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-500/30 transition-transform hover:scale-105 active:scale-95"
+        className="z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-500/30 active:scale-95"
       >
-        {open ? <X size={24} /> : <Sparkles size={24} />}
+        <Sparkles size={24} />
       </button>
 
       {/* Chat overlay */}
-      {open && (
-        <div className="fixed inset-0 z-40 flex items-end justify-end bg-black/30 sm:items-center sm:justify-end sm:p-6">
-          <div className="flex h-[85vh] w-full flex-col rounded-t-2xl bg-white shadow-2xl dark:bg-neutral-900 sm:h-[70vh] sm:w-96 sm:rounded-2xl">
+      {panelState !== "closed" && (
+        <div
+          className="fixed inset-0 z-40 flex items-end justify-end bg-black/30 transition-opacity duration-200 sm:items-center sm:justify-end sm:p-6"
+          style={{ opacity: isOpenish ? 1 : 0 }}
+        >
+          <div
+            className={`flex h-[85vh] w-full flex-col rounded-t-2xl bg-white shadow-2xl transition-all duration-200 ease-out dark:bg-neutral-900 sm:h-[70vh] sm:w-96 sm:rounded-2xl ${
+              isOpenish
+                ? "translate-y-0 scale-100 opacity-100"
+                : "translate-y-4 scale-95 opacity-0"
+            }`}
+          >
             {/* Header */}
             <div className="flex items-center justify-between rounded-t-2xl bg-gradient-to-r from-violet-600 to-indigo-600 px-4 py-3 text-white">
               <div className="flex items-center gap-2">
@@ -91,7 +192,7 @@ export default function RoxWidget() {
                   <Trash2 size={16} />
                 </button>
                 <button
-                  onClick={() => setOpen(false)}
+                  onClick={closePanel}
                   aria-label="Close"
                   className="rounded-full p-2 hover:bg-white/15"
                 >
@@ -104,7 +205,7 @@ export default function RoxWidget() {
             <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-3">
               {messages.length === 0 && (
                 <div className="mt-6 text-center text-sm text-neutral-500">
-                  Hi! Main Rox hoon 👋 <br /> Padhai se juda koi bhi sawaal poochho.
+                  Hi! I'm Rox 👋 <br /> Ask me anything about your studies.
                 </div>
               )}
               {messages.map((m, i) => (
@@ -126,7 +227,7 @@ export default function RoxWidget() {
               {loading && (
                 <div className="flex justify-start">
                   <div className="flex items-center gap-2 rounded-2xl rounded-bl-sm bg-neutral-100 px-3 py-2 text-sm text-neutral-500 dark:bg-neutral-800">
-                    <Loader2 size={14} className="animate-spin" /> Rox soch raha hai...
+                    <Loader2 size={14} className="animate-spin" /> Rox is thinking...
                   </div>
                 </div>
               )}
@@ -138,7 +239,7 @@ export default function RoxWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSend()}
-                placeholder="Apna sawaal likho..."
+                placeholder="Type your question..."
                 className="flex-1 rounded-full border border-neutral-300 bg-transparent px-4 py-2 text-sm outline-none focus:border-violet-500 dark:border-neutral-700"
               />
               <button

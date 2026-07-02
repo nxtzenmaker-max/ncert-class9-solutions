@@ -23,11 +23,11 @@ export async function askRox(history: RoxMessage[]): Promise<string> {
   });
 
   if (!res.ok) {
-    throw new Error(`Rox se connect nahi ho paya (status ${res.status})`);
+    throw new Error(`Couldn't connect to Rox (status ${res.status})`);
   }
 
   const data = await res.json();
-  return data?.reply || "Sorry, mujhe reply banane me dikkat aayi. Dobara try karo.";
+  return data?.reply || "Sorry, I had trouble generating a reply. Please try again.";
 }
 
 const STORAGE_KEY = "rox_chat_history_v1";

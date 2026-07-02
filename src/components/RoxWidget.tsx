@@ -141,6 +141,13 @@ export default function RoxWidget() {
   }
 
   const isOpenish = panelState === "entering" || panelState === "open";
+
+  function slideOutClass(c: Corner) {
+    const x = c.includes("right") ? "translate-x-24" : "-translate-x-24";
+    const y = c.includes("top") ? "-translate-y-24" : "translate-y-24";
+    return `${x} ${y}`;
+  }
+
   const btnStyle = dragStyle ?? {
     ...cornerToStyle(corner),
     transition: "top .3s ease, bottom .3s ease, left .3s ease, right .3s ease",
@@ -156,7 +163,11 @@ export default function RoxWidget() {
         onPointerUp={handlePointerUp}
         style={{ ...btnStyle, touchAction: "none" }}
         aria-label="Rox AI"
-        className="z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-500/30 active:scale-95"
+        className={`z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-500/30 active:scale-95 transition-all duration-300 ease-out ${
+          isOpenish
+            ? `opacity-0 scale-50 pointer-events-none ${slideOutClass(corner)}`
+            : "opacity-100 scale-100 translate-x-0 translate-y-0"
+        }`}
       >
         <Sparkles size={24} />
       </button>

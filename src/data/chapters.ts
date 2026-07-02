@@ -418,27 +418,27 @@ export const chapters: Chapter[] = [
           {
             q: "1. Find the degrees of the following polynomials:",
             parts: [
-              { label: "(i)", question: "2x² − 5x + 3", solution: "Degree = 2 (highest power of x is 2)." },
-              { label: "(ii)", question: "y³ + 2y − 1", solution: "Degree = 3 (highest power of y is 3)." },
-              { label: "(iii)", question: "−9", solution: "Degree = 0 (constant polynomial)." },
-              { label: "(iv)", question: "4z − 3", solution: "Degree = 1 (highest power of z is 1; it is a linear polynomial)." },
+              { label: "(i)", question: "2x² − 5x + 3", solution: "Given: The polynomial is 2x² − 5x + 3.\nStep 1: The degree of a polynomial is the highest power of the variable present in it.\nStep 2: In 2x² − 5x + 3, the powers of x that appear are 2, 1 and 0.\nStep 3: The highest of these powers is 2.\n∴ Degree of the polynomial = 2." },
+              { label: "(ii)", question: "y³ + 2y − 1", solution: "Given: The polynomial is y³ + 2y − 1.\nStep 1: The powers of y present are 3, 1 and 0.\nStep 2: The highest power is 3.\n∴ Degree of the polynomial = 3." },
+              { label: "(iii)", question: "−9", solution: "Given: The polynomial is −9.\nStep 1: A non-zero constant can be written as −9 = −9x⁰, since x⁰ = 1.\nStep 2: The only power of x present is 0.\n∴ Degree of the polynomial = 0 (every non-zero constant polynomial has degree 0)." },
+              { label: "(iv)", question: "4z − 3", solution: "Given: The polynomial is 4z − 3.\nStep 1: The powers of z present are 1 and 0.\nStep 2: The highest power is 1.\n∴ Degree of the polynomial = 1 (since the degree is 1, this is called a linear polynomial)." },
             ],
           },
           {
             q: "2. Write polynomials of degrees 1, 2 and 3.",
-            solution: "Degree 1: 3x + 5 | Degree 2: x² − 4x + 1 | Degree 3: 2x³ + x² − x + 7",
+            solution: "Step 1: A degree-1 polynomial has highest power 1. Example: 3x + 5.\nStep 2: A degree-2 polynomial has highest power 2. Example: x² − 4x + 1.\nStep 3: A degree-3 polynomial has highest power 3. Example: 2x³ + x² − x + 7.\n∴ Degree 1: 3x + 5; Degree 2: x² − 4x + 1; Degree 3: 2x³ + x² − x + 7.",
           },
           {
             q: "3. What are the coefficients of x² and x³ in the polynomial x⁴ − 3x³ + 6x² − 2x + 7?",
-            solution: "Coefficient of x² = 6. Coefficient of x³ = −3.",
+            solution: "Given: The polynomial is x⁴ − 3x³ + 6x² − 2x + 7.\nStep 1: The coefficient of a term is the number multiplying its variable part.\nStep 2: The term containing x² is 6x², so its coefficient is 6.\nStep 3: The term containing x³ is −3x³, so its coefficient is −3.\n∴ Coefficient of x² = 6 and coefficient of x³ = −3.",
           },
           {
             q: "4. What is the coefficient of z in the polynomial 4z³ + 5z² − 11?",
-            solution: "The term with z¹ is missing (coefficient = 0). Coefficient of z = 0.",
+            solution: "Given: The polynomial is 4z³ + 5z² − 11.\nStep 1: List every power of z present: z³ (coefficient 4), z² (coefficient 5), and z⁰ (coefficient −11).\nStep 2: There is no term containing z¹ in this polynomial.\nStep 3: When a power is missing from a polynomial, its coefficient is taken to be 0.\n∴ Coefficient of z = 0.",
           },
           {
             q: "5. What is the constant term of the polynomial 9x³ + 5x² − 8x − 10?",
-            solution: "The constant term is −10 (the term with no variable).",
+            solution: "Given: The polynomial is 9x³ + 5x² − 8x − 10.\nStep 1: The constant term is the term that does not involve the variable, i.e. the term with x⁰.\nStep 2: In this polynomial, that term is −10.\n∴ Constant term = −10.",
           },
         ],
       },
@@ -448,38 +448,38 @@ export const chapters: Chapter[] = [
           {
             q: "1. Find the value of the linear polynomial 5x − 3 if:",
             parts: [
-              { label: "(i)", question: "x = 0", solution: "5(0) − 3 = −3" },
-              { label: "(ii)", question: "x = −1", solution: "5(−1) − 3 = −5 − 3 = −8" },
-              { label: "(iii)", question: "x = 2", solution: "5(2) − 3 = 10 − 3 = 7" },
+              { label: "(i)", question: "x = 0", solution: "Given: p(x) = 5x − 3.\nStep 1: Substitute x = 0 into p(x).\np(0) = 5(0) − 3\n= 0 − 3\n∴ p(0) = −3." },
+              { label: "(ii)", question: "x = −1", solution: "Given: p(x) = 5x − 3.\nStep 1: Substitute x = −1 into p(x).\np(−1) = 5(−1) − 3\n= −5 − 3\n∴ p(−1) = −8." },
+              { label: "(iii)", question: "x = 2", solution: "Given: p(x) = 5x − 3.\nStep 1: Substitute x = 2 into p(x).\np(2) = 5(2) − 3\n= 10 − 3\n∴ p(2) = 7." },
             ],
           },
           {
             q: "2. Find the value of the quadratic polynomial 7s² − 4s + 6 if:",
             parts: [
-              { label: "(i)", question: "s = 0", solution: "7(0)² − 4(0) + 6 = 6" },
-              { label: "(ii)", question: "s = −3", solution: "7(9) − 4(−3) + 6 = 63 + 12 + 6 = 81" },
-              { label: "(iii)", question: "s = 4", solution: "7(16) − 4(4) + 6 = 112 − 16 + 6 = 102" },
+              { label: "(i)", question: "s = 0", solution: "Given: p(s) = 7s² − 4s + 6.\nStep 1: Substitute s = 0 into p(s).\np(0) = 7(0)² − 4(0) + 6\n= 7(0) − 0 + 6\n= 0 − 0 + 6\n∴ p(0) = 6." },
+              { label: "(ii)", question: "s = −3", solution: "Given: p(s) = 7s² − 4s + 6.\nStep 1: Substitute s = −3 into p(s).\np(−3) = 7(−3)² − 4(−3) + 6\n= 7(9) + 12 + 6\n= 63 + 12 + 6\n∴ p(−3) = 81." },
+              { label: "(iii)", question: "s = 4", solution: "Given: p(s) = 7s² − 4s + 6.\nStep 1: Substitute s = 4 into p(s).\np(4) = 7(4)² − 4(4) + 6\n= 7(16) − 16 + 6\n= 112 − 16 + 6\n∴ p(4) = 102." },
             ],
           },
           {
             q: "3. The present age of Salil's mother is three times Salil's present age. After 5 years, their ages will add up to 70 years. Find their present ages.",
-            solution: "Let Salil's age = x. Mother's age = 3x. After 5 years: (x+5) + (3x+5) = 70 → 4x + 10 = 70 → 4x = 60 → x = 15. Salil's age = 15 years, Mother's age = 45 years.",
+            solution: "Given: Let Salil's present age = x years.\nStep 1: Mother's present age = 3x years (three times Salil's age).\nStep 2: After 5 years, Salil's age = (x + 5) years and Mother's age = (3x + 5) years.\nStep 3: Their ages after 5 years add up to 70 years:\n(x + 5) + (3x + 5) = 70\nStep 4: Simplify the left-hand side.\n4x + 10 = 70\nStep 5: Subtract 10 from both sides.\n4x = 60\nStep 6: Divide both sides by 4.\nx = 15\n∴ Salil's present age = 15 years and Mother's present age = 3 × 15 = 45 years.",
           },
           {
             q: "4. The difference between two positive integers is 63. The ratio of the two integers is 2:5. Find the two integers.",
-            solution: "Let the integers be 2k and 5k. Difference: 5k − 2k = 3k = 63 → k = 21. The two integers are 2×21 = 42 and 5×21 = 105.",
+            solution: "Given: The two positive integers are in the ratio 2 : 5.\nStep 1: Let the integers be 2k and 5k, where k is a positive constant.\nStep 2: Their difference is 63:\n5k − 2k = 63\nStep 3: Simplify the left-hand side.\n3k = 63\nStep 4: Divide both sides by 3.\nk = 21\nStep 5: Find the two integers.\n2k = 2 × 21 = 42\n5k = 5 × 21 = 105\n∴ The two integers are 42 and 105.",
           },
           {
             q: "5. Ruby has 3 times as many two-rupee coins as she has five-rupee coins. If she has a total of ₹88, how many coins does she have of each type?",
-            solution: "Let five-rupee coins = x. Two-rupee coins = 3x. Total: 5x + 2(3x) = 5x + 6x = 11x = 88 → x = 8. Five-rupee coins = 8, Two-rupee coins = 24.",
+            solution: "Given: Let the number of five-rupee coins = x.\nStep 1: Number of two-rupee coins = 3x (three times as many).\nStep 2: Value of five-rupee coins = 5x rupees; value of two-rupee coins = 2(3x) = 6x rupees.\nStep 3: The total amount is ₹88:\n5x + 6x = 88\nStep 4: Simplify the left-hand side.\n11x = 88\nStep 5: Divide both sides by 11.\nx = 8\n∴ Five-rupee coins = 8 and two-rupee coins = 3 × 8 = 24.",
           },
           {
             q: "6. A farmer cuts a 300 feet fence into two pieces. The longer piece is four times the shorter piece. How long are the two pieces?",
-            solution: "Let shorter piece = x. Longer piece = 4x. x + 4x = 300 → 5x = 300 → x = 60. Shorter = 60 ft, Longer = 240 ft.",
+            solution: "Given: Let the length of the shorter piece = x feet.\nStep 1: The longer piece is four times the shorter piece, so longer piece = 4x feet.\nStep 2: The two pieces together make up the full 300 feet fence:\nx + 4x = 300\nStep 3: Simplify the left-hand side.\n5x = 300\nStep 4: Divide both sides by 5.\nx = 60\n∴ Shorter piece = 60 feet and longer piece = 4 × 60 = 240 feet.",
           },
           {
             q: "7. If the length of a rectangle is three more than twice its width and its perimeter is 24 cm, what are the dimensions?",
-            solution: "Let width = w. Length = 2w + 3. Perimeter = 2(l + w) = 2(2w + 3 + w) = 2(3w + 3) = 6w + 6 = 24 → 6w = 18 → w = 3. Width = 3 cm, Length = 2(3)+3 = 9 cm.",
+            solution: "Given: Let the width of the rectangle = w cm.\nStep 1: The length is three more than twice the width, so length = (2w + 3) cm.\nStep 2: Perimeter of a rectangle = 2(length + width).\nStep 3: Substitute the known perimeter (24 cm):\n2[(2w + 3) + w] = 24\nStep 4: Simplify inside the brackets.\n2(3w + 3) = 24\nStep 5: Expand.\n6w + 6 = 24\nStep 6: Subtract 6 from both sides.\n6w = 18\nStep 7: Divide both sides by 6.\nw = 3\nStep 8: Find the length.\nLength = 2(3) + 3 = 6 + 3 = 9\n∴ Width = 3 cm and Length = 9 cm.",
           },
         ],
       },
@@ -488,31 +488,31 @@ export const chapters: Chapter[] = [
         questions: [
           {
             q: "1. A student has ₹500 in her savings account. She gets ₹150 every month as pocket money. How much money will she have at the end of every month from the second month onwards? Find a linear expression for the amount in the nth month.",
-            solution: "At end of month 1: 500 + 150 = ₹650; Month 2: ₹800; Month 3: ₹950. Linear expression: Amount in nth month = 500 + 150n. (Starting from month 0 = ₹500, each month adds ₹150.)",
+            solution: "Given: Initial savings = ₹500. Pocket money added each month = ₹150.\nStep 1: Amount at the end of month 1 = 500 + 150 = ₹650.\nStep 2: Amount at the end of month 2 = 650 + 150 = ₹800.\nStep 3: Amount at the end of month 3 = 800 + 150 = ₹950.\nStep 4: The amount increases by a constant ₹150 every month — this is a linear pattern.\nStep 5: After n months, the total amount added is 150n, so:\nAmount(n) = 500 + 150n\n∴ The linear expression is 500 + 150n. (Check: n = 1 gives 650 ✓, n = 2 gives 800 ✓.)",
           },
           {
             q: "2. A rally starts with 120 members. Each hour, 9 members drop out. Find a linear expression for the number of members at the end of the nth hour.",
-            solution: "After 1 hr: 120−9 = 111; After 2 hrs: 102; After 3 hrs: 93. Linear expression: Members at end of nth hour = 120 − 9n.",
+            solution: "Given: Initial members = 120. Members leaving each hour = 9.\nStep 1: Members after 1 hour = 120 − 9 = 111.\nStep 2: Members after 2 hours = 111 − 9 = 102.\nStep 3: Members after 3 hours = 102 − 9 = 93.\nStep 4: The number decreases by a constant 9 every hour — a linear pattern.\nStep 5: After n hours, 9n members have left, so:\nMembers(n) = 120 − 9n\n∴ The linear expression is 120 − 9n.",
           },
           {
             q: "3. Suppose the length of a rectangle is 13 cm. Find the area if the breadth is (i) 12 cm, (ii) 10 cm, (iii) 8 cm. Find the linear pattern.",
             parts: [
-              { label: "(i)", question: "Breadth = 12 cm", solution: "Area = 13 × 12 = 156 cm²" },
-              { label: "(ii)", question: "Breadth = 10 cm", solution: "Area = 13 × 10 = 130 cm²" },
-              { label: "(iii)", question: "Breadth = 8 cm", solution: "Area = 13 × 8 = 104 cm²" },
+              { label: "(i)", question: "Breadth = 12 cm", solution: "Given: Length = 13 cm, Breadth = 12 cm.\nStep 1: Area of a rectangle = length × breadth.\nArea = 13 × 12\n= 156\n∴ Area = 156 cm²." },
+              { label: "(ii)", question: "Breadth = 10 cm", solution: "Given: Length = 13 cm, Breadth = 10 cm.\nStep 1: Area = length × breadth.\nArea = 13 × 10\n= 130\n∴ Area = 130 cm²." },
+              { label: "(iii)", question: "Breadth = 8 cm", solution: "Given: Length = 13 cm, Breadth = 8 cm.\nStep 1: Area = length × breadth.\nArea = 13 × 8\n= 104\n∴ Area = 104 cm². Note the pattern: as breadth decreases by 2 cm each time (12→10→8), area decreases by a constant 26 cm² each time (156→130→104) — since Area = 13 × breadth is linear in breadth." },
             ],
           },
           {
             q: "4. Suppose the length of a rectangular box is 7 cm and breadth is 11 cm. Find the volume if the height is (i) 5 cm, (ii) 9 cm, (iii) 13 cm. Find the linear pattern.",
             parts: [
-              { label: "(i)", question: "Height = 5 cm", solution: "Volume = 7 × 11 × 5 = 385 cm³" },
-              { label: "(ii)", question: "Height = 9 cm", solution: "Volume = 7 × 11 × 9 = 693 cm³" },
-              { label: "(iii)", question: "Height = 13 cm", solution: "Volume = 7 × 11 × 13 = 1001 cm³" },
+              { label: "(i)", question: "Height = 5 cm", solution: "Given: Length = 7 cm, Breadth = 11 cm, Height = 5 cm.\nStep 1: Volume of a cuboid = length × breadth × height.\nVolume = 7 × 11 × 5\n= 77 × 5\n= 385\n∴ Volume = 385 cm³." },
+              { label: "(ii)", question: "Height = 9 cm", solution: "Given: Length = 7 cm, Breadth = 11 cm, Height = 9 cm.\nStep 1: Volume = length × breadth × height.\nVolume = 7 × 11 × 9\n= 77 × 9\n= 693\n∴ Volume = 693 cm³." },
+              { label: "(iii)", question: "Height = 13 cm", solution: "Given: Length = 7 cm, Breadth = 11 cm, Height = 13 cm.\nStep 1: Volume = length × breadth × height.\nVolume = 7 × 11 × 13\n= 77 × 13\n= 1001\n∴ Volume = 1001 cm³. Note the pattern: since length × breadth = 77 is fixed, Volume = 77 × height — a linear relationship in height." },
             ],
           },
           {
             q: "5. Sarita is reading a book of 500 pages. She reads 20 pages every day. How many pages will be left after 15 days? Express as a linear pattern.",
-            solution: "Pages left after n days = 500 − 20n. After 15 days: 500 − 20(15) = 500 − 300 = 200 pages remaining.",
+            solution: "Given: Total pages = 500. Pages read per day = 20.\nStep 1: After n days, total pages read = 20n.\nStep 2: Pages left after n days = 500 − 20n.\nStep 3: Substitute n = 15.\nPages left = 500 − 20(15)\n= 500 − 300\n∴ Pages left after 15 days = 200 pages.",
           },
         ],
       },
@@ -522,33 +522,33 @@ export const chapters: Chapter[] = [
           {
             q: "1. A plant has height 1.75 feet and grows by 0.5 feet each month.",
             parts: [
-              { label: "(i)", question: "Find the height after 7 months.", solution: "h = 1.75 + 0.5 × 7 = 1.75 + 3.5 = 5.25 feet." },
-              { label: "(ii)", question: "Make a table of values for t from 0 to 10 months.", solution: "t: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 | h: 1.75, 2.25, 2.75, 3.25, 3.75, 4.25, 4.75, 5.25, 5.75, 6.25, 6.75" },
-              { label: "(iii)", question: "Find an expression for h and t, and explain why it represents linear growth.", solution: "h(t) = 1.75 + 0.5t. This is linear growth because h increases by a constant amount (0.5 feet) for each unit increase in t." },
+              { label: "(i)", question: "Find the height after 7 months.", solution: "Given: Initial height = 1.75 feet. Growth rate = 0.5 feet per month.\nStep 1: Height after t months, h(t) = 1.75 + 0.5t.\nStep 2: Substitute t = 7.\nh(7) = 1.75 + 0.5 × 7\n= 1.75 + 3.5\n∴ Height after 7 months = 5.25 feet." },
+              { label: "(ii)", question: "Make a table of values for t from 0 to 10 months.", solution: "Step 1: Use the formula h(t) = 1.75 + 0.5t for t = 0 to 10.\nStep 2: Compute each value by adding 0.5 feet to the previous height.\n∴ t: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10\nh (feet): 1.75, 2.25, 2.75, 3.25, 3.75, 4.25, 4.75, 5.25, 5.75, 6.25, 6.75" },
+              { label: "(iii)", question: "Find an expression for h and t, and explain why it represents linear growth.", solution: "Step 1: Since the height starts at 1.75 feet and increases by a fixed 0.5 feet every month:\nh(t) = 1.75 + 0.5t\nStep 2: This represents linear growth because for every unit increase in t (one more month), h increases by the same constant amount (0.5 feet) — the rate of change is constant.\n∴ h(t) = 1.75 + 0.5t; this is linear growth." },
             ],
           },
           {
             q: "2. A mobile phone bought for ₹10,000 depreciates by ₹800 every year.",
             parts: [
-              { label: "(i)", question: "Find the value after 3 years.", solution: "v = 10000 − 800(3) = 10000 − 2400 = ₹7,600." },
-              { label: "(ii)", question: "Make a table for t = 0 to 8 years.", solution: "t: 0,1,2,3,4,5,6,7,8 | v(₹): 10000, 9200, 8400, 7600, 6800, 6000, 5200, 4400, 3600" },
-              { label: "(iii)", question: "Find an expression relating v and t, and explain why it represents linear decay.", solution: "v(t) = 10000 − 800t. This is linear decay because the value decreases by a constant ₹800 each year." },
+              { label: "(i)", question: "Find the value after 3 years.", solution: "Given: Initial value = ₹10,000. Depreciation = ₹800 per year.\nStep 1: Value after t years, v(t) = 10000 − 800t.\nStep 2: Substitute t = 3.\nv(3) = 10000 − 800 × 3\n= 10000 − 2400\n∴ Value after 3 years = ₹7,600." },
+              { label: "(ii)", question: "Make a table for t = 0 to 8 years.", solution: "Step 1: Use v(t) = 10000 − 800t for t = 0 to 8.\nStep 2: Compute each value by subtracting ₹800 from the previous value.\n∴ t: 0,1,2,3,4,5,6,7,8\nv (₹): 10000, 9200, 8400, 7600, 6800, 6000, 5200, 4400, 3600" },
+              { label: "(iii)", question: "Find an expression relating v and t, and explain why it represents linear decay.", solution: "Step 1: Since the value starts at ₹10,000 and decreases by a fixed ₹800 every year:\nv(t) = 10000 − 800t\nStep 2: This represents linear decay because v decreases by the same constant amount (₹800) for every unit increase in t.\n∴ v(t) = 10000 − 800t; this is linear decay." },
             ],
           },
           {
             q: "3. Initial population of a village is 750. Every year, 50 people move in from a city.",
             parts: [
-              { label: "(i)", question: "Find the population after 6 years.", solution: "P = 750 + 50(6) = 750 + 300 = 1050." },
-              { label: "(ii)", question: "Make a table for t = 0 to 10 years.", solution: "t: 0,1,2,3,4,5,6,7,8,9,10 | P: 750,800,850,900,950,1000,1050,1100,1150,1200,1250" },
-              { label: "(iii)", question: "Find an expression for P and t.", solution: "P(t) = 750 + 50t. This is linear growth since P increases by a constant 50 each year." },
+              { label: "(i)", question: "Find the population after 6 years.", solution: "Given: Initial population = 750. Increase = 50 people per year.\nStep 1: Population after t years, P(t) = 750 + 50t.\nStep 2: Substitute t = 6.\nP(6) = 750 + 50 × 6\n= 750 + 300\n∴ Population after 6 years = 1050." },
+              { label: "(ii)", question: "Make a table for t = 0 to 10 years.", solution: "Step 1: Use P(t) = 750 + 50t for t = 0 to 10.\nStep 2: Compute each value by adding 50 to the previous population.\n∴ t: 0,1,2,3,4,5,6,7,8,9,10\nP: 750,800,850,900,950,1000,1050,1100,1150,1200,1250" },
+              { label: "(iii)", question: "Find an expression for P and t.", solution: "Step 1: Since the population starts at 750 and grows by a fixed 50 people every year:\nP(t) = 750 + 50t\n∴ P(t) = 750 + 50t; this is linear growth since P increases by a constant amount every year." },
             ],
           },
           {
             q: "4. A telecom recharge of ₹600 is reduced by ₹15 each day.",
             parts: [
-              { label: "(i)", question: "Write an equation for remaining balance b(x) after x days.", solution: "b(x) = 600 − 15x. This is linear decay since balance decreases by constant ₹15 daily." },
-              { label: "(ii)", question: "After how many days will the balance run out?", solution: "600 − 15x = 0 → x = 600/15 = 40 days." },
-              { label: "(iii)", question: "Make a table for x = 1 to 10 days.", solution: "x: 1,2,3,4,5,6,7,8,9,10 | b(₹): 585,570,555,540,525,510,495,480,465,450" },
+              { label: "(i)", question: "Write an equation for remaining balance b(x) after x days.", solution: "Given: Initial balance = ₹600. Reduction = ₹15 per day.\nStep 1: The remaining balance after x days is obtained by subtracting ₹15 for each day that passes:\nb(x) = 600 − 15x\n∴ b(x) = 600 − 15x; this is linear decay since the balance decreases by a fixed ₹15 every day." },
+              { label: "(ii)", question: "After how many days will the balance run out?", solution: "Given: b(x) = 600 − 15x.\nStep 1: The balance runs out when b(x) = 0.\n600 − 15x = 0\nStep 2: Add 15x to both sides.\n600 = 15x\nStep 3: Divide both sides by 15.\nx = 40\n∴ The balance will run out after 40 days." },
+              { label: "(iii)", question: "Make a table for x = 1 to 10 days.", solution: "Step 1: Use b(x) = 600 − 15x for x = 1 to 10.\nStep 2: Compute each value by subtracting ₹15 from the previous balance.\n∴ x: 1,2,3,4,5,6,7,8,9,10\nb (₹): 585,570,555,540,525,510,495,480,465,450" },
             ],
           },
         ],
@@ -558,15 +558,15 @@ export const chapters: Chapter[] = [
         questions: [
           {
             q: "1. A learning platform charges a fixed monthly fee plus ₹ per module. When 10 modules → ₹400; when 14 modules → ₹500. Find a and b in y = ax + b.",
-            solution: "System of equations: 10a + b = 400 ... (1) and 14a + b = 500 ... (2). Subtract (1) from (2): 4a = 100 → a = 25. From (1): b = 400 − 250 = 150. So y = 25x + 150 (fixed fee ₹150, ₹25 per module).",
+            solution: "Given: y = ax + b, where x = number of modules and y = total charge.\nStep 1: When x = 10, y = 400:\n10a + b = 400 ...(1)\nStep 2: When x = 14, y = 500:\n14a + b = 500 ...(2)\nStep 3: Subtract equation (1) from equation (2) to eliminate b.\n4a = 100\nStep 4: Divide both sides by 4.\na = 25\nStep 5: Substitute a = 25 into equation (1).\n10(25) + b = 400\n250 + b = 400\nb = 150\n∴ a = 25 and b = 150, so y = 25x + 150 (fixed monthly fee ₹150, plus ₹25 per module).",
           },
           {
             q: "2. A gym charges fixed fee + cost per hour of badminton court. 10 hours → ₹800; 15 hours → ₹1100. Find a and b in y = ax + b.",
-            solution: "10a + b = 800 ... (1) and 15a + b = 1100 ... (2). Subtracting: 5a = 300 → a = 60. From (1): b = 800 − 600 = 200. So y = 60x + 200 (₹200 fixed fee, ₹60/hour).",
+            solution: "Given: y = ax + b, where x = hours and y = total charge.\nStep 1: When x = 10, y = 800:\n10a + b = 800 ...(1)\nStep 2: When x = 15, y = 1100:\n15a + b = 1100 ...(2)\nStep 3: Subtract equation (1) from equation (2).\n5a = 300\nStep 4: Divide both sides by 5.\na = 60\nStep 5: Substitute a = 60 into equation (1).\n10(60) + b = 800\n600 + b = 800\nb = 200\n∴ a = 60 and b = 200, so y = 60x + 200 (fixed fee ₹200, plus ₹60 per hour).",
           },
           {
             q: "3. The relationship between °C and °F is °C = a°F + b. Ice melts at 0°C = 32°F. Water boils at 100°C = 212°F. Find a and b.",
-            solution: "When °F = 32, °C = 0: 0 = 32a + b → b = −32a ... (1). When °F = 212, °C = 100: 100 = 212a + b = 212a − 32a = 180a → a = 100/180 = 5/9. Then b = −32(5/9) = −160/9. So °C = (5/9)°F − 160/9 = (5/9)(°F − 32).",
+            solution: "Given: °C = a°F + b.\nStep 1: Ice melts at 0°C = 32°F:\n0 = 32a + b\nStep 2: Rearrange to express b in terms of a.\nb = −32a ...(1)\nStep 3: Water boils at 100°C = 212°F:\n100 = 212a + b\nStep 4: Substitute b = −32a from (1).\n100 = 212a − 32a\n100 = 180a\nStep 5: Divide both sides by 180.\na = 100/180 = 5/9\nStep 6: Substitute a = 5/9 into b = −32a.\nb = −32 × 5/9\n= −160/9\n∴ °C = (5/9)°F − 160/9, which can also be written as °C = (5/9)(°F − 32).",
           },
         ],
       },
@@ -575,28 +575,28 @@ export const chapters: Chapter[] = [
         questions: [
           {
             q: "1. Write a polynomial of degree 3 in x, where the coefficient of x² is −7.",
-            solution: "Example: 4x³ − 7x² + 3x − 1. (Degree 3, coefficient of x² is −7.)",
+            solution: "Step 1: A degree-3 polynomial has highest power x³, and we need the coefficient of x² to be −7.\nStep 2: Choose convenient coefficients for the remaining terms, e.g. coefficient of x³ = 4, coefficient of x = 3, constant term = −1.\n∴ One valid example: 4x³ − 7x² + 3x − 1 (degree 3, coefficient of x² is −7).",
           },
           {
             q: "2. Find the values of the polynomials at indicated values:",
             parts: [
-              { label: "(i)", question: "5x² − 3x + 7 if x = 1", solution: "5(1)² − 3(1) + 7 = 5 − 3 + 7 = 9" },
-              { label: "(ii)", question: "4t³ − t² + 6 if t = a", solution: "4a³ − a² + 6" },
+              { label: "(i)", question: "5x² − 3x + 7 if x = 1", solution: "Given: p(x) = 5x² − 3x + 7.\nStep 1: Substitute x = 1 into p(x).\np(1) = 5(1)² − 3(1) + 7\n= 5(1) − 3 + 7\n= 5 − 3 + 7\n∴ p(1) = 9." },
+              { label: "(ii)", question: "4t³ − t² + 6 if t = a", solution: "Given: p(t) = 4t³ − t² + 6.\nStep 1: Substitute t = a directly in place of t (a is simply a variable name here).\np(a) = 4a³ − a² + 6\n∴ p(a) = 4a³ − a² + 6." },
             ],
           },
           {
             q: "3. If we multiply a number by 2 and add 3 to the product, we get −7/12. Find the number.",
-            solution: "Let the number = x. 2x + 3 = −7/12 → 2x = −7/12 − 3 = −7/12 − 36/12 = −43/12 → x = −43/24.",
+            solution: "Given: Let the number = x.\nStep 1: Multiplying by 2 and adding 3 gives −7/12:\n2x + 3 = −7/12\nStep 2: Subtract 3 from both sides. Write 3 as 36/12 for a common denominator.\n2x = −7/12 − 36/12\nStep 3: Combine the fractions on the right-hand side.\n2x = −43/12\nStep 4: Divide both sides by 2.\nx = −43/24\n∴ The number is −43/24.",
           },
           {
             q: "4. A positive number is 5 times another number. If 21 is added to both, one of the new numbers becomes twice the other new number. What are the numbers?",
-            solution: "Let the smaller number = x. Larger = 5x. After adding 21: 5x + 21 = 2(x + 21) → 5x + 21 = 2x + 42 → 3x = 21 → x = 7. Numbers are 7 and 35.",
+            solution: "Given: Let the smaller number = x.\nStep 1: The larger number is 5 times the smaller, so larger number = 5x.\nStep 2: Adding 21 to both: new smaller = x + 21, new larger = 5x + 21.\nStep 3: One new number is twice the other:\n5x + 21 = 2(x + 21)\nStep 4: Expand the right-hand side.\n5x + 21 = 2x + 42\nStep 5: Subtract 2x from both sides.\n3x + 21 = 42\nStep 6: Subtract 21 from both sides.\n3x = 21\nStep 7: Divide both sides by 3.\nx = 7\n∴ The smaller number = 7 and the larger number = 5 × 7 = 35.",
           },
           {
             q: "5. If you have ₹800 and save ₹250 every month, find the amount after (i) 6 months, (ii) 2 years.",
             parts: [
-              { label: "(i)", question: "After 6 months", solution: "Amount = 800 + 250(6) = 800 + 1500 = ₹2,300" },
-              { label: "(ii)", question: "After 2 years (24 months)", solution: "Amount = 800 + 250(24) = 800 + 6000 = ₹6,800" },
+              { label: "(i)", question: "After 6 months", solution: "Given: Initial amount = ₹800. Savings per month = ₹250.\nStep 1: Amount after n months = 800 + 250n.\nStep 2: Substitute n = 6.\nAmount = 800 + 250(6)\n= 800 + 1500\n∴ Amount after 6 months = ₹2,300." },
+              { label: "(ii)", question: "After 2 years (24 months)", solution: "Given: Initial amount = ₹800. Savings per month = ₹250. 2 years = 24 months.\nStep 1: Amount after n months = 800 + 250n.\nStep 2: Substitute n = 24.\nAmount = 800 + 250(24)\n= 800 + 6000\n∴ Amount after 2 years = ₹6,800." },
             ],
           },
         ],

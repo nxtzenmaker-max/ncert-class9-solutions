@@ -99,9 +99,9 @@ export default function Home() {
                       src={ganitaManjariCover}
                       alt=""
                       aria-hidden="true"
-                      className="absolute inset-0 w-full h-full object-cover opacity-[0.14] scale-110 group-hover:scale-125 group-hover:opacity-20 transition-all duration-500"
+                      className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-all duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/90 to-white" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-white/40" />
                     <div className="relative z-10">
                       <h3 className="text-xl font-bold text-foreground mb-2">{subject.name}</h3>
                       <p className="text-gray-600 mb-6">{subject.desc}</p>

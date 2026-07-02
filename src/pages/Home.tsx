@@ -92,23 +92,29 @@ export default function Home() {
                     whileTap={{ scale: 0.97 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
-                    className="group relative bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 w-full max-w-sm"
+                    className="group relative bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 w-full max-w-sm"
                     data-testid={`card-subject-${subject.id}`}
                   >
-                    <div className="w-14 h-14 rounded-xl overflow-hidden mb-6 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                      <img src={ganitaManjariCover} alt="Ganita Manjari cover" className="w-full h-full object-cover" />
+                    <div className="w-full h-64 overflow-hidden bg-gray-50 flex items-center justify-center">
+                      <img
+                        src={ganitaManjariCover}
+                        alt="Ganita Manjari cover"
+                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
                     </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">{subject.name}</h3>
-                    <p className="text-gray-600 mb-6">{subject.desc}</p>
-                    <motion.div whileTap={{ scale: 0.93 }}>
-                      <Link
-                        href={`/subject/${subject.id}`}
-                        className="inline-flex items-center text-primary font-medium hover:underline"
-                        data-testid={`link-subject-${subject.id}`}
-                      >
-                        View Solutions <ArrowRight className="ml-1 w-4 h-4" />
-                      </Link>
-                    </motion.div>
+                    <div className="p-8">
+                      <h3 className="text-xl font-bold text-foreground mb-2">{subject.name}</h3>
+                      <p className="text-gray-600 mb-6">{subject.desc}</p>
+                      <motion.div whileTap={{ scale: 0.93 }}>
+                        <Link
+                          href={`/subject/${subject.id}`}
+                          className="inline-flex items-center text-primary font-medium hover:underline"
+                          data-testid={`link-subject-${subject.id}`}
+                        >
+                          View Solutions <ArrowRight className="ml-1 w-4 h-4" />
+                        </Link>
+                      </motion.div>
+                    </div>
                   </motion.div>
                 );
               })}

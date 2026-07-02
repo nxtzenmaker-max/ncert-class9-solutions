@@ -103,6 +103,9 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-white/40" />
                     <div className="relative z-10">
+                      <div className="w-12 h-12 rounded-xl bg-white/90 backdrop-blur-sm shadow-md flex items-center justify-center mb-4 text-primary">
+                        <Calculator className="w-6 h-6" />
+                      </div>
                       <h3 className="text-xl font-bold text-foreground mb-2">{subject.name}</h3>
                       <p className="text-gray-600 mb-6">{subject.desc}</p>
                       <motion.div whileTap={{ scale: 0.93 }}>

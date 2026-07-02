@@ -2,3 +2,5 @@ android/release.keystore
 android/*.keystore
 android/release.keystore
 android/*.keystore
+node_modules/
+dist/

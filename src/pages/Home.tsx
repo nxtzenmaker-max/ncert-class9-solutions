@@ -92,17 +92,17 @@ export default function Home() {
                     whileTap={{ scale: 0.97 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
-                    className="group relative bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 w-full max-w-sm"
+                    className="group relative bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 w-full max-w-sm overflow-hidden"
                     data-testid={`card-subject-${subject.id}`}
                   >
-                    <div className="w-full h-64 overflow-hidden bg-gray-50 flex items-center justify-center">
-                      <img
-                        src={ganitaManjariCover}
-                        alt="Ganita Manjari cover"
-                        className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="p-8">
+                    <img
+                      src={ganitaManjariCover}
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute inset-0 w-full h-full object-cover opacity-[0.14] scale-110 group-hover:scale-125 group-hover:opacity-20 transition-all duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/90 to-white" />
+                    <div className="relative z-10">
                       <h3 className="text-xl font-bold text-foreground mb-2">{subject.name}</h3>
                       <p className="text-gray-600 mb-6">{subject.desc}</p>
                       <motion.div whileTap={{ scale: 0.93 }}>
